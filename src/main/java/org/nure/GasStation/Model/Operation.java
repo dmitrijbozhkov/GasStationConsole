@@ -1,6 +1,7 @@
 package org.nure.GasStation.Model;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.nure.GasStation.Model.Enumerations.OperationTypes;
 
 import java.util.Date;
 
@@ -11,14 +12,16 @@ public class Operation {
     private final Date date;
     private final String fuelName;
     private final String username;
+    private final OperationTypes type;
 
-    public Operation(String operationId, float amount, float price, Date date, String fuelName, String username) {
+    public Operation(String operationId, float amount, float price, Date date, String fuelName, String username, OperationTypes type) {
         this.operationId = operationId;
         this.amount = amount;
         this.price = price;
         this.date = date;
         this.fuelName = fuelName;
         this.username = username;
+        this.type = type;
     }
 
     public String getOperationId() {
@@ -35,6 +38,10 @@ public class Operation {
 
     public Date getDate() {
         return date;
+    }
+
+    public OperationTypes getType() {
+        return type;
     }
 
     public String getFuelName() {

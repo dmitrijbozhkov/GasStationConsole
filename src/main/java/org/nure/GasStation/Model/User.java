@@ -1,14 +1,16 @@
 package org.nure.GasStation.Model;
 
+import org.nure.GasStation.Model.Enumerations.UserRoles;
+
 public class User {
     private final String username;
     private String password;
-    private String role;
+    private UserRoles roles;
 
-    public User(String username, String password, String role) {
+    public User(String username, String password, UserRoles roles) {
         this.username = username;
         this.password = password;
-        this.role = role;
+        this.roles = roles;
     }
 
     public String getUsername() {
@@ -19,7 +21,16 @@ public class User {
         return password;
     }
 
-    public String getRole() {
-        return role;
+    public UserRoles getRoles() {
+        return roles;
     }
+
+    public void setRoles(UserRoles roles) {
+        this.roles = roles;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }

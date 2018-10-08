@@ -3,7 +3,7 @@ package org.nure.GasStation.Model.Repositories;
 import org.nure.GasStation.Exceptions.EntityAlreadyExistsException;
 import org.nure.GasStation.Exceptions.EntityNotFoundException;
 import org.nure.GasStation.Model.Fuel;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.nure.GasStation.Model.Interfaces.IFuelRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ public class FuelRepository implements IFuelRepository {
             throw new EntityNotFoundException(String.format("Can't set fuel price, fuel %s doesn't exist"));
         }
     }
-asdasdasd
+
     @Override
     public void setFuelLeft(String fuelName, float fuelLeft) throws EntityNotFoundException {
         Optional<Fuel> search = findFuel(fuelName);

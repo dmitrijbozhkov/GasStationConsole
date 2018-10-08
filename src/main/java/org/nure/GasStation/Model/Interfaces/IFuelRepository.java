@@ -1,4 +1,4 @@
-package org.nure.GasStation.Model.Repositories;
+package org.nure.GasStation.Model.Interfaces;
 
 import org.nure.GasStation.Exceptions.EntityAlreadyExistsException;
 import org.nure.GasStation.Exceptions.EntityNotFoundException;
