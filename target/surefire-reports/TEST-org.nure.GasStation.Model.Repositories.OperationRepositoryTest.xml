@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.nure.GasStation.Controllers.MainControllerTest" time="4.615" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="10.092" tests="14" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,5 +61,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testHomePage" classname="org.nure.GasStation.Controllers.MainControllerTest" time="0.381"/>
+  <testcase name="testGetUserTimeOperationsShouldReturnTheLatestOperationIfAmountIs1AndPageis2" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.057"/>
+  <testcase name="testGetUserOperationsShouldReturnSecondLatestUserOperationIfAmountIs1AndPageIs2" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.016"/>
+  <testcase name="testGetTimeOperationsShouldGiveSecondOperationInTimeFrameIfAmountIs1AndPageIs2" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.051"/>
+  <testcase name="testGetOperationsShouldReturnFirstTwoEarliestOperationsIfAmountIs2AndPageIs1" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.025"/>
+  <testcase name="testBuyFuelShouldRemoveFuelLeftByAmountOfFuelBought" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.003"/>
+  <testcase name="testFillFuelShouldAddFuelByAmout" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.003"/>
+  <testcase name="testFillFuelShouldAddFuelFillingOperation" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.004"/>
+  <testcase name="testGetOperationsShouldSkipAmountOfOperationsEqualToAmountTimesPage" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.015"/>
+  <testcase name="testGetUserOpertionsShouldReturnOperationsOfAGivenUser" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.004"/>
+  <testcase name="testMethodsWithPaginationShouldThrowIndexOutOfBoundsExceptionIfPageIsLessThanOne" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.004"/>
+  <testcase name="testMethodsWithPaginationShouldThrowIndexOutOfBoundsExceptionIfAmountIsLessThanOne" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.004"/>
+  <testcase name="testBuyFuelShouldAddFuelBuyingOperation" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.004"/>
+  <testcase name="testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.048"/>
+  <testcase name="testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames" classname="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" time="0.047"/>
 </testsuite>

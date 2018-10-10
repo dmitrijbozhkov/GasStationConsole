@@ -3,7 +3,7 @@ package org.nure.GasStation.Model.Repositories;
 import org.nure.GasStation.Exceptions.EntityAlreadyExistsException;
 import org.nure.GasStation.Exceptions.EntityNotFoundException;
 import org.nure.GasStation.Model.Enumerations.UserRoles;
-import org.nure.GasStation.Model.Interfaces.IUserRepository;
+import org.nure.GasStation.Model.RepositoryInterfaces.IUserRepository;
 import org.nure.GasStation.Model.User;
 import org.springframework.stereotype.Repository;
 

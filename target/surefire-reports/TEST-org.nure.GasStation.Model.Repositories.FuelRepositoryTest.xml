@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.nure.GasStation.Controllers.MainControllerTest" time="4.615" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="7.61" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,5 +61,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testHomePage" classname="org.nure.GasStation.Controllers.MainControllerTest" time="0.381"/>
+  <testcase name="testAddFuelShouldThrowEntityAlreadyExistsExceptionIfFuelExists" classname="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="0"/>
+  <testcase name="testSetFuelPriceShouldThrowEntityNotFoundExceptionIfFuelNotFound" classname="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="0.005"/>
+  <testcase name="testRemoveFuelShouldRemoveFuelFromCollection" classname="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="0.005"/>
+  <testcase name="testSetFuelLeftShouldSetLeftoverFuelByName" classname="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="0.004"/>
+  <testcase name="testSetFuelLeftShouldThrowEntityNotFoundExceptionIfFuelNotPresent" classname="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="0.013"/>
+  <testcase name="testRemoveFuelShouldThrowEntityNotFoundExceptionIfFuelNotFound" classname="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="0.006"/>
+  <testcase name="testGetFuelsShouldReturnAllFuels" classname="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="0.005"/>
+  <testcase name="testSetFuelPriceShouldSetPriceOfFuelByName" classname="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="0.005"/>
+  <testcase name="testGetFuelShouldReturnChosenFuelByName" classname="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="0.005"/>
+  <testcase name="testGetFuelShouldThrowEntityNotFoundExceptionIfFuelNotFound" classname="org.nure.GasStation.Model.Repositories.FuelRepositoryTest" time="0.004"/>
 </testsuite>

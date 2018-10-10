@@ -1,28 +1,31 @@
 package org.nure.GasStation.Model.Repositories;
 
 import org.nure.GasStation.Exceptions.EntityNotFoundException;
-import org.nure.GasStation.Model.Enumerations.OperationTimeFrame;
 import org.nure.GasStation.Model.Enumerations.OperationTypes;
 import org.nure.GasStation.Model.Fuel;
-import org.nure.GasStation.Model.Interfaces.IFuelRepository;
-import org.nure.GasStation.Model.Interfaces.IOperationRepository;
+import org.nure.GasStation.Model.RepositoryInterfaces.IFuelRepository;
+import org.nure.GasStation.Model.RepositoryInterfaces.IOperationRepository;
+import org.nure.GasStation.Model.RepositoryInterfaces.IUserRepository;
 import org.nure.GasStation.Model.Operation;
+import org.nure.GasStation.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import java.time.*;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Repository
 public class OperationRepository implements IOperationRepository {
 
     @Autowired
     private CommonsRepository commmons;
     @Autowired
     private IFuelRepository fuelRepository;
+    @Autowired
+    private IUserRepository userRepository;
 
     private ArrayList<Operation> operationList = new ArrayList<Operation>();
 
@@ -51,37 +54,41 @@ public class OperationRepository implements IOperationRepository {
     }
 
     @Override
-    public void buyFuel(String username, String fuelName, float amount, float price) {
+    public String buyFuel(String username, String fuelName, float amount) throws EntityNotFoundException {
         String operationId = generateOperationId();
         Fuel currentFuel = fuelRepository.getFuel(fuelName);
+        User currentUser = userRepository.getUserByUsername(username);
         currentFuel.setFuelLeft(currentFuel.getFuelLeft() - amount);
         operationList.add(new Operation(
                 operationId,
                 amount,
-                price,
+                currentFuel.getPrice(),
                 new Date(),
-                fuelName,
-                username,
+                currentFuel.getFuelName(),
+                currentUser.getUsername(),
                 OperationTypes.OPERATION_BUY));
+        return operationId;
     }
 
     @Override
-    public void fillFuel(String username, String fuelName, float amount) {
+    public String fillFuel(String username, String fuelName, float amount) throws EntityNotFoundException {
         String operationId = generateOperationId();
         Fuel currentFuel = fuelRepository.getFuel(fuelName);
+        User currentUser = userRepository.getUserByUsername(username);
         currentFuel.setFuelLeft(currentFuel.getFuelLeft() + amount);
         operationList.add(new Operation(
                 operationId,
                 amount,
                 currentFuel.getPrice(),
                 new Date(),
-                fuelName,
-                username,
-                OperationTypes.OPERATION_BUY));
+                currentFuel.getFuelName(),
+                currentUser.getUsername(),
+                OperationTypes.OPERATION_FILL));
+        return operationId;
     }
 
     @Override
-    public Operation getOperation(String operationId) throws EntityNotFoundException {
+    public Operation getOperationById(String operationId) throws EntityNotFoundException {
         Optional<Operation> search = findOperation(operationId);
         if (search.isPresent()){
             return search.get();
@@ -97,7 +104,7 @@ public class OperationRepository implements IOperationRepository {
         page = makePage(amount, page);
         return operationList
                 .stream()
-                .sorted(Comparator.comparing(op -> op.getDate()))
+                .sorted(Comparator.comparing(Operation::getDate).reversed())
                 .skip(page)
                 .limit(amount)
                 .collect(Collectors.toCollection(ArrayList::new));
@@ -109,7 +116,7 @@ public class OperationRepository implements IOperationRepository {
         return operationList
                 .stream()
                 .filter(op -> op.getUsername().equals(username))
-                .sorted(Comparator.comparing(op -> op.getDate()))
+                .sorted(Comparator.comparing(Operation::getDate).reversed())
                 .skip(page)
                 .limit(amount)
                 .collect(Collectors.toCollection(ArrayList::new));
@@ -121,7 +128,7 @@ public class OperationRepository implements IOperationRepository {
         return operationList
                 .stream()
                 .filter(op -> op.getDate().after(before) && op.getDate().before(after))
-                .sorted(Comparator.comparing(op -> op.getDate()))
+                .sorted(Comparator.comparing(Operation::getDate).reversed())
                 .skip(page)
                 .limit(amount)
                 .collect(Collectors.toCollection(ArrayList::new));
@@ -133,7 +140,7 @@ public class OperationRepository implements IOperationRepository {
         return operationList
                 .stream()
                 .filter(op -> op.getDate().after(before) && op.getDate().before(after) && op.getUsername().equals(username))
-                .sorted(Comparator.comparing(op -> op.getDate()))
+                .sorted(Comparator.comparing(Operation::getDate).reversed())
                 .skip(page)
                 .limit(amount)
                 .collect(Collectors.toCollection(ArrayList::new));
