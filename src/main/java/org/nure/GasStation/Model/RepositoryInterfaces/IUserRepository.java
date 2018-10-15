@@ -4,12 +4,6 @@ import org.nure.GasStation.Exceptions.EntityAlreadyExistsException;
 import org.nure.GasStation.Exceptions.EntityNotFoundException;
 import org.nure.GasStation.Model.Enumerations.UserRoles;
 import org.nure.GasStation.Model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IUserRepository {
-    void createUser(String username, String password, UserRoles role) throws EntityAlreadyExistsException;
-    User getUserByUsername(String username) throws EntityNotFoundException;
-    UserRoles getUserRole(String username) throws EntityNotFoundException;
-    void setPassword(String username, String password) throws EntityNotFoundException;
-    void setRole(String username, UserRoles role) throws EntityNotFoundException;
-    boolean checkUserCredentials(String username, String password) throws EntityNotFoundException;
-}
+public interface IUserRepository extends JpaRepository<User, String> { }

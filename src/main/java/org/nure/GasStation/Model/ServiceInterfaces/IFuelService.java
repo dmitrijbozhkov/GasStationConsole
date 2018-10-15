@@ -1,6 +1,18 @@
 package org.nure.GasStation.Model.ServiceInterfaces;
 
+import org.nure.GasStation.Exceptions.EntityAlreadyExistsException;
+import org.nure.GasStation.Exceptions.EntityNotFoundException;
+import org.nure.GasStation.Model.Fuel;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public interface IFuelService {
 
-
+    void addFuel(String fuelName, float price, float fuelLeft) throws EntityAlreadyExistsException;
+    void removeFuel(String fuelName) throws EntityNotFoundException;
+    void setFuelPrice(String fuelName, float price) throws EntityNotFoundException;
+    void setFuelLeft(String fuelName, float fuelLeft) throws EntityNotFoundException;
+    Fuel getFuel(String fuelName) throws EntityNotFoundException;
+    List<Fuel> getFuels();
 }

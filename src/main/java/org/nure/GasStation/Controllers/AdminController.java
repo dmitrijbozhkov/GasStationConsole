@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/admin")
 public class AdminController {
 
-    @Autowired
-    private IAdminService fuelService;
+//    @Autowired
+//    private IAdminService fuelService;
 }

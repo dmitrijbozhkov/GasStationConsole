@@ -2,19 +2,41 @@ package org.nure.GasStation.Model;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+@Access(AccessType.PROPERTY)
 public class Fuel {
-    private final String fuelName;
+
+    private String fuelName;
     private float price;
     private float fuelLeft;
+    private Set<Operation> operations;
 
     public Fuel(String fuelName, float price, float fuelLeft) {
         this.fuelName = fuelName;
         this.price = price;
         this.fuelLeft = fuelLeft;
+        this.operations = new HashSet<Operation>();
     }
 
+    public Fuel(String fuelName, float price, float fuelLeft, HashSet<Operation> operations) {
+        this.fuelName = fuelName;
+        this.price = price;
+        this.fuelLeft = fuelLeft;
+        this.operations = operations;
+    }
+
+    @Id
+    @Column
     public String getFuelName() {
         return this.fuelName;
+    }
+
+    public void setFuelName(String fuelName) {
+        this.fuelName = fuelName;
     }
 
     public float getPrice() {
@@ -36,8 +58,12 @@ public class Fuel {
         this.fuelLeft = fuelLeft;
     }
 
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "fuel")
+    public Set<Operation> getOperations() {
+        return operations;
+    }
+
+    public void setOperations(Set<Operation> operations) {
+        this.operations = operations;
     }
 }
