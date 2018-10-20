@@ -11,8 +11,6 @@ public interface IFuelService {
 
     void addFuel(String fuelName, float price, float fuelLeft) throws EntityAlreadyExistsException;
     void removeFuel(String fuelName) throws EntityNotFoundException;
-    void setFuelPrice(String fuelName, float price) throws EntityNotFoundException;
-    void setFuelLeft(String fuelName, float fuelLeft) throws EntityNotFoundException;
     Fuel getFuel(String fuelName) throws EntityNotFoundException;
     List<Fuel> getFuels();
 }

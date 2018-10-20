@@ -2,13 +2,16 @@ package org.nure.GasStation.Controllers;
 
 import org.nure.GasStation.Model.Enumerations.UserRoles;
 import org.nure.GasStation.Model.ExchangeModels.AuthToken;
+import org.nure.GasStation.Model.ExchangeModels.ChangePassword;
 import org.nure.GasStation.Model.ExchangeModels.UserCredentials;
 import org.nure.GasStation.Model.ServiceInterfaces.IUserService;
 import org.nure.GasStation.Security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +22,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/api/user")
-public class UserController {
+public class GasStationUserController {
 
     @Autowired
     private IUserService userService;
@@ -39,7 +42,11 @@ public class UserController {
         return ResponseEntity.ok(new AuthToken(token));
     }
 
-    public ResponseEntity changePassword() {
-
+    @Secured({"ROLE_BUYER", "ROLE_ADMIN"})
+    @RequestMapping(value = "/change-password", method = { RequestMethod.POST })
+    public ResponseEntity changePassword(@RequestBody ChangePassword changePassword) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        userService.changePassword(auth.getName(), changePassword.getPassword(), changePassword.getOldPassword());
+        return ResponseEntity.ok().build();
     }
 }

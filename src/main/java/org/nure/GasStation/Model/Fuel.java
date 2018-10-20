@@ -15,6 +15,8 @@ public class Fuel {
     private float fuelLeft;
     private Set<Operation> operations;
 
+    public Fuel() { }
+
     public Fuel(String fuelName, float price, float fuelLeft) {
         this.fuelName = fuelName;
         this.price = price;

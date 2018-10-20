@@ -1,6 +1,8 @@
 package org.nure.GasStation.Model.ExchangeModels;
 
-public class UserCredentials {
+import java.io.Serializable;
+
+public class UserCredentials implements Serializable {
     private String username;
     private String password;
 

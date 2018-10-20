@@ -7,14 +7,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nure.GasStation.Model.Enumerations.UserRoles;
 import org.nure.GasStation.Model.ExchangeModels.AuthToken;
+import org.nure.GasStation.Model.ExchangeModels.ChangePassword;
 import org.nure.GasStation.Model.ExchangeModels.UserCredentials;
 import org.nure.GasStation.Model.ServiceInterfaces.IUserService;
 import org.nure.GasStation.Security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.security.core.Authentication;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -23,12 +25,12 @@ import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
 import static org.mockito.BDDMockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
-public class GasStationUserControllerTest {
+@AutoConfigureMockMvc
+@SpringBootTest
+public class GasStationGasStationUserControllerTest {
 
     @Autowired
     private MockMvc mvc;
@@ -75,6 +77,16 @@ public class GasStationUserControllerTest {
                 .andReturn();
         String tokenObj = result.getResponse().getContentAsString();
         assertEquals(map.writeValueAsString(new AuthToken(token)), tokenObj);
+    }
+
+    @Test
+    @WithMockUser(username = "matviei", authorities = { "ROLE_ADMIN" })
+    public void testChangePasswordShouldCallChangePasswordWithSuppliedData() throws Exception {
+        String nextPassword = "newpass";
+        ChangePassword changePassword = new ChangePassword(nextPassword, user.getPassword());
+        mvc.perform(post("/api/user/change-password").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(changePassword)))
+                .andExpect(status().isOk());
+        verify(userServiceMock).changePassword("matviei", nextPassword, user.getPassword());
     }
 
 }

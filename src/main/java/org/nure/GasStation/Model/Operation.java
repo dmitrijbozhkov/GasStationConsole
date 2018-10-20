@@ -1,8 +1,6 @@
 package org.nure.GasStation.Model;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.nure.GasStation.Model.Enumerations.OperationTypes;
-import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,18 +12,29 @@ public class Operation {
     private long operationId;
     private float amount;
     private float price;
-    private Date date;
+    private Date operationDate;
     private Fuel fuel;
-    private User user;
+    private GasStationUser gasStationUser;
     private OperationTypes type;
 
-    public Operation(long operationId, float amount, float price, Date date, Fuel fuel, User user, OperationTypes type) {
+    public Operation() { }
+
+    public Operation(float amount, float price, Date operationDate, Fuel fuel, GasStationUser gasStationUser, OperationTypes type) {
+        this.amount = amount;
+        this.price = price;
+        this.operationDate = operationDate;
+        this.fuel = fuel;
+        this.gasStationUser = gasStationUser;
+        this.type = type;
+    }
+
+    public Operation(long operationId, float amount, float price, Date operationDate, Fuel fuel, GasStationUser gasStationUser, OperationTypes type) {
         this.operationId = operationId;
         this.amount = amount;
         this.price = price;
-        this.date = date;
+        this.operationDate = operationDate;
         this.fuel = fuel;
-        this.user = user;
+        this.gasStationUser = gasStationUser;
         this.type = type;
     }
 
@@ -44,8 +53,8 @@ public class Operation {
     }
 
     @Temporal(TemporalType.TIMESTAMP)
-    public Date getDate() {
-        return date;
+    public Date getOperationDate() {
+        return operationDate;
     }
 
     @Enumerated(EnumType.ORDINAL)
@@ -59,8 +68,8 @@ public class Operation {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
-    public User getUser() {
-        return user;
+    public GasStationUser getGasStationUser() {
+        return gasStationUser;
     }
 
     public void setOperationId(long operationId) {
@@ -75,16 +84,16 @@ public class Operation {
         this.price = price;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setOperationDate(Date operationDate) {
+        this.operationDate = operationDate;
     }
 
     public void setFuel(Fuel fuel) {
         this.fuel = fuel;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setGasStationUser(GasStationUser gasStationUser) {
+        this.gasStationUser = gasStationUser;
     }
 
     public void setType(OperationTypes type) {

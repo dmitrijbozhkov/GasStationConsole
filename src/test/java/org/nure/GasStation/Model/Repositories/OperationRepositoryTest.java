@@ -57,42 +57,6 @@ public class OperationRepositoryTest {
 //        fuelRepository.addFuel(fuelName, price, fuelLeft);
 //    }
 //
-//    @Test
-//    public void testBuyFuelShouldAddFuelBuyingOperation() {
-//        float fuelAmount = 100;
-//        String operationId = operationRepository.buyFuel(usernameBuyer, fuelName, fuelAmount);
-//        Operation currentOperation = operationRepository.getOperationById(operationId);
-//        assertEquals(currentOperation.getUsername(), usernameBuyer);
-//        assertEquals(currentOperation.getFuelName(), fuelName);
-//        assertEquals(currentOperation.getAmount(), fuelAmount, 0);
-//        assertEquals(currentOperation.getType(), OperationTypes.OPERATION_BUY);
-//    }
-//
-//    @Test
-//    public void testBuyFuelShouldRemoveFuelLeftByAmountOfFuelBought() {
-//        float fuelAmount = 100;
-//        operationRepository.buyFuel(usernameBuyer, fuelName, fuelAmount);
-//        Fuel boughtFuel = fuelRepository.getFuel(fuelName);
-//        assertEquals(boughtFuel.getFuelLeft() + fuelAmount, fuelLeft, 0);
-//    }
-//
-//    @Test
-//    public void testFillFuelShouldAddFuelFillingOperation() throws NotEnoughPrivilegesException {
-//        float fuelAmount = 3000;
-//        String operationId = operationRepository.fillFuel(usernameAdmin, fuelName, fuelAmount);
-//        Operation currentOperation = operationRepository.getOperationById(operationId);
-//        assertEquals(currentOperation.getUsername(), usernameAdmin);
-//        assertEquals(currentOperation.getFuelName(), fuelName);
-//        assertEquals(currentOperation.getType(), OperationTypes.OPERATION_FILL);
-//    }
-//
-//    @Test
-//    public void testFillFuelShouldAddFuelByAmout() throws NotEnoughPrivilegesException {
-//        float fuelAmount = 3000;
-//        operationRepository.fillFuel(usernameAdmin, fuelName, fuelAmount);
-//        Fuel currentFuel = fuelRepository.getFuel(fuelName);
-//        assertEquals(currentFuel.getFuelLeft() - fuelAmount, fuelLeft, 0);
-//    }
 //
 //    @Test
 //    public void testGetOperationsShouldReturnFirstTwoEarliestOperationsIfAmountIs2AndPageIs1() throws InterruptedException {

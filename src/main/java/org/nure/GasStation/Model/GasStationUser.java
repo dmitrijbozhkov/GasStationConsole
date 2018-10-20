@@ -8,21 +8,23 @@ import java.util.Set;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class User {
+public class GasStationUser {
 
     private String username;
     private String password;
     private UserRoles roles;
     private Set<Operation> userOperations;
 
-    public User(String username, String password, UserRoles roles) {
+    public GasStationUser() { }
+
+    public GasStationUser(String username, String password, UserRoles roles) {
         this.username = username;
         this.password = password;
         this.roles = roles;
         this.userOperations = new HashSet<Operation>();
     }
 
-    public User(String username, String password, UserRoles roles, HashSet<Operation> userOperations) {
+    public GasStationUser(String username, String password, UserRoles roles, HashSet<Operation> userOperations) {
         this.username = username;
         this.password = password;
         this.roles = roles;
@@ -56,7 +58,7 @@ public class User {
         this.username = username;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "gasStationUser")
     public Set<Operation> getUserOperations() {
         return userOperations;
     }

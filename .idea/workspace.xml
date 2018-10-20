@@ -2,46 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="625907db-92d0-42f8-a456-c6db3b681177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/UserCredentials.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IOperationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/OperationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserPrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/JwtAuthenticationEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/JwtTokenProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/ExceptionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/GasStationUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Exceptions/OperationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/AuthToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/ChangePassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/EtityCreatedResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/GasStationGasStationUserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/AdminServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/FuelServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/GasStationUserServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/OperationServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GasStationConsole.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/FuelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/FuelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/UserController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/GasStationApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/GasStationApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/UserRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/UserRoles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/UserCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/UserCredentials.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Fuel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Fuel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/CommonsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/FuelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/FuelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/OperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/OperationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IFuelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IFuelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/FuelRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/OperationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/UserRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IOperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IOperationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IAdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IFuelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IFuelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IOperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IOperationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/FuelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/FuelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/OperationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/GasStationUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/CommonsRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/MainControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/FuelRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/FuelRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/OperationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/OperationRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/UserRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/GasStation-1.0-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/UserRepositoryTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/GasStationConsole-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/GasStationConsole-1.0-SNAPSHOT.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
@@ -49,12 +50,10 @@
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.GasStation.Controllers.MainControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.GasStation.Controllers.MainControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.GasStation.Model.Repositories.CommonsRepositoryTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.GasStation.Model.Repositories.FuelRepositoryTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.GasStation.Model.Repositories.FuelRepositoryTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.GasStation.Model.Repositories.OperationRepositoryTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.GasStation.Model.Repositories.OperationRepositoryTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.GasStation.Model.Repositories.UserRepositoryTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.GasStation.Model.Repositories.UserRepositoryTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.GasStation.Controllers.MainControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.GasStation.Controllers.MainControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.GasStation.Model.Repositories.CommonsRepositoryTest.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.GasStation.Model.Repositories.FuelRepositoryTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.GasStation.Model.Repositories.FuelRepositoryTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.GasStation.Model.Repositories.OperationRepositoryTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.GasStation.Model.Repositories.OperationRepositoryTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.GasStation.Model.Repositories.UserRepositoryTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.GasStation.Model.Repositories.UserRepositoryTest.txt" afterDir="false" />
@@ -99,10 +98,11 @@
     <session id="1906214325">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="3" />
@@ -112,41 +112,87 @@
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="42" />
           <entry key="html" value="34" />
-          <entry key="java" value="27169" />
-          <entry key="properties" value="132" />
-          <entry key="xml" value="118" />
+          <entry key="java" value="29866" />
+          <entry key="properties" value="136" />
+          <entry key="xml" value="119" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="34" />
-          <entry key="JAVA" value="27169" />
+          <entry key="JAVA" value="29866" />
           <entry key="PLAIN_TEXT" value="42" />
-          <entry key="Properties" value="132" />
-          <entry key="XML" value="118" />
+          <entry key="Properties" value="136" />
+          <entry key="XML" value="119" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="1" />
-          <entry key="java" value="178" />
-          <entry key="properties" value="4" />
-          <entry key="xml" value="4" />
+          <entry key="java" value="199" />
+          <entry key="properties" value="6" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="JAVA" value="178" />
-          <entry key="Properties" value="4" />
-          <entry key="XML" value="4" />
+          <entry key="JAVA" value="199" />
+          <entry key="Properties" value="6" />
+          <entry key="XML" value="5" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="1426482324">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="21" />
+          <entry key="java" value="11711" />
+          <entry key="properties" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="11711" />
+          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="Properties" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Learning" value="1" />
+          <entry key="class" value="11" />
+          <entry key="java" value="83" />
+          <entry key="properties" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="11" />
+          <entry key="JAVA" value="83" />
+          <entry key="Properties" value="3" />
+          <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -154,19 +200,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/OperationRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IOperationRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+              <caret line="24" column="68" lean-forward="true" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/FuelRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IAdminService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+            <state relative-caret-position="60">
+              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/AdminService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/AdminServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="519">
+              <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,82 +239,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/OperationRepositoryTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/OperationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            <state relative-caret-position="780">
+              <caret line="82" column="101" lean-forward="true" selection-start-line="82" selection-start-column="101" selection-end-line="82" selection-end-column="101" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/MainControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/AdminController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/FuelController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/ExceptionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="17" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/UserRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/FuelRepositoryTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="69" column="29" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/UserRepositoryTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="225">
+              <caret line="15" column="105" selection-start-line="15" selection-start-column="105" selection-end-line="15" selection-end-column="105" />
               <folding>
-                <element signature="e#801#802#0" expanded="true" />
-                <element signature="e#833#834#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/FuelService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-165">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -272,6 +290,8 @@
     <findStrings>
       <find>CommonsRepositoryTest</find>
       <find>CommonsRepository</find>
+      <find>Commons</find>
+      <find>String.format(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -280,57 +300,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Exceptions/EntityAlreadyExistsException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/CommonsRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/IUserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/IFuelRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/IOperationRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/OperationTypes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/UserType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Interfaces/IFuelRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/OperationTimeFrme.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/OperationTimeFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Exceptions/NotEnoughPrivileges.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Exceptions/NotEnoughPrivilegesException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Interfaces/IOperationRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Interfaces/IUserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IFuelRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IOperationRepository.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/JwtAuthenticationEntryPoint.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IUserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/UserRoles.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserPrincipal.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserDetailsService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/JwtAuthenticationFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/JwtTokenProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IFuelService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IAdminService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IOperationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/AdminService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/FuelService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/OperationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/FuelRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/OperationRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/CommonsRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/UserCredentials.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/MainController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/FuelRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/OperationRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/UserRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Fuel.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Operation.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/FuelController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/GasStationApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/EtityCreatedResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/UserCredentials.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/AuthToken.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/UserControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/UserServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/GasStationUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Fuel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/GasStationUserControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/GasStationApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/GasStationUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/ChangePassword.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/GasStationGasStationUserControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/FuelRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IFuelService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/FuelRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/OperationRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Exceptions/OperationException.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/OperationRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/FuelServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IOperationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/OperationService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/OperationServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IUserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Operation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IOperationRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/AdminService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IAdminService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/AdminServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/FuelService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/GasStationUserServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/MainControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/ExceptionController.java" />
       </list>
     </option>
   </component>
@@ -395,25 +415,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -422,8 +423,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -433,8 +432,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -444,8 +441,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -455,8 +450,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="Enumerations" type="462c0819:PsiDirectoryNode" />
@@ -467,8 +460,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="ExchangeModels" type="462c0819:PsiDirectoryNode" />
@@ -479,20 +470,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
-              <item name="GasStation" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="RepositoryInterfaces" type="462c0819:PsiDirectoryNode" />
@@ -503,8 +480,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="ServiceInterfaces" type="462c0819:PsiDirectoryNode" />
@@ -515,8 +490,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="Services" type="462c0819:PsiDirectoryNode" />
@@ -527,8 +500,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Security" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -558,25 +529,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -585,8 +537,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -596,8 +546,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -607,26 +555,43 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="nure" type="462c0819:PsiDirectoryNode" />
               <item name="GasStation" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="Repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="GasStation" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Course" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -640,81 +605,81 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JAR Application.Run console app">
-    <configuration name="OperationRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MainControllerTest.testHomePageShouldReturnViewWithNameIndex">
+    <configuration name="AdminServiceTest.testGetUserShouldReturnUserByUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GasStationConsole" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nure.GasStation.Model.Repositories.*" />
+          <option name="PATTERN" value="org.nure.GasStation.Model.Services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.nure.GasStation.Model.Repositories" />
-      <option name="MAIN_CLASS_NAME" value="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OperationRepositoryTest.testGetTimeOperationsShouldGiveSecondOperationInTimeFrameIfAmountIs1AndPageIs2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GasStationConsole" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.nure.GasStation.Model.Repositories.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.nure.GasStation.Model.Repositories" />
-      <option name="MAIN_CLASS_NAME" value="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" />
-      <option name="METHOD_NAME" value="testGetTimeOperationsShouldGiveSecondOperationInTimeFrameIfAmountIs1AndPageIs2" />
+      <option name="PACKAGE_NAME" value="org.nure.GasStation.Model.Services" />
+      <option name="MAIN_CLASS_NAME" value="org.nure.GasStation.Model.Services.AdminServiceTest" />
+      <option name="METHOD_NAME" value="testGetUserShouldReturnUserByUsername" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OperationRepositoryTest.testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdminServiceTest.testSearchForUserShouldLookupUsernamesThatContainQueryIgnoringCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GasStationConsole" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nure.GasStation.Model.Repositories.*" />
+          <option name="PATTERN" value="org.nure.GasStation.Model.Services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.nure.GasStation.Model.Repositories" />
-      <option name="MAIN_CLASS_NAME" value="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" />
-      <option name="METHOD_NAME" value="testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames" />
+      <option name="PACKAGE_NAME" value="org.nure.GasStation.Model.Services" />
+      <option name="MAIN_CLASS_NAME" value="org.nure.GasStation.Model.Services.AdminServiceTest" />
+      <option name="METHOD_NAME" value="testSearchForUserShouldLookupUsernamesThatContainQueryIgnoringCase" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OperationRepositoryTest.testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdminServiceTest.testSetRoleShouldSetUserRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GasStationConsole" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nure.GasStation.Model.Repositories.*" />
+          <option name="PATTERN" value="org.nure.GasStation.Model.Services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.nure.GasStation.Model.Repositories" />
-      <option name="MAIN_CLASS_NAME" value="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" />
-      <option name="METHOD_NAME" value="testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame" />
+      <option name="PACKAGE_NAME" value="org.nure.GasStation.Model.Services" />
+      <option name="MAIN_CLASS_NAME" value="org.nure.GasStation.Model.Services.AdminServiceTest" />
+      <option name="METHOD_NAME" value="testSetRoleShouldSetUserRole" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OperationRepositoryTest.testGetUserTimeOperationsShouldReturnTheLatestOperationIfAmountIs1AndPageis2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainControllerTest.testHomePageShouldReturnViewWithNameIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GasStationConsole" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nure.GasStation.Model.Repositories.*" />
+          <option name="PATTERN" value="org.nure.GasStation.Controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.nure.GasStation.Model.Repositories" />
-      <option name="MAIN_CLASS_NAME" value="org.nure.GasStation.Model.Repositories.OperationRepositoryTest" />
-      <option name="METHOD_NAME" value="testGetUserTimeOperationsShouldReturnTheLatestOperationIfAmountIs1AndPageis2" />
+      <option name="PACKAGE_NAME" value="org.nure.GasStation.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="org.nure.GasStation.Controllers.MainControllerTest" />
+      <option name="METHOD_NAME" value="testHomePageShouldReturnViewWithNameIndex" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GasStationConsole" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nure.GasStation.Model.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.nure.GasStation.Model.Services" />
+      <option name="MAIN_CLASS_NAME" value="org.nure.GasStation.Model.Services.OperationServiceTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -732,19 +697,19 @@
     </configuration>
     <list>
       <item itemvalue="JAR Application.Run console app" />
-      <item itemvalue="JUnit.OperationRepositoryTest" />
-      <item itemvalue="JUnit.OperationRepositoryTest.testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames" />
-      <item itemvalue="JUnit.OperationRepositoryTest.testGetTimeOperationsShouldGiveSecondOperationInTimeFrameIfAmountIs1AndPageIs2" />
-      <item itemvalue="JUnit.OperationRepositoryTest.testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame" />
-      <item itemvalue="JUnit.OperationRepositoryTest.testGetUserTimeOperationsShouldReturnTheLatestOperationIfAmountIs1AndPageis2" />
+      <item itemvalue="JUnit.OperationServiceTest" />
+      <item itemvalue="JUnit.AdminServiceTest.testGetUserShouldReturnUserByUsername" />
+      <item itemvalue="JUnit.AdminServiceTest.testSearchForUserShouldLookupUsernamesThatContainQueryIgnoringCase" />
+      <item itemvalue="JUnit.AdminServiceTest.testSetRoleShouldSetUserRole" />
+      <item itemvalue="JUnit.MainControllerTest.testHomePageShouldReturnViewWithNameIndex" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OperationRepositoryTest.testGetUserTimeOperationsShouldReturnTheLatestOperationIfAmountIs1AndPageis2" />
-        <item itemvalue="JUnit.OperationRepositoryTest.testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame" />
-        <item itemvalue="JUnit.OperationRepositoryTest.testGetTimeOperationsShouldGiveSecondOperationInTimeFrameIfAmountIs1AndPageIs2" />
-        <item itemvalue="JUnit.OperationRepositoryTest.testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames" />
-        <item itemvalue="JUnit.OperationRepositoryTest" />
+        <item itemvalue="JUnit.MainControllerTest.testHomePageShouldReturnViewWithNameIndex" />
+        <item itemvalue="JUnit.AdminServiceTest.testSetRoleShouldSetUserRole" />
+        <item itemvalue="JUnit.AdminServiceTest.testSearchForUserShouldLookupUsernamesThatContainQueryIgnoringCase" />
+        <item itemvalue="JUnit.AdminServiceTest.testGetUserShouldReturnUserByUsername" />
+        <item itemvalue="JUnit.OperationServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -762,63 +727,64 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OperationRepositoryTest_testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames - 2018.10.10 at 12h 24m 03s.xml">
-      <configuration name="OperationRepositoryTest.testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames" configurationId="JUnit" />
+    <history-entry file="AdminServiceTest - 2018.10.20 at 09h 07m 50s.xml">
+      <configuration name="AdminServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OperationRepositoryTest_testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames - 2018.10.10 at 12h 24m 42s.xml">
-      <configuration name="OperationRepositoryTest.testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames" configurationId="JUnit" />
+    <history-entry file="AdminServiceTest - 2018.10.20 at 09h 15m 30s.xml">
+      <configuration name="AdminServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OperationRepositoryTest_testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames - 2018.10.10 at 12h 25m 01s.xml">
-      <configuration name="OperationRepositoryTest.testGetTimeOperationsShouldReturnOperationsBetweenTwoTimeFrames" configurationId="JUnit" />
+    <history-entry file="AdminServiceTest - 2018.10.20 at 09h 19m 10s.xml">
+      <configuration name="AdminServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OperationRepositoryTest_testGetTimeOperationsShouldGiveSecondOperationInTimeFrameIfAmountIs1AndPageIs2 - 2018.10.10 at 12h 28m 27s.xml">
-      <configuration name="OperationRepositoryTest.testGetTimeOperationsShouldGiveSecondOperationInTimeFrameIfAmountIs1AndPageIs2" configurationId="JUnit" />
+    <history-entry file="AdminServiceTest - 2018.10.20 at 09h 25m 37s.xml">
+      <configuration name="AdminServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OperationRepositoryTest_testGetTimeOperationsShouldGiveSecondOperationInTimeFrameIfAmountIs1AndPageIs2 - 2018.10.10 at 12h 28m 45s.xml">
-      <configuration name="OperationRepositoryTest.testGetTimeOperationsShouldGiveSecondOperationInTimeFrameIfAmountIs1AndPageIs2" configurationId="JUnit" />
+    <history-entry file="OperationServiceTest - 2018.10.20 at 09h 26m 36s.xml">
+      <configuration name="OperationServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OperationRepositoryTest_testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame - 2018.10.10 at 12h 32m 41s.xml">
-      <configuration name="OperationRepositoryTest.testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame" configurationId="JUnit" />
+    <history-entry file="AdminServiceTest_testGetUserShouldReturnUserByUsername - 2018.10.20 at 09h 38m 15s.xml">
+      <configuration name="AdminServiceTest.testGetUserShouldReturnUserByUsername" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OperationRepositoryTest_testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame - 2018.10.10 at 12h 32m 59s.xml">
-      <configuration name="OperationRepositoryTest.testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame" configurationId="JUnit" />
+    <history-entry file="AdminServiceTest_testSearchForUserShouldLookupUsernamesThatContainQueryIgnoringCase - 2018.10.20 at 10h 30m 34s.xml">
+      <configuration name="AdminServiceTest.testSearchForUserShouldLookupUsernamesThatContainQueryIgnoringCase" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OperationRepositoryTest_testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame - 2018.10.10 at 12h 36m 09s.xml">
-      <configuration name="OperationRepositoryTest.testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame" configurationId="JUnit" />
+    <history-entry file="AdminServiceTest_testSearchForUserShouldLookupUsernamesThatContainQueryIgnoringCase - 2018.10.20 at 10h 31m 09s.xml">
+      <configuration name="AdminServiceTest.testSearchForUserShouldLookupUsernamesThatContainQueryIgnoringCase" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OperationRepositoryTest_testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame - 2018.10.10 at 12h 38m 44s.xml">
-      <configuration name="OperationRepositoryTest.testGetUserTimeOperationsShouldGiveSpecifiedUsersOperationsInGivenTimeFrame" configurationId="JUnit" />
+    <history-entry file="AdminServiceTest_testSetRoleShouldSetUserRole - 2018.10.20 at 10h 34m 56s.xml">
+      <configuration name="AdminServiceTest.testSetRoleShouldSetUserRole" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OperationRepositoryTest_testGetUserTimeOperationsShouldReturnTheLatestOperationIfAmountIs1AndPageis2 - 2018.10.10 at 12h 42m 27s.xml">
-      <configuration name="OperationRepositoryTest.testGetUserTimeOperationsShouldReturnTheLatestOperationIfAmountIs1AndPageis2" configurationId="JUnit" />
+    <history-entry file="MainControllerTest_testHomePageShouldReturnViewWithNameIndex - 2018.10.20 at 10h 38m 48s.xml">
+      <configuration name="MainControllerTest.testHomePageShouldReturnViewWithNameIndex" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3067114" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32811657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Learn" order="5" weight="0.32982844" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32805908" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33122364" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978904" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32911393" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.32885906" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.2450081" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -830,325 +796,339 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserDetailsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Exceptions/EntityAlreadyExistsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="69" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/OperationTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/function/Predicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Exceptions/EntityNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Exceptions/NotEnoughPrivilegesException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IFuelRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/function/Function.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserPrincipal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/JwtAuthenticationEntryPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/CommonsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IOperationRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IFuelService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IOperationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/CommonsRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/OperationTimeFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/UserRoles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="6" selection-end-column="25" />
+        <state relative-caret-position="272">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/UserCredentials.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/EtityCreatedResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#173#174#0" expanded="true" />
-            <element signature="e#204#205#0" expanded="true" />
-            <element signature="e#239#240#0" expanded="true" />
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-          </folding>
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Fuel.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="61" column="43" lean-forward="true" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1584#1585#0" expanded="true" />
-            <element signature="e#1644#1645#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IAdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-381">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1911#1912#0" expanded="true" />
-            <element signature="e#1943#1944#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="59" column="41" lean-forward="true" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1492#1493#0" expanded="true" />
-            <element signature="e#1560#1561#0" expanded="true" />
-            <element signature="e#1612#1613#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/GasStationUserDetailsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IUserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/JwtTokenProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="57" column="23" lean-forward="true" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/JwtAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="278">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1896#1897#0" expanded="true" />
-            <element signature="e#1940#1941#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="332">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/OperationService.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Learning">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="135">
+          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/AuthToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Security/JwtTokenProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="184" selection-start-line="184" selection-end-line="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestMethodCallbacks.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.7.RELEASE/spring-aop-5.0.7.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestExecutionCallbacks.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunBeforeTestExecutionCallbacks.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/GasStationUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mockito/mockito-core/2.15.0/mockito-core-2.15.0.jar!/org/mockito/ArgumentMatcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/GasStationApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ExchangeModels/ChangePassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Enumerations/UserRoles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar!/org/springframework/test/context/junit4/SpringJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/GasStationUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/GasStationUserRepositoryTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/FuelRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Fuel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="89" selection-start-line="26" selection-start-column="89" selection-end-line="26" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IFuelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Exceptions/OperationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Exceptions/NotEnoughPrivilegesException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/FuelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="833">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="67" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/OperationRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="45" column="54" lean-forward="true" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IUserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/FuelServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="20" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/FuelRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/OperationRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IOperationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Operation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/RepositoryInterfaces/IOperationRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="24" column="68" lean-forward="true" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/ServiceInterfaces/IAdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/AdminServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/AdminService.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/GasStationGasStationUserControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        <state relative-caret-position="90">
+          <caret line="30" selection-start-line="30" selection-end-line="31" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/MainControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/GasStationUserServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Services/OperationServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1157,104 +1137,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/FuelService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        <state relative-caret-position="-165">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/GasStationApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Services/OperationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+        <state relative-caret-position="780">
+          <caret line="82" column="101" lean-forward="true" selection-start-line="82" selection-start-column="101" selection-end-line="82" selection-end-column="101" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/FuelRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/ExceptionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state relative-caret-position="225">
+          <caret line="15" column="105" selection-start-line="15" selection-start-column="105" selection-end-line="15" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/OperationRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Model/Repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/OperationRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/FuelRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Model/Repositories/UserRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#833#834#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/GasStation/Controllers/MainControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/GasStation/Controllers/FuelController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="17" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1263,7 +1170,7 @@
     <states>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>JDK_1.8.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

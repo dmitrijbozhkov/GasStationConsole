@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.nure.GasStation.Controllers.MainControllerTest" time="6.983" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.nure.GasStation.Model.Services.GasStationUserServiceTest" time="1.837" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -59,5 +59,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testHomePageShouldReturnViewWithNameIndex" classname="org.nure.GasStation.Controllers.MainControllerTest" time="0.528"/>
+  <testcase name="testChangePasswordShouldThrowIllegalArgumentExceptionIfOldPasswordIsWrong" classname="org.nure.GasStation.Model.Services.GasStationUserServiceTest" time="0.055"/>
+  <testcase name="testChangePasswordShouldThrowEntityNotFoundExceptionIfUserNotFound" classname="org.nure.GasStation.Model.Services.GasStationUserServiceTest" time="0.003"/>
+  <testcase name="testAuthenticateShouldAuthenticateUserByCredentials" classname="org.nure.GasStation.Model.Services.GasStationUserServiceTest" time="0.02"/>
+  <testcase name="testChangePasswordShouldChangePasswordInEntity" classname="org.nure.GasStation.Model.Services.GasStationUserServiceTest" time="0.523"/>
+  <testcase name="testCreateUserShouldThrowEntityAlreadyExistsExceptionIfUserExists" classname="org.nure.GasStation.Model.Services.GasStationUserServiceTest" time="0.002"/>
+  <testcase name="testCreateUserShouldSaveNewUserIfEverythingCorrect" classname="org.nure.GasStation.Model.Services.GasStationUserServiceTest" time="0.103"/>
+  <testcase name="testCreateUserSHouldThrowIllegalArgumentExceptionIfUsernameIsInvalid" classname="org.nure.GasStation.Model.Services.GasStationUserServiceTest" time="0.005"/>
+  <testcase name="testCreateUserSHouldThrowIllegalArgumentExceptionIfPasswordIsInvalid" classname="org.nure.GasStation.Model.Services.GasStationUserServiceTest" time="0.001"/>
 </testsuite>
