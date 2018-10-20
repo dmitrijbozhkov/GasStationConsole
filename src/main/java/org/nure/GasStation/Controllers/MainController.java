@@ -18,7 +18,7 @@ public class MainController {
         return prepareMainView();
     }
 
-    @RequestMapping("/{path:^(?:(?!^images$|^js$|^css$|^api$).)*$}/**")
+    @RequestMapping(value = "/{path:^(?:(?!^images$|^js$|^css$|^api$).)*$}/**", method = RequestMethod.GET)
     public ModelAndView anyPath() {
         return prepareMainView();
     }

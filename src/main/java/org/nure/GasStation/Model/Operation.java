@@ -1,27 +1,46 @@
 package org.nure.GasStation.Model;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.nure.GasStation.Model.Enumerations.OperationTypes;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Operation {
-    private final String operationId;
-    private final float amount;
-    private final float price;
-    private final Date date;
-    private final String fuelName;
-    private final String username;
 
-    public Operation(String operationId, float amount, float price, Date date, String fuelName, String username) {
+    private long operationId;
+    private float amount;
+    private float price;
+    private Date operationDate;
+    private Fuel fuel;
+    private GasStationUser gasStationUser;
+    private OperationTypes type;
+
+    public Operation() { }
+
+    public Operation(float amount, float price, Date operationDate, Fuel fuel, GasStationUser gasStationUser, OperationTypes type) {
+        this.amount = amount;
+        this.price = price;
+        this.operationDate = operationDate;
+        this.fuel = fuel;
+        this.gasStationUser = gasStationUser;
+        this.type = type;
+    }
+
+    public Operation(long operationId, float amount, float price, Date operationDate, Fuel fuel, GasStationUser gasStationUser, OperationTypes type) {
         this.operationId = operationId;
         this.amount = amount;
         this.price = price;
-        this.date = date;
-        this.fuelName = fuelName;
-        this.username = username;
+        this.operationDate = operationDate;
+        this.fuel = fuel;
+        this.gasStationUser = gasStationUser;
+        this.type = type;
     }
 
-    public String getOperationId() {
+    @Id
+    @Column
+    public long getOperationId() {
         return operationId;
     }
 
@@ -33,20 +52,51 @@ public class Operation {
         return price;
     }
 
-    public Date getDate() {
-        return date;
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getOperationDate() {
+        return operationDate;
     }
 
-    public String getFuelName() {
-        return fuelName;
+    @Enumerated(EnumType.ORDINAL)
+    public OperationTypes getType() {
+        return type;
     }
 
-    public String getUsername() {
-        return username;
+    @ManyToOne(fetch = FetchType.EAGER)
+    public Fuel getFuel() {
+        return fuel;
     }
 
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that, "amount", "price", "date", "fuelName", "username");
+    @ManyToOne(fetch = FetchType.EAGER)
+    public GasStationUser getGasStationUser() {
+        return gasStationUser;
+    }
+
+    public void setOperationId(long operationId) {
+        this.operationId = operationId;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public void setOperationDate(Date operationDate) {
+        this.operationDate = operationDate;
+    }
+
+    public void setFuel(Fuel fuel) {
+        this.fuel = fuel;
+    }
+
+    public void setGasStationUser(GasStationUser gasStationUser) {
+        this.gasStationUser = gasStationUser;
+    }
+
+    public void setType(OperationTypes type) {
+        this.type = type;
     }
 }
