@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.nure.GasStation.Model.Services.OperationServiceTest
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.348 s - in org.nure.GasStation.Model.Services.OperationServiceTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.413 s - in org.nure.GasStation.Model.Services.OperationServiceTest

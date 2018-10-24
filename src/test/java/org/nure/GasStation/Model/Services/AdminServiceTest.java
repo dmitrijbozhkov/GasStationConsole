@@ -29,6 +29,8 @@ public class AdminServiceTest {
     // Default user
     private final String username = "matviei";
     private final String password = "pass1234";
+    private final String name = "pepe";
+    private final String surname = "keke";
     private final UserRoles userRole = UserRoles.ROLE_ADMIN;
 
     @Test(expected = EntityNotFoundException.class)
@@ -39,7 +41,7 @@ public class AdminServiceTest {
 
     @Test
     public void testGetUserShouldReturnUserByUsername() {
-        GasStationUser user = new GasStationUser(username, password, userRole);
+        GasStationUser user = new GasStationUser(username, password, name, surname, userRole);
         given(userRepository.findById(username)).willReturn(Optional.of(user));
         GasStationUser foundUser = adminService.getUser(username);
         assertEquals(user, foundUser);
@@ -59,7 +61,7 @@ public class AdminServiceTest {
     @Test
     public void testSetRoleShouldSetUserRole() {
         UserRoles nextRole = UserRoles.ROLE_ADMIN;
-        GasStationUser user = new GasStationUser(username, password, userRole);
+        GasStationUser user = new GasStationUser(username, password, name, surname, userRole);
         given(userRepository.findById(username)).willReturn(Optional.of(user));
         adminService.setRole(username, nextRole);
         assertEquals(nextRole, user.getRoles());

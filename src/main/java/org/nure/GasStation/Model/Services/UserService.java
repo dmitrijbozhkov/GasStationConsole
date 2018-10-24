@@ -2,6 +2,7 @@ package org.nure.GasStation.Model.Services;
 
 import org.nure.GasStation.Exceptions.EntityAlreadyExistsException;
 import org.nure.GasStation.Exceptions.EntityNotFoundException;
+import org.nure.GasStation.Exceptions.InputDataValidationException;
 import org.nure.GasStation.Model.Enumerations.UserRoles;
 import org.nure.GasStation.Model.GasStationUser;
 import org.nure.GasStation.Model.RepositoryInterfaces.IUserRepository;
@@ -36,37 +37,37 @@ public class UserService implements IUserService {
 
     private void validateUsername(String username) throws IllegalArgumentException {
         if (username.length() < 4) {
-            throw new IllegalArgumentException("Username must be at least 4 characters long");
+            throw new InputDataValidationException("Username must be at least 4 characters long");
         }
         if (username.length() > 26) {
-            throw new IllegalArgumentException("Username can have maximum 25 characters");
+            throw new InputDataValidationException("Username can have maximum 25 characters");
         }
         if (!username.matches("[A-Za-z0-9]+")) {
-            throw new IllegalArgumentException("Username must contain only latin characters and numbers");
+            throw new InputDataValidationException("Username must contain only latin characters and numbers");
         }
     }
 
-    private void validatePassword(String password) throws IllegalArgumentException {
+    private void validatePassword(String password) throws InputDataValidationException {
         if (password.length() < 6) {
-            throw new IllegalArgumentException("Password must be at least 6 characters long");
+            throw new InputDataValidationException("Password must be at least 6 characters long");
         }
         if (password.length() > 26) {
-            throw new IllegalArgumentException("Password can have maximum 25 characters");
+            throw new InputDataValidationException("Password can have maximum 25 characters");
         }
         if (!password.matches("[A-Za-z0-9]+")) {
-            throw new IllegalArgumentException("Password must contain only latin characters and numbers");
+            throw new InputDataValidationException("Password must contain only latin characters and numbers");
         }
     }
 
     @Override
-    public void createUser(String username, String password, UserRoles role) throws EntityAlreadyExistsException, IllegalArgumentException {
+    public void createUser(String username, String password, String name, String surname, UserRoles role) throws EntityAlreadyExistsException, InputDataValidationException {
         validateUsername(username);
         validatePassword(password);
         Optional<GasStationUser> search = userRepository.findById(username);
         if (search.isPresent()) {
             throw new EntityAlreadyExistsException(String.format("GasStationUser with name of %s already exists", username));
         }
-        userRepository.save(new GasStationUser(username, encoder.encode(password), role));
+        userRepository.save(new GasStationUser(username, encoder.encode(password), name, surname, role));
     }
 
     @Override
@@ -77,14 +78,14 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void changePassword(String username, String password, String oldPassword) throws EntityNotFoundException, IllegalArgumentException {
+    public void changePassword(String username, String password, String oldPassword) throws EntityNotFoundException, InputDataValidationException {
         Optional<GasStationUser> search = userRepository.findById(username);
         if (!search.isPresent()) {
             throw new EntityNotFoundException(String.format("User %s not found, can't change password", username));
         }
         GasStationUser user = search.get();
         if (!encoder.matches(oldPassword, user.getPassword())) {
-            throw new IllegalArgumentException("Old password isn't correct");
+            throw new InputDataValidationException("Old password isn't correct");
         }
         user.setPassword(encoder.encode(password));
         userRepository.flush();

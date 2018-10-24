@@ -2,13 +2,15 @@ package org.nure.GasStation.Controllers;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.h2.command.ddl.CreateUser;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nure.GasStation.Model.Enumerations.UserRoles;
-import org.nure.GasStation.Model.ExchangeModels.AuthToken;
-import org.nure.GasStation.Model.ExchangeModels.ChangePassword;
-import org.nure.GasStation.Model.ExchangeModels.UserCredentials;
+import org.nure.GasStation.Model.ExchangeModels.GasStationUserController.AuthToken;
+import org.nure.GasStation.Model.ExchangeModels.GasStationUserController.ChangePassword;
+import org.nure.GasStation.Model.ExchangeModels.GasStationUserController.CreateUserCredentials;
+import org.nure.GasStation.Model.ExchangeModels.GasStationUserController.UserCredentials;
 import org.nure.GasStation.Model.ServiceInterfaces.IUserService;
 import org.nure.GasStation.Security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +41,13 @@ public class GasStationGasStationUserControllerTest {
     @MockBean
     private JwtTokenProvider tokenProvider;
     private static ObjectMapper map;
-    private final UserCredentials user = new UserCredentials("name", "pass");
+
+    // Default user
+    private final String username = "matviei";
+    private final String password = "pass1234";
+    private final String name = "Matthew";
+    private final String surname = "Serbull";
+    private final UserRoles userRole = UserRoles.ROLE_BYER;
 
     @BeforeClass
     public static void setup() {
@@ -48,31 +56,47 @@ public class GasStationGasStationUserControllerTest {
 
     @Test
     public void testSigninShouldReturnOk() throws Exception {
+        CreateUserCredentials credentials = new CreateUserCredentials();
+        credentials.setUsername(username);
+        credentials.setPassword(password);
+        credentials.setName(name);
+        credentials.setSurname(surname);
         mvc.perform(post("/api/user/signin")
-                .contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(user)))
+                .contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(credentials)))
                 .andExpect(status().isOk());
     }
 
     @Test
     public void testSigninShouldCreateUser() throws Exception {
+        CreateUserCredentials credentials = new CreateUserCredentials();
+        credentials.setUsername(username);
+        credentials.setPassword(password);
+        credentials.setName(name);
+        credentials.setSurname(surname);
         mvc.perform(post("/api/user/signin")
-                .contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(user)));
-        verify(userServiceMock).createUser(user.getUsername(), user.getPassword(), UserRoles.ROLE_BYER);
+                .contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(credentials)));
+        verify(userServiceMock).createUser(credentials.getUsername(), credentials.getPassword(), credentials.getName(), credentials.getSurname(), UserRoles.ROLE_BYER);
     }
 
     @Test
     public void testLoginShouldAuthenticateUser() throws Exception {
+        UserCredentials credentials = new UserCredentials();
+        credentials.setUsername(username);
+        credentials.setPassword(password);
         String token = "sdfsdfwernmnlkdmfgkmk324k3j5knklkKNDLKDNFSoiw43j0";
         given(tokenProvider.generateToken(null)).willReturn(token);
-        mvc.perform(post("/api/user/login").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(user)));
-        verify(userServiceMock).authenticate(user.getUsername(), user.getPassword());
+        mvc.perform(post("/api/user/login").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(credentials)));
+        verify(userServiceMock).authenticate(credentials.getUsername(), credentials.getPassword());
     }
 
     @Test
     public void testLoginShouldReturnAuthTokenWIthToken() throws Exception {
+        UserCredentials credentials = new UserCredentials();
+        credentials.setUsername(username);
+        credentials.setPassword(password);
         String token = "sdfsdfwernmnlkdmfgkmk324k3j5knklkKNDLKDNFSoiw43j0";
         given(tokenProvider.generateToken(null)).willReturn(token);
-        MvcResult result = mvc.perform(post("/api/user/login").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(user)))
+        MvcResult result = mvc.perform(post("/api/user/login").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(credentials)))
                 .andExpect(status().isOk())
                 .andReturn();
         String tokenObj = result.getResponse().getContentAsString();
@@ -83,10 +107,10 @@ public class GasStationGasStationUserControllerTest {
     @WithMockUser(username = "matviei", authorities = { "ROLE_ADMIN" })
     public void testChangePasswordShouldCallChangePasswordWithSuppliedData() throws Exception {
         String nextPassword = "newpass";
-        ChangePassword changePassword = new ChangePassword(nextPassword, user.getPassword());
+        ChangePassword changePassword = new ChangePassword(nextPassword, password);
         mvc.perform(post("/api/user/change-password").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(changePassword)))
                 .andExpect(status().isOk());
-        verify(userServiceMock).changePassword("matviei", nextPassword, user.getPassword());
+        verify(userServiceMock).changePassword("matviei", nextPassword, password);
     }
 
 }

@@ -8,6 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Matchers;
 import org.nure.GasStation.Exceptions.EntityAlreadyExistsException;
 import org.nure.GasStation.Exceptions.EntityNotFoundException;
+import org.nure.GasStation.Exceptions.InputDataValidationException;
 import org.nure.GasStation.Model.Enumerations.UserRoles;
 import org.nure.GasStation.Model.GasStationUser;
 import org.nure.GasStation.Model.RepositoryInterfaces.IUserRepository;
@@ -43,6 +44,8 @@ public class GasStationUserServiceTest {
 
     private final String correctUsername = "matviei";
     private final String correctPassword = "pass1234";
+    private final String name = "pepe";
+    private final String surname = "kek";
     private final UserRoles correctUserRole = UserRoles.ROLE_BYER;
     private final String incorrectUsername = "pep";
     private final String incorrectPassword = "pass";
@@ -55,26 +58,26 @@ public class GasStationUserServiceTest {
         this.userService = new UserService(this.userRepository, this.authenticationManager, new BCryptPasswordEncoder());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testCreateUserSHouldThrowIllegalArgumentExceptionIfUsernameIsInvalid() {
-        userService.createUser(incorrectUsername, correctPassword, correctUserRole);
+    @Test(expected = InputDataValidationException.class)
+    public void testCreateUserSHouldThrowInputDataValidationExceptionIfUsernameIsInvalid() {
+        userService.createUser(incorrectUsername, correctPassword, name, surname, correctUserRole);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testCreateUserSHouldThrowIllegalArgumentExceptionIfPasswordIsInvalid() {
-        userService.createUser(correctUsername, incorrectPassword, correctUserRole);
+    @Test(expected = InputDataValidationException.class)
+    public void testCreateUserSHouldThrowInputDataValidationExceptionIfPasswordIsInvalid() {
+        userService.createUser(correctUsername, incorrectPassword, name, surname, correctUserRole);
     }
 
     @Test(expected = EntityAlreadyExistsException.class)
     public void testCreateUserShouldThrowEntityAlreadyExistsExceptionIfUserExists() {
-        given(userRepository.findById(correctUsername)).willReturn(Optional.of(new GasStationUser(correctUsername, correctPassword, correctUserRole)));
-        userService.createUser(correctUsername, correctPassword, correctUserRole);
+        given(userRepository.findById(correctUsername)).willReturn(Optional.of(new GasStationUser(correctUsername, correctPassword, name, surname, correctUserRole)));
+        userService.createUser(correctUsername, correctPassword, name, surname, correctUserRole);
     }
 
     @Test
     public void testCreateUserShouldSaveNewUserIfEverythingCorrect() {
         given(userRepository.findById(correctUsername)).willReturn(Optional.empty());
-        userService.createUser(correctUsername, correctPassword,correctUserRole);
+        userService.createUser(correctUsername, correctPassword, name, surname, correctUserRole);
         verify(userRepository).save(isA(GasStationUser.class));
     }
 
@@ -92,9 +95,9 @@ public class GasStationUserServiceTest {
         userService.changePassword(correctUsername, changingPassword, correctPassword);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testChangePasswordShouldThrowIllegalArgumentExceptionIfOldPasswordIsWrong() {
-        GasStationUser user = spy(new GasStationUser(correctUsername, correctPassword, correctUserRole));
+    @Test(expected = InputDataValidationException.class)
+    public void testChangePasswordShouldThrowInputDataValidationExceptionIfOldPasswordIsWrong() {
+        GasStationUser user = spy(new GasStationUser(correctUsername, correctPassword, name, surname, correctUserRole));
         given(userRepository.findById(correctUsername)).willReturn(Optional.of(user));
         userService.changePassword(correctUsername, changingPassword, incorrectPassword);
     }
@@ -102,7 +105,7 @@ public class GasStationUserServiceTest {
     @Test
     public void testChangePasswordShouldChangePasswordInEntity() {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        GasStationUser user = spy(new GasStationUser(correctUsername, encoder.encode(correctPassword), correctUserRole));
+        GasStationUser user = spy(new GasStationUser(correctUsername, encoder.encode(correctPassword), name, surname, correctUserRole));
         given(userRepository.findById(correctUsername)).willReturn(Optional.of(user));
         userService.changePassword(correctUsername, changingPassword, correctPassword);
         verify(user).setPassword(argThat(settingPassword -> encoder.matches(changingPassword, settingPassword)));

@@ -1,6 +1,7 @@
 package org.nure.GasStation.Model;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.nure.GasStation.Exceptions.InputDataValidationException;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -53,9 +54,9 @@ public class Fuel {
         this.price = price;
     }
 
-    public void setFuelLeft(float fuelLeft) throws IllegalArgumentException {
+    public void setFuelLeft(float fuelLeft) throws InputDataValidationException {
         if (fuelLeft > 10000) {
-            throw new IllegalArgumentException("Лимит хранилища топлива 10000 литров");
+            throw new InputDataValidationException("Лимит хранилища топлива 10000 литров");
         }
         this.fuelLeft = fuelLeft;
     }

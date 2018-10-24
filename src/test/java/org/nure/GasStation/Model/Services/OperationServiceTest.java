@@ -43,6 +43,8 @@ public class OperationServiceTest {
     // Default user
     private final String username = "matviei";
     private final String password = "pass1234";
+    private final String name = "pepe";
+    private final String surname = "keke";
     private final UserRoles userRole = UserRoles.ROLE_ADMIN;
     // Default fuel
     private final String fuelName = "95";
@@ -54,7 +56,7 @@ public class OperationServiceTest {
     public void testBuyFuelShouldAddFuelBuyingOperation() throws Exception {
         float fuelAmount = 100;
         given(fuelService.getFuel(fuelName)).willReturn(new Fuel(fuelName, price, fuelLeft));
-        given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, userRole));
+        given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, name, surname, userRole));
         operationService.buyFuel(username, fuelName, fuelAmount);
         verify(operationRepository).save(argThat(o -> {
             return OperationTypes.OPERATION_BUY.equals(o.getType());
@@ -66,7 +68,7 @@ public class OperationServiceTest {
         float fuelAmount = 100;
         Fuel boughtFuel = new Fuel(fuelName, price, fuelLeft);
         given(fuelService.getFuel(fuelName)).willReturn(boughtFuel);
-        given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, userRole));
+        given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, name, surname, userRole));
         operationService.buyFuel(username, fuelName, fuelAmount);
         assertEquals(fuelLeft, boughtFuel.getFuelLeft() + fuelAmount, 0);
     }
@@ -75,7 +77,7 @@ public class OperationServiceTest {
     public void testBuyFuelShouldthrowOperationExceptionIfFuelLeftIsLessThanBuyingAmount() throws Exception {
         float fuelAmount = 20000;
         given(fuelService.getFuel(fuelName)).willReturn(new Fuel(fuelName, price, fuelLeft));
-        given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, userRole));
+        given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, name, surname, userRole));
         operationService.buyFuel(username, fuelName, fuelAmount);
     }
 
@@ -83,7 +85,7 @@ public class OperationServiceTest {
     public void testFillFuelShouldAddFuelFillingOperation() throws Exception {
         float fuelAmount = 100;
         given(fuelService.getFuel(fuelName)).willReturn(new Fuel(fuelName, price, fuelLeft));
-        given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, userRole));
+        given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, name, surname, userRole));
         operationService.fillFuel(username, fuelName, fuelAmount);
         verify(operationRepository).save(argThat(o -> {
            return OperationTypes.OPERATION_FILL.equals(o.getType());
@@ -95,7 +97,7 @@ public class OperationServiceTest {
         float fuelAmount = 100;
         Fuel boughtFuel = new Fuel(fuelName, price, fuelLeft);
         given(fuelService.getFuel(fuelName)).willReturn(boughtFuel);
-        given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, userRole));
+        given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, name, surname, userRole));
         operationService.fillFuel(username, fuelName, fuelAmount);
         assertEquals(fuelLeft, boughtFuel.getFuelLeft() - fuelAmount, 0);
     }
@@ -131,7 +133,7 @@ public class OperationServiceTest {
     public void testGetUserOperationsShouldReturnPageableOfUserOperations() {
         int page = 1;
         int amount = 5;
-        GasStationUser user = new GasStationUser(username, password, userRole);
+        GasStationUser user = new GasStationUser(username, password, name, surname, userRole);
         given(adminService.getUser(username)).willReturn(user);
         operationService.getUserOperations(username, amount, page);
         verify(operationRepository).findAllByGasStationUser(eq(user), argThat(req -> {
@@ -157,7 +159,7 @@ public class OperationServiceTest {
         int amount = 5;
         Date before = new Date();
         Date after = new Date();
-        GasStationUser user = new GasStationUser(username, password, userRole);
+        GasStationUser user = new GasStationUser(username, password, name, surname, userRole);
         given(adminService.getUser(username)).willReturn(user);
         operationService.getUserTimeOperations(username, before, after, amount, page);
         verify(operationRepository).findAllByGasStationUserAndOperationDateBetween(eq(user), eq(before), eq(after), argThat(req -> {

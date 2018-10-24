@@ -30,6 +30,9 @@ public class JwtTokenProvider {
     @Value("${token.settings.authoritiesKey}")
     private String authoritiesKey;
 
+    @Value("${token.settings.tokenPrefix}")
+    private String tokenPrefix;
+
     private final String authoritiesSeparator = ",";
 
     public String getUsernameFromToken(Claims claims) {
@@ -69,7 +72,8 @@ public class JwtTokenProvider {
                 .stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(authoritiesSeparator));
-        return Jwts
+        return tokenPrefix + " " +
+                Jwts
                 .builder()
                 .setSubject(auth.getName())
                 .claim(authoritiesKey, authorities)

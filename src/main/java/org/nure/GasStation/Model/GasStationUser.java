@@ -3,6 +3,7 @@ package org.nure.GasStation.Model;
 import org.nure.GasStation.Model.Enumerations.UserRoles;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,21 +12,27 @@ import java.util.Set;
 public class GasStationUser {
 
     private String username;
+    private String name;
+    private String surname;
     private String password;
     private UserRoles roles;
     private Set<Operation> userOperations;
 
     public GasStationUser() { }
 
-    public GasStationUser(String username, String password, UserRoles roles) {
+    public GasStationUser(String username, String password, String name, String surname, UserRoles roles) {
         this.username = username;
+        this.name = name;
+        this.surname = surname;
         this.password = password;
         this.roles = roles;
         this.userOperations = new HashSet<Operation>();
     }
 
-    public GasStationUser(String username, String password, UserRoles roles, HashSet<Operation> userOperations) {
+    public GasStationUser(String username, String password, String name, String surname, UserRoles roles, HashSet<Operation> userOperations) {
         this.username = username;
+        this.name = name;
+        this.surname = surname;
         this.password = password;
         this.roles = roles;
         this.userOperations = userOperations;
@@ -37,6 +44,7 @@ public class GasStationUser {
         return username;
     }
 
+    @NotNull
     public String getPassword() {
         return password;
     }
@@ -56,6 +64,24 @@ public class GasStationUser {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @NotNull
+    public String getName() {
+        return name;
+    }
+
+    @NotNull
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "gasStationUser")
