@@ -5,8 +5,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.nure.GasStation.Exceptions.InputDataValidationException;
 import org.nure.GasStation.Model.Enumerations.UserRoles;
+import org.nure.GasStation.Model.ExchangeModels.AdminController.ChangeUserRole;
 import org.nure.GasStation.Model.ExchangeModels.AdminController.SearchUser;
+import org.nure.GasStation.Model.ExchangeModels.AdminController.UserDetails;
 import org.nure.GasStation.Model.ExchangeModels.GasStationPage;
 import org.nure.GasStation.Model.GasStationUser;
 import org.nure.GasStation.Model.ServiceInterfaces.IAdminService;
@@ -82,26 +85,37 @@ public class AdminControllerTest {
         String searchQuery = "tv";
         SearchUser searchingUser = new SearchUser(searchQuery, page, amount);
         GasStationUser user1 = new GasStationUser(username, password, name, surname, userRole);
-        GasStationUser user2 = new GasStationUser(username2, password2, name, surname, userRoles2);
+        GasStationUser user2 = new GasStationUser(username2, password2, name2, surname2, userRoles2);
         List<GasStationUser> usersearchedList = Arrays.asList(user1, user2);
         Page<GasStationUser> userPage = new PageImpl<GasStationUser>(usersearchedList, new PageRequest(page, amount), usersearchedList.size());
         given(adminService.searchForUser(searchQuery, amount, page)).willReturn(userPage);
         MvcResult result = mvc.perform(post("/api/admin/search-user").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(searchingUser)))
                 .andExpect(status().isOk())
                 .andReturn();
-        GasStationPage<String> foundUsers = map.readValue(result.getResponse().getContentAsString(), new TypeReference<GasStationPage<String>>() {});
-        Optional<String> u1 = foundUsers.getContent()
+        GasStationPage<UserDetails> foundUsers = map.readValue(result.getResponse().getContentAsString(), new TypeReference<GasStationPage<UserDetails>>() {});
+        System.out.println(foundUsers.getContent());
+        Optional<UserDetails> u1 = foundUsers.getContent()
                 .stream()
-                .filter(u -> {
-                    return u.equals(username);
+                .filter(d -> {
+                    return d.getName().equals(name) && d.getRole().equals(userRole) && d.getSurname().equals(surname) && d.getUsername().equals(username);
                 })
                 .findFirst();
-        Optional<String> u2 = foundUsers.getContent()
+        Optional<UserDetails> u2 = foundUsers.getContent()
                 .stream()
-                .filter(u -> {
-                    return u.equals(username2);
+                .filter(d -> {
+                    return d.getName().equals(name2) && d.getRole().equals(userRoles2) && d.getSurname().equals(surname2) && d.getUsername().equals(username2);
                 })
                 .findFirst();
         assertTrue(u1.isPresent() && u2.isPresent());
+    }
+
+    @Test
+    @WithMockUser(username = "matviei", authorities = { "ROLE_ADMIN" })
+    public void testSetRoleShouldSetUserRoleToGivenRole() throws Exception {
+        UserRoles roleToChange = UserRoles.ROLE_ADMIN;
+        ChangeUserRole role = new ChangeUserRole(username, roleToChange);
+        mvc.perform(post("/api/admin/set-role").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(role)))
+                .andExpect(status().isOk());
+        verify(adminService).setRole(username, roleToChange);
     }
 }

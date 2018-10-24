@@ -3,6 +3,7 @@ package org.nure.GasStation.Controllers;
 import org.nure.GasStation.Exceptions.InputDataValidationException;
 import org.nure.GasStation.Model.ExchangeModels.AdminController.ChangeUserRole;
 import org.nure.GasStation.Model.ExchangeModels.AdminController.SearchUser;
+import org.nure.GasStation.Model.ExchangeModels.AdminController.UserDetails;
 import org.nure.GasStation.Model.ExchangeModels.GasStationPage;
 import org.nure.GasStation.Model.GasStationUser;
 import org.nure.GasStation.Model.ServiceInterfaces.IAdminService;
@@ -55,15 +56,15 @@ public class AdminController {
 
     @Secured("ROLE_ADMIN")
     @RequestMapping(value = "/search-user", method = { RequestMethod.POST })
-    public ResponseEntity<GasStationPage<String>> searchUser(@RequestBody SearchUser user) {
+    public ResponseEntity<GasStationPage<UserDetails>> searchUser(@RequestBody SearchUser user) {
         validateSearchUser(user);
         Page<GasStationUser> users = adminService.searchForUser(user.getUsername(), user.getAmount(), user.getPage());
-        List<String> usernames = users
+        List<UserDetails> usernames = users
                 .getContent()
                 .stream()
-                .map(u -> u.getUsername())
+                .map(u -> new UserDetails(u))
                 .collect(Collectors.toList());
-        return ResponseEntity.ok(new GasStationPage<String>(usernames, users.getPageable(), users.getTotalElements()));
+        return ResponseEntity.ok(new GasStationPage<UserDetails>(usernames, users.getPageable(), users.getTotalElements()));
     }
 
     @Secured("ROLE_ADMIN")
