@@ -1,0 +1,61 @@
+<div class="container">
+  	<div class="navbar-brand">
+	  {{#link-to "index" class="navbar-item brand-text" }}
+		Gas station
+		{{/link-to}}
+		<div class="navbar-burger burger {{if isBurgerOpen 'is-active'}}" {{action "toggleBurger"}} data-target="topNav">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <div class="navbar-menu {{if isBurgerOpen 'is-active'}}">
+		<div class="navbar-start">
+            {{#link-to "search" class="navbar-item" }}
+			<span class="icon">
+				<i class="fa fa-search" aria-hidden="true"></i>
+			</span>
+			<span>
+				Искать
+			</span>
+			{{/link-to}}
+			{{#link-to "first-aid" class="navbar-item" }}
+			<span class="icon">
+				<i class="fa fa-medkit" aria-hidden="true"></i>
+			</span>
+			<span>
+				Первая помощь
+			</span>
+			{{/link-to}}
+			{{#link-to "case-dashboard" class="navbar-item" }}
+			<span class="icon">
+				<i class="fa fa-book" aria-hidden="true"></i>
+			</span>
+			<span>
+				Дела
+			</span>
+			{{/link-to}}
+			{{#link-to "knowledgebase" class="navbar-item" }}
+			<span class="icon">
+				<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+			</span>
+			<span>
+				База знаний
+			</span>
+			{{/link-to}}
+			{{#link-to "profile" class="navbar-item" }}
+			<span class="icon">
+				<i class="fa fa-user-md" aria-hidden="true"></i>
+			</span>
+			<span>
+				Профиль
+			</span>
+			{{/link-to}}
+		</div>
+		<div class="navbar-end">
+			<div class="navbar-item">
+				{{account-buttons}}
+			</div>
+		</div>
+	</div>
+</div>

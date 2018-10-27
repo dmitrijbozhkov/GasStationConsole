@@ -72,8 +72,7 @@ public class JwtTokenProvider {
                 .stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(authoritiesSeparator));
-        return tokenPrefix + " " +
-                Jwts
+        return Jwts
                 .builder()
                 .setSubject(auth.getName())
                 .claim(authoritiesKey, authorities)
