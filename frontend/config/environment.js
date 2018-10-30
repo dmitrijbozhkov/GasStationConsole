@@ -27,7 +27,10 @@ module.exports = function(environment) {
     serverTokenEndpoint: '/api/auth/login', // Server endpoint to send authenticate request
     tokenPropertyName: 'token', // Key in server response that contains the access token
     authorizationHeaderName: 'Authorization',
-    authorizationPrefix: 'Bearer '
+    authorizationPrefix: 'Bearer ',
+    refreshAccessTokens: false,
+    identificationField: 'username',
+    passwordField: 'password'
   };
 
   if (environment === 'development') {

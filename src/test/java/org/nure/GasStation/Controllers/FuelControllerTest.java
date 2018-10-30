@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.nure.GasStation.Model.ExchangeModels.FuelController.CreateFuel;
+import org.nure.GasStation.Model.ExchangeModels.FuelController.FuelDetails;
 import org.nure.GasStation.Model.ExchangeModels.FuelController.FuelList;
 import org.nure.GasStation.Model.ExchangeModels.FuelController.RequestFuel;
 import org.nure.GasStation.Model.Fuel;
@@ -40,6 +40,8 @@ public class FuelControllerTest {
     private final String fuelName = "95";
     private final float price = (float) 9.99;
     private final float fuelLeft = 10000;
+    private final float maxFuel = 50000;
+    private final String description = "Super fuel";
     private static ObjectMapper map;
 
     @BeforeClass
@@ -50,11 +52,11 @@ public class FuelControllerTest {
     @Test
     @WithMockUser(username = "matviei", authorities = { "ROLE_ADMIN" })
     public void testAddFuelShouldAddNewFuelAndReturnOkResponse() throws Exception {
-        CreateFuel fuel = new CreateFuel(fuelName, price, fuelLeft);
+        FuelDetails fuel = new FuelDetails(fuelName, price, fuelLeft, maxFuel, description);
         System.out.println(map.writeValueAsString(fuel));
         mvc.perform(post("/api/fuel/add").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(fuel)))
                 .andExpect(status().isOk());
-        verify(fuelService).addFuel(fuelName, price, fuelLeft);
+        verify(fuelService).addFuel(fuelName, price, fuelLeft, maxFuel, description);
     }
 
     @Test
@@ -70,13 +72,13 @@ public class FuelControllerTest {
     @WithMockUser(username = "matviei", authorities = { "ROLE_ADMIN" })
     public void testGetFuelShouldReturnFuelByFuelName() throws Exception {
         RequestFuel fuelRequest = new RequestFuel(fuelName);
-        Fuel fuel = new Fuel(fuelName, price, fuelLeft);
+        Fuel fuel = new Fuel(fuelName, price, fuelLeft, maxFuel, description);
         given(fuelService.getFuel(fuelName)).willReturn(fuel);
         MvcResult result = mvc.perform(post("/api/fuel/get").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(fuelRequest)))
                 .andExpect(status().isOk())
                 .andReturn();
-        Fuel foundFuel = map.readValue(result.getResponse().getContentAsString(), Fuel.class);
-        assertTrue(foundFuel.getFuelName().equals(fuelName) && foundFuel.getPrice() == price && foundFuel.getFuelLeft() == fuelLeft);
+        FuelDetails foundFuel = map.readValue(result.getResponse().getContentAsString(), FuelDetails.class);
+        assertTrue(foundFuel.getFuelName().equals(fuelName) && foundFuel.getPrice() == price && foundFuel.getFuelLeft() == fuelLeft && foundFuel.getMaxFuel() == maxFuel && foundFuel.getDescription().equals(description));
     }
 
     @Test
@@ -85,20 +87,22 @@ public class FuelControllerTest {
         String fuelName2 = "92";
         float price2 = (float) 9.88;
         float fuelLeft2 = (float) 3000;
-        Fuel fuel1 = new Fuel(fuelName, price, fuelLeft);
-        Fuel fuel2 = new Fuel(fuelName2, price2, fuelLeft2);
+        float maxFuel2 = 50000;
+        String description2 = "Super duper fuel";
+        Fuel fuel1 = new Fuel(fuelName, price, fuelLeft, maxFuel, description);
+        Fuel fuel2 = new Fuel(fuelName2, price2, fuelLeft2, maxFuel2, description2);
         given(fuelService.getFuels()).willReturn(new ArrayList<Fuel>() {{add(fuel1); add(fuel2);}});
         MvcResult result = mvc.perform(get("/api/fuel/get-all"))
                 .andExpect(status().isOk())
                 .andReturn();
         FuelList foundFuels = map.readValue(result.getResponse().getContentAsString(), FuelList.class);
-        Optional<Fuel> f1 = foundFuels.getFuels()
+        Optional<FuelDetails> f1 = foundFuels.getFuels()
                 .stream()
-                .filter(f -> f.getFuelName().equals(fuelName) && f.getPrice() == price && f.getFuelLeft() == fuelLeft)
+                .filter(f -> f.getFuelName().equals(fuelName) && f.getPrice() == price && f.getFuelLeft() == fuelLeft && f.getMaxFuel() == maxFuel && f.getDescription().equals(description))
                 .findFirst();
-        Optional<Fuel> f2 = foundFuels.getFuels()
+        Optional<FuelDetails> f2 = foundFuels.getFuels()
                 .stream()
-                .filter(f -> f.getFuelName().equals(fuelName2) && f.getPrice() == price2 && f.getFuelLeft() == fuelLeft2)
+                .filter(f -> f.getFuelName().equals(fuelName2) && f.getPrice() == price2 && f.getFuelLeft() == fuelLeft2 && f.getMaxFuel() == maxFuel2 && f.getDescription().equals(description2))
                 .findFirst();
         assertTrue(f1.isPresent() && f2.isPresent());
     }

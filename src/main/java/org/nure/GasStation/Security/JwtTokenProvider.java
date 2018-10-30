@@ -50,17 +50,13 @@ public class JwtTokenProvider {
     }
 
     public UsernamePasswordAuthenticationToken validateToken(String token) {
-        JwtParser parserJwt = getParser();
-        Claims detailsClaims = parserJwt
-                .parseClaimsJwt(token)
-                .getBody();
-        Claims authorityClaims = parserJwt
+        Claims claims = getParser()
                 .parseClaimsJws(token)
                 .getBody();
-        String tokenUsername = getUsernameFromToken(detailsClaims);
+        String tokenUsername = getUsernameFromToken(claims);
         UserDetails details = userDetailsService.loadUserByUsername(tokenUsername);
         Collection<? extends GrantedAuthority> authorities =
-                Arrays.stream(authorityClaims.get(authoritiesKey).toString().split(authoritiesSeparator))
+                Arrays.stream(claims.get(authoritiesKey).toString().split(authoritiesSeparator))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
         return new UsernamePasswordAuthenticationToken(details, "", authorities);

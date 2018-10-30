@@ -47,5 +47,6 @@ module.exports = function(defaults) {
         });
     }
     app.import("vendor/bulma.min.css");
+    app.import("vendor/bulma-extensions.min.css")
   return app.toTree();
 };

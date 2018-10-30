@@ -7,9 +7,15 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route("index");
   this.route("login");
   this.route("register");
+  this.route('profile', function() {});
+  this.route('admin', function() {});
+  this.route('fuel-catalogue', function() {
+    this.route('buy', { path: "/buy/:fuel_name" });
+  });
+  this.route('about');
+
 });
 
 export default Router;

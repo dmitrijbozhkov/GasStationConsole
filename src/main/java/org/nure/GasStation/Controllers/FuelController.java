@@ -1,7 +1,7 @@
 package org.nure.GasStation.Controllers;
 
 import org.nure.GasStation.Exceptions.InputDataValidationException;
-import org.nure.GasStation.Model.ExchangeModels.FuelController.CreateFuel;
+import org.nure.GasStation.Model.ExchangeModels.FuelController.FuelDetails;
 import org.nure.GasStation.Model.ExchangeModels.FuelController.FuelList;
 import org.nure.GasStation.Model.ExchangeModels.FuelController.RequestFuel;
 import org.nure.GasStation.Model.Fuel;
@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/fuel")
@@ -23,11 +24,11 @@ public class FuelController {
     @Autowired
     private IFuelService fuelService;
 
-    private void validateCreateFuel(CreateFuel createFuel) {
-        if (createFuel.getFuelName() == null || createFuel.getFuelName().isEmpty()) {
+    private void validateFuelDetails(FuelDetails fuelDetails) {
+        if (fuelDetails.getFuelName() == null || fuelDetails.getFuelName().isEmpty()) {
             throw new InputDataValidationException("Fuel name can't be empty");
         }
-        if (createFuel.getPrice() == 0) {
+        if (fuelDetails.getPrice() == 0) {
             throw new InputDataValidationException("Price can't be 0");
         }
     }
@@ -40,9 +41,14 @@ public class FuelController {
 
     @Secured("ROLE_ADMIN")
     @RequestMapping(value="/add", method = RequestMethod.POST)
-    public ResponseEntity addFuel(@RequestBody CreateFuel createFuel) {
-        validateCreateFuel(createFuel);
-        fuelService.addFuel(createFuel.getFuelName(), createFuel.getPrice(), createFuel.getFuelLeft());
+    public ResponseEntity addFuel(@RequestBody FuelDetails fuelDetails) {
+        validateFuelDetails(fuelDetails);
+        fuelService.addFuel(
+                fuelDetails.getFuelName(),
+                fuelDetails.getPrice(),
+                fuelDetails.getFuelLeft(),
+                fuelDetails.getMaxFuel(),
+                fuelDetails.getDescription());
         return ResponseEntity.ok().build();
     }
 
@@ -54,18 +60,21 @@ public class FuelController {
         return ResponseEntity.ok().build();
     }
 
-    @Secured({"ROLE_ADMIN", "ROLE_BYER"})
     @RequestMapping(value="/get", method = RequestMethod.POST)
-    public ResponseEntity<Fuel> getFuel(@RequestBody RequestFuel requestFuel) {
+    public ResponseEntity<FuelDetails> getFuel(@RequestBody RequestFuel requestFuel) {
         validateRequestFuel(requestFuel);
         Fuel foundFuel = fuelService.getFuel(requestFuel.getFuelName());
-        return ResponseEntity.ok(foundFuel);
+        return ResponseEntity.ok(new FuelDetails(foundFuel.getFuelName(), foundFuel.getPrice(), foundFuel.getFuelLeft(), foundFuel.getMaxFuel(), foundFuel.getDescription()));
     }
 
-    @Secured({"ROLE_ADMIN", "ROLE_BYER"})
     @RequestMapping(value="/get-all", method = RequestMethod.GET)
     public ResponseEntity<FuelList> getFuels() {
         List<Fuel> foundFuels = fuelService.getFuels();
-        return ResponseEntity.ok(new FuelList(foundFuels));
+        return ResponseEntity.ok(new FuelList(foundFuels
+                .stream()
+                .map(f -> {
+                    return new FuelDetails(f.getFuelName(), f.getPrice(), f.getFuelLeft(), f.getMaxFuel(), f.getDescription());
+                })
+                .collect(Collectors.toList())));
     }
 }

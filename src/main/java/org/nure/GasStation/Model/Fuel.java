@@ -14,21 +14,27 @@ public class Fuel {
     private String fuelName;
     private float price;
     private float fuelLeft;
+    private float maxFuel;
+    private String description;
     private Set<Operation> operations;
 
     public Fuel() { }
 
-    public Fuel(String fuelName, float price, float fuelLeft) {
+    public Fuel(String fuelName, float price, float fuelLeft, float maxFuel, String description) {
         this.fuelName = fuelName;
         this.price = price;
         this.fuelLeft = fuelLeft;
+        this.maxFuel = maxFuel;
+        this.description = description;
         this.operations = new HashSet<Operation>();
     }
 
-    public Fuel(String fuelName, float price, float fuelLeft, HashSet<Operation> operations) {
+    public Fuel(String fuelName, float price, float fuelLeft, float maxFuel, String description, HashSet<Operation> operations) {
         this.fuelName = fuelName;
         this.price = price;
         this.fuelLeft = fuelLeft;
+        this.maxFuel = maxFuel;
+        this.description = description;
         this.operations = operations;
     }
 
@@ -55,10 +61,26 @@ public class Fuel {
     }
 
     public void setFuelLeft(float fuelLeft) throws InputDataValidationException {
-        if (fuelLeft > 10000) {
+        if (fuelLeft > maxFuel) {
             throw new InputDataValidationException("Лимит хранилища топлива 10000 литров");
         }
         this.fuelLeft = fuelLeft;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public float getMaxFuel() {
+        return maxFuel;
+    }
+
+    public void setMaxFuel(float maxFuel) {
+        this.maxFuel = maxFuel;
     }
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "fuel")

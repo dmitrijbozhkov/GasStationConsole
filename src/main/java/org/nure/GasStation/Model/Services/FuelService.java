@@ -18,12 +18,12 @@ public class FuelService implements IFuelService {
     private IFuelRepository fuelRepository;
 
     @Override
-    public void addFuel(String fuelName, float price, float fuelLeft) throws EntityAlreadyExistsException {
+    public void addFuel(String fuelName, float price, float fuelLeft, float maxFuel, String description) throws EntityAlreadyExistsException {
         Optional<Fuel> search = fuelRepository.findById(fuelName);
         if (search.isPresent()) {
             throw new EntityAlreadyExistsException(String.format("Fuel with name of %s already exists", fuelName));
         }
-        fuelRepository.save(new Fuel(fuelName, price, fuelLeft));
+        fuelRepository.save(new Fuel(fuelName, price, fuelLeft, maxFuel, description));
     }
 
     @Override

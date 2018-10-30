@@ -7,5 +7,5 @@ import java.util.List;
 
 @Value
 public class FuelList {
-    private List<Fuel> fuels;
+    private List<FuelDetails> fuels;
 }

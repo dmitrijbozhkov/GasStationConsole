@@ -61,7 +61,7 @@ public class OperationControllerTest {
     @Before
     public void setUp() {
         this.user = new GasStationUser("matviei", "pass1234", "Matviei", "Servull", UserRoles.ROLE_ADMIN);
-        this.fuel = new Fuel("95", 20, 6000);
+        this.fuel = new Fuel("95", 20, 6000, 10000, "Super fuel");
         this.operation = new Operation(134, 200, 90, new Date(), this.fuel, this.user, OperationTypes.OPERATION_BUY);
     }
 

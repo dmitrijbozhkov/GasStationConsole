@@ -50,12 +50,14 @@ public class OperationServiceTest {
     private final String fuelName = "95";
     private final float price = (float) 9.99;
     private final float fuelLeft = 5000;
+    private final float maxFuel = 50000;
+    private final String description = "Super fuel";
 
 
     @Test
     public void testBuyFuelShouldAddFuelBuyingOperation() throws Exception {
         float fuelAmount = 100;
-        given(fuelService.getFuel(fuelName)).willReturn(new Fuel(fuelName, price, fuelLeft));
+        given(fuelService.getFuel(fuelName)).willReturn(new Fuel(fuelName, price, fuelLeft, maxFuel, description));
         given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, name, surname, userRole));
         operationService.buyFuel(username, fuelName, fuelAmount);
         verify(operationRepository).save(argThat(o -> {
@@ -66,7 +68,7 @@ public class OperationServiceTest {
     @Test
     public void testBuyFuelShouldRemoveFuelLeftByAmountOfFuelBought() throws Exception {
         float fuelAmount = 100;
-        Fuel boughtFuel = new Fuel(fuelName, price, fuelLeft);
+        Fuel boughtFuel = new Fuel(fuelName, price, fuelLeft, maxFuel, description);
         given(fuelService.getFuel(fuelName)).willReturn(boughtFuel);
         given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, name, surname, userRole));
         operationService.buyFuel(username, fuelName, fuelAmount);
@@ -76,7 +78,7 @@ public class OperationServiceTest {
     @Test(expected = OperationException.class)
     public void testBuyFuelShouldthrowOperationExceptionIfFuelLeftIsLessThanBuyingAmount() throws Exception {
         float fuelAmount = 20000;
-        given(fuelService.getFuel(fuelName)).willReturn(new Fuel(fuelName, price, fuelLeft));
+        given(fuelService.getFuel(fuelName)).willReturn(new Fuel(fuelName, price, fuelLeft, maxFuel, description));
         given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, name, surname, userRole));
         operationService.buyFuel(username, fuelName, fuelAmount);
     }
@@ -84,7 +86,7 @@ public class OperationServiceTest {
     @Test
     public void testFillFuelShouldAddFuelFillingOperation() throws Exception {
         float fuelAmount = 100;
-        given(fuelService.getFuel(fuelName)).willReturn(new Fuel(fuelName, price, fuelLeft));
+        given(fuelService.getFuel(fuelName)).willReturn(new Fuel(fuelName, price, fuelLeft, maxFuel, description));
         given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, name, surname, userRole));
         operationService.fillFuel(username, fuelName, fuelAmount);
         verify(operationRepository).save(argThat(o -> {
@@ -95,7 +97,7 @@ public class OperationServiceTest {
     @Test
     public void testFillFuelShouldAddFuelByAmout() throws Exception {
         float fuelAmount = 100;
-        Fuel boughtFuel = new Fuel(fuelName, price, fuelLeft);
+        Fuel boughtFuel = new Fuel(fuelName, price, fuelLeft, maxFuel, description);
         given(fuelService.getFuel(fuelName)).willReturn(boughtFuel);
         given(adminService.getUser(username)).willReturn(new GasStationUser(username, password, name, surname, userRole));
         operationService.fillFuel(username, fuelName, fuelAmount);

@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface IFuelService {
 
-    void addFuel(String fuelName, float price, float fuelLeft) throws EntityAlreadyExistsException;
+    void addFuel(String fuelName, float price, float fuelLeft, float maxFuel, String description) throws EntityAlreadyExistsException;
     void removeFuel(String fuelName) throws EntityNotFoundException;
     Fuel getFuel(String fuelName) throws EntityNotFoundException;
     List<Fuel> getFuels();
