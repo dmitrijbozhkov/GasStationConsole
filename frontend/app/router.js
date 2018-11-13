@@ -12,7 +12,7 @@ Router.map(function() {
   this.route('profile', function() {});
   this.route('admin', function() {});
   this.route('fuel-catalogue', function() {
-    this.route('buy', { path: "/buy/:fuel_name" });
+    this.route('buy', { path: "/buy/:fuel_id" });
   });
   this.route('about');
 

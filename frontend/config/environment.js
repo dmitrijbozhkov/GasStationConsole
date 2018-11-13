@@ -22,15 +22,36 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+  ENV['ember-toastr'] = {
+    injectAs: 'toast',
+    toastrOptions: {
+      closeButton: true,
+      debug: false,
+      newestOnTop: true,
+      progressBar: false,
+      positionClass: 'toast-bottom-center',
+      preventDuplicates: true,
+      onclick: null,
+      showDuration: '300',
+      hideDuration: '1000',
+      timeOut: '4000',
+      extendedTimeOut: '1000',
+      showEasing: 'swing',
+      hideEasing: 'linear',
+      showMethod: 'fadeIn',
+      hideMethod: 'fadeOut'
+    }
+  };
 
   ENV['ember-simple-auth-token'] = {
-    serverTokenEndpoint: '/api/auth/login', // Server endpoint to send authenticate request
+    serverTokenEndpoint: '/api/user/login', // Server endpoint to send authenticate request
     tokenPropertyName: 'token', // Key in server response that contains the access token
     authorizationHeaderName: 'Authorization',
     authorizationPrefix: 'Bearer ',
-    refreshAccessTokens: false,
     identificationField: 'username',
-    passwordField: 'password'
+    passwordField: 'password',
+    refreshAccessTokens: true,
+    refreshLeeway: 18000
   };
 
   if (environment === 'development') {

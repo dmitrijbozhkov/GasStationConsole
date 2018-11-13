@@ -2,41 +2,7 @@
 <section class="section">
   <div class="container">
     <div class="box column is-6 is-offset-3">
-      <h1 class="title">Buy fuel "{{model.fuelName}}"</h1>
-      <form>
-        <div class="field">
-          <label class="label">Payment method</label>
-          <div class="control">
-            <div class="select">
-              <select>
-                <option selected>BitPay</option>
-                <option disabled>Credit card</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Fuel to buy</label>
-          <div class="control">
-            {{input
-              class="slider is-fullwidth"
-              type="range"
-              value=selectedFuelAmount
-              max=model.fuelLeft
-              orient="vertical"
-              mouse-up=""
-            }}
-          </div>
-        </div>
-        
-      </form>
+      {{buy-fuel-form model=model}}
     </div>
   </div>
 </section>
-
-<figure class="image is-128x128">
-  <img
-    src="https://www.asti.com/wp-content/uploads/2017/08/AAEAAQAAAAAAAAWbAAAAJGFlM2NhMWM3LTNjNDQtNDFlMy04MDUyLTAxMzJjZDJhMjcwNw.png"
-    alt="QR code"
-  >
-</figure>

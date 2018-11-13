@@ -24,12 +24,16 @@
     {{/link-to}}
     <div class="navbar-item">
       <div class="buttons">
-        {{#link-to "register" class="button is-primary"}}
-          Register
-        {{/link-to}}
-        {{#link-to "login" class="button is-light"}}
-          Login
-        {{/link-to}}
+        {{#if isLoggedIn}}
+          <button class="button is-danger" {{action "logOut"}}>Log out</button>
+        {{else}}
+          {{#link-to "register" class="button is-primary"}}
+            Register
+          {{/link-to}}
+          {{#link-to "login" class="button is-light"}}
+            Login
+          {{/link-to}}
+        {{/if}}
       </div>
     </div>
   </div>

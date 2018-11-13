@@ -97,7 +97,7 @@
           <progress
             class="progress is-info"
             value={{fuel.fuelLeft}}
-            max="10000"
+            max={{fuel.maxFuel}}
           >
           </progress>
           <div class="level is-mobile">
@@ -110,7 +110,7 @@
             <div class="level-right">
               {{#link-to 
                 "fuel-catalogue.buy"
-                fuel.fuelName
+                fuel.id
                 class=(if fuel.fuelLeft "button is-success" "button is-success is-static")
               }}
                 Buy

@@ -22,3 +22,15 @@
 .navbar-brand > .navbar-item {
     font-family: Futura;
 }
+
+.buy-chevron > .fa {
+    font-size: 4rem;
+}
+
+.buy-content > .fa {
+    font-size: 8rem;
+}
+
+.buy-content > figure {
+    margin: auto;
+}

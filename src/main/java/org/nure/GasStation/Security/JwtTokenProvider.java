@@ -35,11 +35,7 @@ public class JwtTokenProvider {
 
     private final String authoritiesSeparator = ",";
 
-    public String getUsernameFromToken(Claims claims) {
-        return getClaimFromClaims(claims, Claims::getSubject);
-    }
-
-    public <T> T getClaimFromClaims(Claims claims, Function<Claims, T> claimsResolver) {
+    private  <T> T getClaimFromClaims(Claims claims, Function<Claims, T> claimsResolver) {
         return claimsResolver.apply(claims);
     }
 
@@ -53,7 +49,7 @@ public class JwtTokenProvider {
         Claims claims = getParser()
                 .parseClaimsJws(token)
                 .getBody();
-        String tokenUsername = getUsernameFromToken(claims);
+        String tokenUsername = getClaimFromClaims(claims, Claims::getSubject);
         UserDetails details = userDetailsService.loadUserByUsername(tokenUsername);
         Collection<? extends GrantedAuthority> authorities =
                 Arrays.stream(claims.get(authoritiesKey).toString().split(authoritiesSeparator))
