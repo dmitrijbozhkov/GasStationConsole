@@ -1,4 +1,4 @@
-import { faker } from 'ember-cli-mirage';
+import Mirage, { faker } from 'ember-cli-mirage';
 
 const TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXR2aWVpIiwic2NvcGVzIjoiUk9MRV9BRE1JTiIsImlhdCI6MTU0MTE3NzczOCwiZXhwIjoxNTQxMTk1NzM4fQ.CtdZkkk343yQnCRyRqOoWSf07N9FTyVa9b50bNpPVFk"
 
@@ -49,14 +49,20 @@ export default function() {
       return fuel.fuelName === fuelName;
     });
   });
+  this.post("/operation/buy-fuel", function(schema, request) {
+    console.log(request);
+  });
   this.post("/user/signin", function(schema, request) {
-    const userDetails = JSON.parse(request.requestBody)
+    const userDetails = JSON.parse(request.requestBody);
     if (userDetails.name === USER.name &&
         userDetails.surname === USER.surname &&
-        userDetails.username === USER.surname &&
+        userDetails.username === USER.username &&
         userDetails.password === USER.password) {
-      return 200;
+      return new Mirage.Response(200);
     }
+    return new Mirage.Response(409,
+      {},
+      {exceptionType: "EntityAlreadyExistsException", exceptionMessage: "User with name of " + userDetails.name + " already exists"});
   });
   this.post("/user/login", function(schema, request) {
     const userDetails = JSON.parse(request.requestBody);

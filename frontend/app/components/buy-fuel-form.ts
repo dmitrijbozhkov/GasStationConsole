@@ -1,10 +1,15 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
+import Ember from 'ember';
+import { inject } from '@ember/service';
 
 const USD_TO_BITCOIN_LINK = "https://blockchain.info/tobtc?currency=USD&value=1";
 const ROUND_ZEROES = 5;
+const BUY_FUEL_URL = "/api/operation/buy-fuel";
 
 export default class BuyFuelForm extends Component.extend({
+  notify: inject("toast" as any) as any,
+  router: inject("router"),
   positionalParams: ["model"],
   selectedFuelAmount: 0,
   exchangeRate: 0,
@@ -52,6 +57,23 @@ export default class BuyFuelForm extends Component.extend({
       if (this.get("representSelectedFuelAmount")) {
         this.set("isBitcoinModalOpen", !this.get("isBitcoinModalOpen"));
       }
+    },
+    buyFuel(this: BuyFuelForm) {
+      Ember.$.ajax({
+        type: "POST",
+        url: BUY_FUEL_URL,
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify({
+          fuelName: this.get("model.fuelName" as any),
+          amount: this.get("representSelectedFuelAmount")
+        })
+      }).then((data) => {
+        this.get("notify").success("Thank you for the purchase", "Transaction successful");
+        this.get("router").transitionTo("fuel-catalogue");
+      }, (error) => {
+        this.get("notify").error(error.responseJSON.exceptionMessage, "An error occured");
+      });
+      console.log("fuel bought");
     }
   }
   updateExchangeRate(this: BuyFuelForm) {

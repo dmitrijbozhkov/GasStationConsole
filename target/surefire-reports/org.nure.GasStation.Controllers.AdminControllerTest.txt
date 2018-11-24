@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.nure.GasStation.Controllers.AdminControllerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.705 s - in org.nure.GasStation.Controllers.AdminControllerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.486 s - in org.nure.GasStation.Controllers.AdminControllerTest

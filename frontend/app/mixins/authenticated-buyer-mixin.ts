@@ -70,7 +70,6 @@ export default Mixin.create(AuthenticatedRouteMixin, {
         return this.checkClaims(); 
       }
     } catch(err) {
-      console.log(err);
       if (err.message === AuthErrors.not_authorized) {
         this.notAuthorized(transition, err.message);
       }
