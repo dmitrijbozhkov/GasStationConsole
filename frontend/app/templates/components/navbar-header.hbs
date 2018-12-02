@@ -25,6 +25,9 @@
     <div class="navbar-item">
       <div class="buttons">
         {{#if isLoggedIn}}
+          {{#link-to "user" class="button is-primary"}}
+            My account
+          {{/link-to}}
           <button class="button is-danger" {{action "logOut"}}>Log out</button>
         {{else}}
           {{#link-to "register" class="button is-primary"}}

@@ -73,7 +73,6 @@ export default class BuyFuelForm extends Component.extend({
       }, (error) => {
         this.get("notify").error(error.responseJSON.exceptionMessage, "An error occured");
       });
-      console.log("fuel bought");
     }
   }
   updateExchangeRate(this: BuyFuelForm) {
