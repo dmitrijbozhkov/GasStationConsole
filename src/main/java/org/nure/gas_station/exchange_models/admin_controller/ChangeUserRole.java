@@ -16,8 +16,8 @@ import javax.validation.constraints.NotNull;
 public class ChangeUserRole {
     @JsonProperty("username")
     @NotBlank(message = "Username cannot be empty")
-    String username;
+    private String username;
     @JsonProperty("userRole")
     @NotNull(message = "User role cannot be empty")
-    UserRoles userRole;
+    private UserRoles userRole;
 }

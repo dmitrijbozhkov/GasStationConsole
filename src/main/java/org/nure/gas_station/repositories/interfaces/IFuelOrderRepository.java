@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Temporal;
 
 import javax.persistence.TemporalType;
 import java.util.Date;
+import java.util.List;
 
 public interface IFuelOrderRepository extends JpaRepository<FuelOrder, Long> {
     Page<FuelOrder> findAllByGasStationUser(GasStationUser gasStationUser, Pageable pageable);
@@ -17,9 +18,14 @@ public interface IFuelOrderRepository extends JpaRepository<FuelOrder, Long> {
             @Temporal(TemporalType.TIMESTAMP) Date orderDateStart,
             @Temporal(TemporalType.TIMESTAMP) Date orderDateEnd,
             Pageable pageable);
+    Page<FuelOrder> findAllByFuel(Fuel fuel, Pageable pageable);
     Page<FuelOrder> findAllByFuelAndOrderDateBetween(
             Fuel fuel,
-            @Temporal(TemporalType.TIMESTAMP) Date operationDateStart,
-            @Temporal(TemporalType.TIMESTAMP) Date operationDateEnd,
+            @Temporal(TemporalType.TIMESTAMP) Date orderDateStart,
+            @Temporal(TemporalType.TIMESTAMP) Date orderDateEnd,
             Pageable pageable);
+    List<FuelOrder> findAllByFuelAndOrderDateBetween(
+            Fuel fuel,
+            @Temporal(TemporalType.TIMESTAMP) Date orderDateStart,
+            @Temporal(TemporalType.TIMESTAMP) Date orderDateEnd);
 }

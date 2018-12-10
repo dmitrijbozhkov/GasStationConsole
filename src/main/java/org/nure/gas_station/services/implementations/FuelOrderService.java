@@ -2,6 +2,8 @@ package org.nure.gas_station.services.implementations;
 
 import org.nure.gas_station.exceptions.EntityNotFoundException;
 import org.nure.gas_station.exceptions.OperationException;
+import org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales.FuelVolumeOfSales;
+import org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales.FuelsVolumeOfSales;
 import org.nure.gas_station.model.Fuel;
 import org.nure.gas_station.model.FuelOrder;
 import org.nure.gas_station.model.FuelStorage;
@@ -22,7 +24,9 @@ import javax.transaction.Transactional;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class FuelOrderService implements IFuelOrderService {
@@ -35,7 +39,7 @@ public class FuelOrderService implements IFuelOrderService {
     private IAdminService adminService;
 
     private Pageable getPage(int page, int amount) {
-        return PageRequest.of(page, amount, Sort.Direction.DESC, "date");
+        return PageRequest.of(page, amount, Sort.Direction.DESC, "orderDate");
     }
 
     private void checkOrderValid(Fuel fuel, Date orderDate, float fuelAmount) throws OperationException {
@@ -68,6 +72,20 @@ public class FuelOrderService implements IFuelOrderService {
         return new FuelOrder(fuelAmount, OrderType.CURRENCY_BY_FUEL, orderDate, fuel, fuel.getFuelTariff(), user);
     }
 
+    private List<FuelOrder> getFuelTimeOrders(Fuel fuel, Date before, Date after) {
+        return fuelOrderRepository.findAllByFuelAndOrderDateBetween(fuel, before, after);
+    }
+
+    private FuelsVolumeOfSales countFuelsVolumeOfSales(List<Fuel> fuels, Date before, Date after) {
+        List<FuelVolumeOfSales> fuelVolumeOfSales = fuels
+                .stream()
+                .map(f -> {
+                    return new FuelVolumeOfSales(f, getFuelTimeOrders(f, before, after));
+                })
+                .collect(Collectors.toList());
+        return new FuelsVolumeOfSales(fuelVolumeOfSales);
+    }
+
     @Override
     @Transactional
     public void orderFuel(String username, String fuelName, float amount, OrderType orderType, Date orderDate) throws EntityNotFoundException, OperationException {
@@ -88,12 +106,18 @@ public class FuelOrderService implements IFuelOrderService {
     }
 
     @Override
-    public FuelOrder getOrderById(long operationId) throws EntityNotFoundException {
-        Optional<FuelOrder> search = fuelOrderRepository.findById(operationId);
+    public FuelOrder getOrderById(long orderId) throws EntityNotFoundException {
+        Optional<FuelOrder> search = fuelOrderRepository.findById(orderId);
         if (!search.isPresent()) {
-            throw new EntityNotFoundException(String.format("Operation by id %s doesn't exist", operationId));
+            throw new EntityNotFoundException(String.format("Operation by id %s doesn't exist", orderId));
         }
         return search.get();
+    }
+
+    @Override
+    @Transactional
+    public void removeFuelOrder(long orderId) throws EntityNotFoundException {
+        fuelOrderRepository.delete(getOrderById(orderId));
     }
 
     @Override
@@ -116,5 +140,26 @@ public class FuelOrderService implements IFuelOrderService {
     public Page<FuelOrder> getFuelTimeOrders(String fuelName, Date before, Date after, int amount, int page) throws IndexOutOfBoundsException {
         Fuel fuel = fuelService.getFuel(fuelName);
         return fuelOrderRepository.findAllByFuelAndOrderDateBetween(fuel, before, after, getPage(page, amount));
+    }
+
+    @Override
+    public Page<FuelOrder> getFuelOrders(String fuelName, int amount, int page) throws IndexOutOfBoundsException {
+        Fuel fuel = fuelService.getFuel(fuelName);
+        return fuelOrderRepository.findAllByFuel(fuel, getPage(page, amount));
+    }
+
+    @Override
+    public FuelsVolumeOfSales getVolumeOfSalesBetweenDates(Date before, Date after) {
+        List<Fuel> fuels = fuelService.getFuels();
+        return countFuelsVolumeOfSales(fuels, before, after);
+    }
+
+    @Override
+    public FuelsVolumeOfSales getFuelsVolumeOfSalesBetweenDates(List<String> fuelNames, Date before, Date after) {
+        List<Fuel> fuels = fuelNames
+                .stream()
+                .map(n -> fuelService.getFuel(n))
+                .collect(Collectors.toList());
+        return countFuelsVolumeOfSales(fuels, before, after);
     }
 }

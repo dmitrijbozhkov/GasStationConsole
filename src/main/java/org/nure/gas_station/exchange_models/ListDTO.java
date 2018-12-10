@@ -12,7 +12,6 @@ import org.springframework.data.domain.*;
 import java.util.ArrayList;
 import java.util.List;
 
-// @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
 @Data
 @NoArgsConstructor
 public class ListDTO<T> {

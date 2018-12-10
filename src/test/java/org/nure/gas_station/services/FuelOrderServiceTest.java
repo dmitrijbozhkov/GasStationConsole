@@ -255,4 +255,11 @@ public class FuelOrderServiceTest {
             return req.getPageNumber() == page && req.getPageSize() == amount && req.getSort().equals(new Sort(Sort.Direction.DESC, "date"));
         }));
     }
+
+    @Test
+    public void testRemoveFuelOrderShouldDeleteFoundFuelOrderById() {
+        given(fuelOrderRepository.findById(fuelOrderId)).willReturn(Optional.of(fuelOrder));
+        fuelOrderService.removeFuelOrder(fuelOrderId);
+        verify(fuelOrderRepository).delete(fuelOrder);
+    }
 }
