@@ -1,11 +1,10 @@
-package org.nure.GasStation.Controllers;
+package org.nure.gas_station.controllers;
 
-import org.nure.GasStation.Exceptions.InputDataValidationException;
-import org.nure.GasStation.Model.ExchangeModels.FuelController.FuelDetails;
-import org.nure.GasStation.Model.ExchangeModels.FuelController.FuelList;
-import org.nure.GasStation.Model.ExchangeModels.FuelController.RequestFuel;
-import org.nure.GasStation.Model.Fuel;
-import org.nure.GasStation.Model.ServiceInterfaces.IFuelService;
+import org.nure.gas_station.controllers.commons.ExchangeValidator;
+import org.nure.gas_station.exchange_models.ListDTO;
+import org.nure.gas_station.exchange_models.fuel_controller.*;
+import org.nure.gas_station.model.Fuel;
+import org.nure.gas_station.services.interfaces.IFuelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
@@ -24,57 +23,66 @@ public class FuelController {
     @Autowired
     private IFuelService fuelService;
 
-    private void validateFuelDetails(FuelDetails fuelDetails) {
-        if (fuelDetails.getFuelName() == null || fuelDetails.getFuelName().isEmpty()) {
-            throw new InputDataValidationException("Fuel name can't be empty");
-        }
-        if (fuelDetails.getPrice() == 0) {
-            throw new InputDataValidationException("Price can't be 0");
-        }
-    }
-
-    private void validateRequestFuel(RequestFuel requestFuel) {
-        if (requestFuel.getFuelName() == null || requestFuel.getFuelName().isEmpty()) {
-            throw new InputDataValidationException("Fuel name can't be empty");
-        }
-    }
+    @Autowired
+    private ExchangeValidator exchangeValidator;
 
     @Secured("ROLE_ADMIN")
     @RequestMapping(value="/add", method = RequestMethod.POST)
-    public ResponseEntity addFuel(@RequestBody FuelDetails fuelDetails) {
-        validateFuelDetails(fuelDetails);
+    public ResponseEntity addFuel(@RequestBody CreateFuel fuelDetails) {
+        exchangeValidator.validateConstrains(fuelDetails);
         fuelService.addFuel(
                 fuelDetails.getFuelName(),
-                fuelDetails.getPrice(),
-                fuelDetails.getFuelLeft(),
-                fuelDetails.getMaxFuel(),
-                fuelDetails.getDescription());
+                fuelDetails.getTariffId(),
+                fuelDetails.getFuelLeft());
         return ResponseEntity.ok().build();
     }
 
     @Secured("ROLE_ADMIN")
     @RequestMapping(value="/remove", method = RequestMethod.DELETE)
     public ResponseEntity removeFuel(@RequestBody RequestFuel requestFuel) {
-        validateRequestFuel(requestFuel);
+        exchangeValidator.validateConstrains(requestFuel);
         fuelService.removeFuel(requestFuel.getFuelName());
         return ResponseEntity.ok().build();
     }
 
     @RequestMapping(value="/get", method = RequestMethod.POST)
     public ResponseEntity<FuelDetails> getFuel(@RequestBody RequestFuel requestFuel) {
-        validateRequestFuel(requestFuel);
+        exchangeValidator.validateConstrains(requestFuel);
         Fuel foundFuel = fuelService.getFuel(requestFuel.getFuelName());
-        return ResponseEntity.ok(new FuelDetails(foundFuel.getFuelName(), foundFuel.getPrice(), foundFuel.getFuelLeft(), foundFuel.getMaxFuel(), foundFuel.getDescription()));
+        return ResponseEntity.ok(new FuelDetails(foundFuel));
     }
 
     @RequestMapping(value="/get-all", method = RequestMethod.GET)
-    public ResponseEntity<FuelList> getFuels() {
-        List<Fuel> foundFuels = fuelService.getFuels();
-        return ResponseEntity.ok(new FuelList(foundFuels
+    public ResponseEntity<ListDTO<FuelDetails>> getFuels() {
+        List<FuelDetails> foundFuels = fuelService
+                .getFuels()
                 .stream()
-                .map(f -> {
-                    return new FuelDetails(f.getFuelName(), f.getPrice(), f.getFuelLeft(), f.getMaxFuel(), f.getDescription());
-                })
-                .collect(Collectors.toList())));
+                .map(f -> new FuelDetails(f))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(new ListDTO<FuelDetails>(foundFuels));
+    }
+
+    @Secured("ROLE_ADMIN")
+    @RequestMapping(value="/update-name", method = RequestMethod.PUT)
+    public ResponseEntity updateFuelName(@RequestBody ChangeFuelName changeFuelName) {
+        exchangeValidator.validateConstrains(changeFuelName);
+        fuelService.updateFuelName(changeFuelName.getFuelName(), changeFuelName.getNextFuelName());
+        return ResponseEntity.status(204).build();
+    }
+
+    @Secured("ROLE_ADMIN")
+    @RequestMapping(value="/update-tariff", method = RequestMethod.PUT)
+    public ResponseEntity updateFuelTariff(@RequestBody FuelTariffDTO fuelTariffDTO) {
+        exchangeValidator.validateConstrains(fuelTariffDTO);
+        fuelService.updateFuelTariff(fuelTariffDTO.getFuelName(), fuelTariffDTO.getTariffId());
+        return ResponseEntity.status(204).build();
+    }
+
+    @Secured("ROLE_ADMIN")
+    @RequestMapping(value="/update-left", method = RequestMethod.PUT)
+    public ResponseEntity updateFuelLeft(@RequestBody FuelAmountDTO fuelAmountDTO) {
+        exchangeValidator.validateConstrains(fuelAmountDTO);
+        fuelService.updateFuelLeft(fuelAmountDTO.getFuelName(), fuelAmountDTO.getFuelLeft());
+        return ResponseEntity.status(204).build();
     }
 }

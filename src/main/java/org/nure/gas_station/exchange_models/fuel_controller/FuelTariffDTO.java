@@ -10,9 +10,9 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @NoArgsConstructor
-public class UpdateFuelTariff extends RequestFuel {
+public class FuelTariffDTO extends RequestFuel {
 
-    public UpdateFuelTariff(String fuelName, @NotBlank(message = "Tariff id can't be empty") long tariffId) {
+    public FuelTariffDTO(String fuelName, long tariffId) {
         super(fuelName);
         this.tariffId = tariffId;
     }

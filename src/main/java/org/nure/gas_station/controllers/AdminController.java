@@ -1,12 +1,13 @@
-package org.nure.GasStation.Controllers;
+package org.nure.gas_station.controllers;
 
-import org.nure.GasStation.Exceptions.InputDataValidationException;
-import org.nure.GasStation.Model.ExchangeModels.AdminController.ChangeUserRole;
-import org.nure.GasStation.Model.ExchangeModels.AdminController.SearchUser;
-import org.nure.GasStation.Model.ExchangeModels.AdminController.UserDetails;
-import org.nure.GasStation.Model.ExchangeModels.GasStationPage;
-import org.nure.GasStation.Model.GasStationUser;
-import org.nure.GasStation.Model.ServiceInterfaces.IAdminService;
+import org.nure.gas_station.controllers.commons.ExchangeValidator;
+import org.nure.gas_station.exchange_models.PageDTO;
+import org.nure.gas_station.exchange_models.admin_controller.ChangeUserRole;
+import org.nure.gas_station.exchange_models.admin_controller.SearchUser;
+import org.nure.gas_station.exchange_models.admin_controller.UserDetails;
+import org.nure.gas_station.exchange_models.ListDTO;
+import org.nure.gas_station.model.GasStationUser;
+import org.nure.gas_station.services.interfaces.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -26,26 +27,8 @@ public class AdminController {
     @Autowired
     private IAdminService adminService;
 
-    private void validateSearchUser(SearchUser searchUser) {
-        if (searchUser.getUsername() == null || searchUser.getUsername().isEmpty()) {
-            throw new InputDataValidationException("Username can't be empty");
-        }
-        if (searchUser.getAmount() < 1) {
-            throw new InputDataValidationException("Amount can't be less than 1");
-        }
-        if (searchUser.getPage() < 0) {
-            throw new InputDataValidationException("Page can't be less than 0");
-        }
-    }
-
-    private void validateChangeUserRole(ChangeUserRole changeUserRole) {
-        if (changeUserRole.getUsername() == null || changeUserRole.getUsername().isEmpty()) {
-            throw new InputDataValidationException("Username can't be empty");
-        }
-        if (changeUserRole.getUserRole() == null) {
-            throw new InputDataValidationException("UserRole can't be empty");
-        }
-    }
+    @Autowired
+    private ExchangeValidator exchangeValidator;
 
 //    @Secured("ROLE_ADMIN")
 //    @RequestMapping(value = "/get-user", method = { RequestMethod.POST })
@@ -56,21 +39,21 @@ public class AdminController {
 
     @Secured("ROLE_ADMIN")
     @RequestMapping(value = "/search-user", method = { RequestMethod.POST })
-    public ResponseEntity<GasStationPage<UserDetails>> searchUser(@RequestBody SearchUser user) {
-        validateSearchUser(user);
+    public ResponseEntity<PageDTO<UserDetails>> searchUser(@RequestBody SearchUser user) {
+        exchangeValidator.validateConstrains(user);
         Page<GasStationUser> users = adminService.searchForUser(user.getUsername(), user.getAmount(), user.getPage());
-        List<UserDetails> usernames = users
+        List<UserDetails> userDetails = users
                 .getContent()
                 .stream()
                 .map(u -> new UserDetails(u))
                 .collect(Collectors.toList());
-        return ResponseEntity.ok(new GasStationPage<UserDetails>(usernames, users.getPageable(), users.getTotalElements()));
+        return ResponseEntity.ok(new PageDTO<UserDetails>(userDetails, users.getPageable(), users.getTotalElements()));
     }
 
     @Secured("ROLE_ADMIN")
     @RequestMapping(value = "/set-role", method = { RequestMethod.POST })
     public ResponseEntity setRole(@RequestBody ChangeUserRole changeUserRole) {
-        validateChangeUserRole(changeUserRole);
+        exchangeValidator.validateConstrains(changeUserRole);
         adminService.setRole(changeUserRole.getUsername(), changeUserRole.getUserRole());
         return ResponseEntity.ok().build();
     }

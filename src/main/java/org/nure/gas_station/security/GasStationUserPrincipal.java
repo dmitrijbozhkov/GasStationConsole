@@ -1,6 +1,6 @@
-package org.nure.gas_station.Security;
+package org.nure.gas_station.security;
 
-import org.nure.gas_station.model.Enumerations.UserRoles;
+import org.nure.gas_station.model.enumerations.UserRoles;
 import org.nure.gas_station.model.GasStationUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

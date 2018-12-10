@@ -1,5 +1,6 @@
-package org.nure.gas_station.controllers;
+package org.nure.gas_station.controllers.commons;
 
+import org.nure.gas_station.exceptions.InputDataValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

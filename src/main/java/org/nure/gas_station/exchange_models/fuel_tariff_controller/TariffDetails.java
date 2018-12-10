@@ -1,7 +1,6 @@
-package org.nure.gas_station.exchange_models.tariff_controller;
+package org.nure.gas_station.exchange_models.fuel_tariff_controller;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.nure.gas_station.model.FuelTariff;
@@ -10,22 +9,19 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @NoArgsConstructor
-public class TariffDetails {
+public class TariffDetails extends CreateTariff {
 
     public TariffDetails(long id, float exchangeRate) {
+        super(exchangeRate);
         this.id = id;
-        this.exchangeRate = exchangeRate;
     }
 
     public TariffDetails(FuelTariff fuelTariff) {
+        super(fuelTariff.getExchangeRate());
         this.id = fuelTariff.getId();
-        this.exchangeRate = fuelTariff.getExchangeRate();
     }
 
     @NotNull(message = "Please provide an id for tariff")
     @JsonProperty("id")
     private long id;
-    @NotNull(message = "Please set exchange rate for tariff")
-    @JsonProperty("exchangeRate")
-    private float exchangeRate;
 }

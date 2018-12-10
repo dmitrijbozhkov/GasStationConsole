@@ -1,4 +1,4 @@
-package org.nure.GasStation.Controllers;
+package org.nure.gas_station.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

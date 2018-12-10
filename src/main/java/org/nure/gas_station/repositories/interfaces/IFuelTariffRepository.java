@@ -1,4 +1,6 @@
 package org.nure.gas_station.repositories.interfaces;
 
-public interface IFuelTariffRepository {
-}
+import org.nure.gas_station.model.FuelTariff;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IFuelTariffRepository extends JpaRepository<FuelTariff, Long> { }

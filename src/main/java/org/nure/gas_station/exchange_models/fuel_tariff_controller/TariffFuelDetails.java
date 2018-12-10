@@ -1,9 +1,10 @@
-package org.nure.gas_station.exchange_models.tariff_controller;
+package org.nure.gas_station.exchange_models.fuel_tariff_controller;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.nure.gas_station.model.FuelTariff;
 
 import javax.validation.constraints.NotBlank;
 
@@ -12,7 +13,13 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 public class TariffFuelDetails extends TariffDetails {
 
-    @NotBlank(message = "Please set fuel name for tariff")
+    public TariffFuelDetails(FuelTariff fuelTariff) {
+        super(fuelTariff);
+        if (fuelTariff.getFuel() != null) {
+            this.fuelName = fuelTariff.getFuel().getFuelName();
+        }
+    }
+
     @JsonProperty("fuelName")
     private String fuelName;
 }

@@ -35,7 +35,6 @@ public class GasStationUser {
     private String password;
     @Column(nullable = false)
     private UserRoles roles;
-    @Column
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<FuelOrder> userOperations;
 }

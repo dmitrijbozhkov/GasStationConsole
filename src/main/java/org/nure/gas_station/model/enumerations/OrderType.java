@@ -1,4 +1,6 @@
 package org.nure.gas_station.model.enumerations;
 
-public class OrderType {
+public enum OrderType {
+    FUEL_BY_CURRENCY,
+    CURRENCY_BY_FUEL
 }

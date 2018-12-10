@@ -1,4 +1,4 @@
-package org.nure.gas_station.Security;
+package org.nure.gas_station.security;
 
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Autowired;

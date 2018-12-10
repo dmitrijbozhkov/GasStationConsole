@@ -20,7 +20,7 @@ public class FuelService implements IFuelService {
 
     @Autowired
     private IFuelRepository fuelRepository;
-
+    @Autowired
     private IFuelTariffService fuelTariffService;
 
     @Override
@@ -69,7 +69,7 @@ public class FuelService implements IFuelService {
     @Transactional
     public void updateFuelName(String fuelName, String nextFuelName) throws EntityNotFoundException {
         Fuel fuel = getFuel(fuelName);
-        fuel.setFuelName(fuelName);
+        fuel.setFuelName(nextFuelName);
     }
 
     @Override

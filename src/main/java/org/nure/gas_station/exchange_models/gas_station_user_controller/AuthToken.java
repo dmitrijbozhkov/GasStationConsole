@@ -1,4 +1,4 @@
-package org.nure.gas_station.exchange_models.GasStationUserController;
+package org.nure.gas_station.exchange_models.gas_station_user_controller;
 
 import lombok.Value;
 

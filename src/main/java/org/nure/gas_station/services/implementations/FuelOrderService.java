@@ -4,6 +4,7 @@ import org.nure.gas_station.exceptions.EntityNotFoundException;
 import org.nure.gas_station.exceptions.OperationException;
 import org.nure.gas_station.model.Fuel;
 import org.nure.gas_station.model.FuelOrder;
+import org.nure.gas_station.model.FuelStorage;
 import org.nure.gas_station.model.GasStationUser;
 import org.nure.gas_station.services.interfaces.IAdminService;
 import org.nure.gas_station.services.interfaces.IFuelService;
@@ -24,7 +25,7 @@ import java.util.Date;
 import java.util.Optional;
 
 @Service
-public class FuelOrderServiceService implements IFuelOrderService {
+public class FuelOrderService implements IFuelOrderService {
 
     @Autowired
     private IFuelService fuelService;
@@ -49,19 +50,22 @@ public class FuelOrderServiceService implements IFuelOrderService {
         }
     }
 
-    private FuelOrder orderFuelByCurrency(Fuel fuel, GasStationUser user, float moneyAmount, Date orderDate) throws OperationException {
-        float fuelAmount = fuel.getFuelTariff().getExchangeRate() * moneyAmount;
-        checkOrderValid(fuel, orderDate, fuelAmount);
-        float currentFuelAmount = fuel.getFuelStorage().getFuelAmount();
-        fuel.getFuelStorage().setFuelAmount(currentFuelAmount - fuelAmount);
-        return new FuelOrder(fuelAmount, OrderType.FUEL_WORTH_OF_СCURRENCY, orderDate, fuel, fuel.getFuelTariff(), user);
+    private void removeFuelFromStorage(FuelStorage storage, float fuelAmount) {
+        float currentFuelAmount = storage.getFuelAmount();
+        storage.setFuelAmount(currentFuelAmount - fuelAmount);
     }
 
-    private FuelOrder orderCurrencyWorthOfFuel(Fuel fuel, GasStationUser user, float fuelAmount, Date orderDate) throws OperationException {
+    private FuelOrder orderFuelByCurrency(Fuel fuel, GasStationUser user, float moneyAmount, Date orderDate) throws OperationException {
+        float fuelAmount =  moneyAmount / fuel.getFuelTariff().getExchangeRate();
         checkOrderValid(fuel, orderDate, fuelAmount);
-        float currentFuelAmount = fuel.getFuelStorage().getFuelAmount();
-        fuel.getFuelStorage().setFuelAmount(currentFuelAmount - fuelAmount);
-        return new FuelOrder(fuelAmount, OrderType.FUEL_WORTH_OF_СCURRENCY, orderDate, fuel, fuel.getFuelTariff(), user);
+        removeFuelFromStorage(fuel.getFuelStorage(), fuelAmount);
+        return new FuelOrder(moneyAmount, OrderType.FUEL_BY_CURRENCY, orderDate, fuel, fuel.getFuelTariff(), user);
+    }
+
+    private FuelOrder orderCurrencyByFuel(Fuel fuel, GasStationUser user, float fuelAmount, Date orderDate) throws OperationException {
+        checkOrderValid(fuel, orderDate, fuelAmount);
+        removeFuelFromStorage(fuel.getFuelStorage(), fuelAmount);
+        return new FuelOrder(fuelAmount, OrderType.CURRENCY_BY_FUEL, orderDate, fuel, fuel.getFuelTariff(), user);
     }
 
     @Override
@@ -71,10 +75,10 @@ public class FuelOrderServiceService implements IFuelOrderService {
         GasStationUser currentUser = adminService.getUser(username);
         FuelOrder currentOrder;
         switch (orderType) {
-            case CURRENCY_WORTH_OF_FUEL:
-                currentOrder = orderCurrencyWorthOfFuel(currentFuel, currentUser, amount, orderDate);
+            case CURRENCY_BY_FUEL:
+                currentOrder = orderCurrencyByFuel(currentFuel, currentUser, amount, orderDate);
                 break;
-            case FUEL_WORTH_OF_СCURRENCY:
+            case FUEL_BY_CURRENCY:
                 currentOrder = orderFuelByCurrency(currentFuel, currentUser, amount, orderDate);
                 break;
                 default:

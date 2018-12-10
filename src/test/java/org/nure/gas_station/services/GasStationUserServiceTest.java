@@ -39,7 +39,7 @@ public class GasStationUserServiceTest {
     private final String correctPassword = "pass1234";
     private final String name = "pepe";
     private final String surname = "kek";
-    private final UserRoles correctUserRole = UserRoles.ROLE_BYER;
+    private final UserRoles correctUserRole = UserRoles.ROLE_BUYER;
     private final String incorrectUsername = "pep";
     private final String incorrectPassword = "pass";
     private final String changingPassword = "pass4321";
@@ -49,16 +49,6 @@ public class GasStationUserServiceTest {
         this.authenticationManager = mock(AuthenticationManager.class);
         this.userRepository = mock(IUserRepository.class);
         this.userService = new UserService(this.userRepository, this.authenticationManager, new BCryptPasswordEncoder());
-    }
-
-    @Test(expected = InputDataValidationException.class)
-    public void testCreateUserSHouldThrowInputDataValidationExceptionIfUsernameIsInvalid() {
-        userService.createUser(incorrectUsername, correctPassword, name, surname, correctUserRole);
-    }
-
-    @Test(expected = InputDataValidationException.class)
-    public void testCreateUserSHouldThrowInputDataValidationExceptionIfPasswordIsInvalid() {
-        userService.createUser(correctUsername, incorrectPassword, name, surname, correctUserRole);
     }
 
     @Test(expected = EntityAlreadyExistsException.class)

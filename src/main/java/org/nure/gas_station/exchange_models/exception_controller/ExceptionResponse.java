@@ -1,4 +1,4 @@
-package org.nure.gas_station.exchange_models.ExceptionController;
+package org.nure.gas_station.exchange_models.exception_controller;
 
 import lombok.Value;
 

@@ -17,12 +17,10 @@ import java.util.Set;
 public class Fuel {
     @Id
     private String fuelName;
-    @Column(nullable = false)
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "fuel_storage_id")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "fuel_storage_id", nullable = false)
     private FuelStorage fuelStorage;
-    @Column(nullable = false)
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "fuel_tariff_id")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "fuel_tariff_id", nullable = false)
     private FuelTariff fuelTariff;
 }

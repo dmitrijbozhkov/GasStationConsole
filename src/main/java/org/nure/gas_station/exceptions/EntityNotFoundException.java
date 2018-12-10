@@ -1,4 +1,4 @@
-package org.nure.GasStation.Exceptions;
+package org.nure.gas_station.exceptions;
 
 /**
  * Exception, that will be thrown if record not found in storage

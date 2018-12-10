@@ -10,19 +10,19 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CreateFuel extends RequestFuel {
+public class CreateFuel extends FuelTariffDTO {
 
     public CreateFuel(Fuel fuel) {
-        super(fuel.getFuelName());
-        this.tariffId = fuel.getFuelTariff().getId();
+        super(fuel.getFuelName(), fuel.getFuelTariff().getId());
         this.fuelLeft = fuel.getFuelStorage().getFuelAmount();
     }
 
-    @NotNull(message = "Please provide fuel tariff")
-    @JsonProperty("tariffId")
-    private long tariffId;
+    public CreateFuel(String fuelName, long tariffId, float fuelLeft) {
+        super(fuelName, tariffId);
+        this.fuelLeft = fuelLeft;
+    }
+
     @NotNull(message = "Please provide number of fuel left in storage")
     @JsonProperty("fuelLeft")
     private float fuelLeft;

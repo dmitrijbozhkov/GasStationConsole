@@ -1,4 +1,4 @@
-package org.nure.gas_station.Security;
+package org.nure.gas_station.security;
 
 import org.nure.gas_station.model.GasStationUser;
 import org.nure.gas_station.repositories.interfaces.IUserRepository;

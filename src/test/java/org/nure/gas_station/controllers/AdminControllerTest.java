@@ -5,11 +5,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.nure.gas_station.model.enumerations.UserRoles;
-import org.nure.gas_station.exchange_models.AdminController.ChangeUserRole;
-import org.nure.gas_station.exchange_models.AdminController.SearchUser;
-import org.nure.gas_station.exchange_models.AdminController.UserDetails;
+import org.nure.gas_station.exchange_models.ListDTO;
 import org.nure.gas_station.exchange_models.PageDTO;
+import org.nure.gas_station.model.enumerations.UserRoles;
+import org.nure.gas_station.exchange_models.admin_controller.ChangeUserRole;
+import org.nure.gas_station.exchange_models.admin_controller.SearchUser;
+import org.nure.gas_station.exchange_models.admin_controller.UserDetails;
 import org.nure.gas_station.model.GasStationUser;
 import org.nure.gas_station.services.interfaces.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,13 +81,13 @@ public class AdminControllerTest {
         String password2 = "pass4321";
         String name2 = "pepe";
         String surname2 = "kek";
-        UserRoles userRoles2 = UserRoles.ROLE_BYER;
+        UserRoles userRoles2 = UserRoles.ROLE_BUYER;
         String searchQuery = "tv";
         SearchUser searchingUser = new SearchUser(searchQuery, page, amount);
         GasStationUser user1 = new GasStationUser(username, password, name, surname, userRole);
         GasStationUser user2 = new GasStationUser(username2, password2, name2, surname2, userRoles2);
         List<GasStationUser> usersearchedList = Arrays.asList(user1, user2);
-        Page<GasStationUser> userPage = new PageImpl<GasStationUser>(usersearchedList, new PageRequest(page, amount), usersearchedList.size());
+        Page<GasStationUser> userPage = new PageImpl<GasStationUser>(usersearchedList, PageRequest.of(page, amount), usersearchedList.size());
         given(adminService.searchForUser(searchQuery, amount, page)).willReturn(userPage);
         MvcResult result = mvc.perform(post("/api/admin/search-user").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(searchingUser)))
                 .andExpect(status().isOk())

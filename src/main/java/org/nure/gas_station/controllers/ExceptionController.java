@@ -1,10 +1,10 @@
-package org.nure.GasStation.Controllers;
+package org.nure.gas_station.controllers;
 
-import org.nure.GasStation.Exceptions.EntityAlreadyExistsException;
-import org.nure.GasStation.Exceptions.EntityNotFoundException;
-import org.nure.GasStation.Exceptions.InputDataValidationException;
-import org.nure.GasStation.Exceptions.OperationException;
-import org.nure.GasStation.Model.ExchangeModels.ExceptionController.ExceptionResponse;
+import org.nure.gas_station.exceptions.EntityAlreadyExistsException;
+import org.nure.gas_station.exceptions.EntityNotFoundException;
+import org.nure.gas_station.exceptions.InputDataValidationException;
+import org.nure.gas_station.exceptions.OperationException;
+import org.nure.gas_station.exchange_models.exception_controller.ExceptionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;

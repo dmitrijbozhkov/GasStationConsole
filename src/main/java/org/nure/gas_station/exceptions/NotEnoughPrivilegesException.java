@@ -1,4 +1,4 @@
-package org.nure.GasStation.Exceptions;
+package org.nure.gas_station.exceptions;
 
 import java.rmi.AccessException;
 

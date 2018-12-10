@@ -1,5 +1,7 @@
 package org.nure.gas_station.services.implementations;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.nure.gas_station.exceptions.EntityAlreadyExistsException;
 import org.nure.gas_station.exceptions.EntityNotFoundException;
 import org.nure.gas_station.exceptions.InputDataValidationException;
@@ -18,6 +20,8 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserService implements IUserService {
 
     @Autowired
@@ -27,42 +31,8 @@ public class UserService implements IUserService {
     @Autowired
     private BCryptPasswordEncoder encoder;
 
-    public UserService() { }
-
-    public UserService(IUserRepository repo, AuthenticationManager manager, BCryptPasswordEncoder encoder) {
-        this.userRepository = repo;
-        this.authManager = manager;
-        this.encoder = encoder;
-    }
-
-    private void validateUsername(String username) throws IllegalArgumentException {
-        if (username.length() < 4) {
-            throw new InputDataValidationException("Username must be at least 4 characters long");
-        }
-        if (username.length() > 26) {
-            throw new InputDataValidationException("Username can have maximum 25 characters");
-        }
-        if (!username.matches("[A-Za-z0-9]+")) {
-            throw new InputDataValidationException("Username must contain only latin characters and numbers");
-        }
-    }
-
-    private void validatePassword(String password) throws InputDataValidationException {
-        if (password.length() < 6) {
-            throw new InputDataValidationException("Password must be at least 6 characters long");
-        }
-        if (password.length() > 26) {
-            throw new InputDataValidationException("Password can have maximum 25 characters");
-        }
-        if (!password.matches("[A-Za-z0-9]+")) {
-            throw new InputDataValidationException("Password must contain only latin characters and numbers");
-        }
-    }
-
     @Override
     public void createUser(String username, String password, String name, String surname, UserRoles role) throws EntityAlreadyExistsException, InputDataValidationException {
-        validateUsername(username);
-        validatePassword(password);
         Optional<GasStationUser> search = userRepository.findById(username);
         if (search.isPresent()) {
             throw new EntityAlreadyExistsException(String.format("GasStationUser with name of %s already exists", username));

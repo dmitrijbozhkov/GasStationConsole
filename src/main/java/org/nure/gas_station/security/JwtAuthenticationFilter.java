@@ -1,4 +1,4 @@
-package org.nure.gas_station.Security;
+package org.nure.gas_station.security;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;

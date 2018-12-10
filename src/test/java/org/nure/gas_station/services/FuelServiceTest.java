@@ -5,13 +5,17 @@ import org.junit.runner.RunWith;
 import org.nure.gas_station.exceptions.EntityAlreadyExistsException;
 import org.nure.gas_station.exceptions.EntityNotFoundException;
 import org.nure.gas_station.model.Fuel;
+import org.nure.gas_station.model.FuelStorage;
+import org.nure.gas_station.model.FuelTariff;
 import org.nure.gas_station.repositories.interfaces.IFuelRepository;
 import org.nure.gas_station.services.interfaces.IFuelService;
+import org.nure.gas_station.services.interfaces.IFuelTariffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.persistence.Temporal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -27,36 +31,37 @@ public class FuelServiceTest {
     private IFuelService fuelService;
     @MockBean
     private IFuelRepository fuelRepository;
+    @MockBean
+    private IFuelTariffService fuelTariffService;
 
     private final String fuelName = "95";
-    private final float price = (float) 9.99;
+    private final long tariffId = 15;
     private final float fuelLeft = 10000;
-    private final float maxFuel = 50000;
-    private final String description = "Super fuel";
 
 
     @Test(expected = EntityAlreadyExistsException.class)
     public void testAddFuelShouldThrowEntityAlreadyExistsExceptionIfFuelExists() {
         given(fuelRepository.findById(fuelName)).willReturn(Optional.of(new Fuel()));
-        fuelService.addFuel(fuelName, price, fuelLeft, maxFuel, description);
+        fuelService.addFuel(fuelName, tariffId, fuelLeft);
     }
 
-    @Test()
+    @Test
     public void testAddFuelShouldSaveFuelIfFuelNameIsNotPresent() {
+        FuelTariff tariff = new FuelTariff();
         given(fuelRepository.findById(fuelName)).willReturn(Optional.empty());
-        fuelService.addFuel(fuelName, price, fuelLeft, maxFuel, description);
+        given(fuelTariffService.getFuelTariff(tariffId)).willReturn(tariff);
+        fuelService.addFuel(fuelName, tariffId, fuelLeft);
         verify(fuelRepository).save(argThat(f -> {
-            return fuelName.equals(f.getFuelName()) && price == f.getPrice() && fuelLeft == f.getFuelLeft();
+            return fuelName.equals(f.getFuelName()) && f.getFuelTariff().equals(tariff) && fuelLeft == f.getFuelStorage().getFuelAmount();
         }));
     }
 
     @Test
     public void testGetFuelShouldReturnChosenFuelByName() {
-        given(fuelRepository.findById(fuelName)).willReturn(Optional.of(new Fuel(fuelName, price, fuelLeft, maxFuel, description)));
+        Fuel fuel = new Fuel();
+        given(fuelRepository.findById(fuelName)).willReturn(Optional.of(fuel));
         Fuel foundFuel = fuelService.getFuel(fuelName);
-        assertEquals(foundFuel.getFuelName(), fuelName);
-        assertEquals(foundFuel.getPrice(), price, 0);
-        assertEquals(foundFuel.getFuelLeft(), fuelLeft, 0);
+        assertEquals(foundFuel, fuel);
     }
 
     @Test(expected = EntityNotFoundException.class)
@@ -67,20 +72,17 @@ public class FuelServiceTest {
 
     @Test
     public void testGetFuelsShouldReturnAllFuels() {
-        String fuelName2 = "92";
-        float price2 = (float) 8.99;
-        float fuelLeft2 = 10000;
-        float maxFuel2 = 40000;
-        String description2 = "Super duper fuel";
-        given(fuelRepository.findAll()).willReturn(Arrays.asList(new Fuel(fuelName, price, fuelLeft, maxFuel, description), new Fuel(fuelName2, price2, fuelLeft2, maxFuel2, description2)));
+        Fuel fuel1 = new Fuel();
+        Fuel fuel2 = new Fuel();
+        given(fuelRepository.findAll()).willReturn(Arrays.asList(fuel1, fuel2));
         List<Fuel> fuelList = fuelService.getFuels();
         Optional<Fuel> firstFuel = fuelList
                 .stream()
-                .filter(f -> f.getFuelName().equals(fuelName) && f.getPrice() == price && f.getFuelLeft() == fuelLeft && f.getMaxFuel() == maxFuel && f.getDescription().equals(description))
+                .filter(f -> f.equals(fuel1))
                 .findFirst();
         Optional<Fuel> secondFuel = fuelList
                 .stream()
-                .filter(f -> f.getFuelName().equals(fuelName2) && f.getPrice() == price2 && f.getFuelLeft() == fuelLeft2 && f.getMaxFuel() == maxFuel2 && f.getDescription().equals(description2))
+                .filter(f -> f.equals(fuel2))
                 .findFirst();
         assertTrue(firstFuel.isPresent() && secondFuel.isPresent());
     }
@@ -93,10 +95,45 @@ public class FuelServiceTest {
 
     @Test
     public void testRemoveFuelShouldCallDeleteOnFuelRepositoryIfFuelWasFound() {
-        Fuel removingFuel = new Fuel(fuelName, price, fuelLeft, maxFuel, description);
+        Fuel removingFuel = new Fuel();
         given(fuelRepository.findById(fuelName)).willReturn(Optional.of(removingFuel));
         fuelService.removeFuel(fuelName);
         verify(fuelRepository).delete(removingFuel);
+    }
+
+    @Test
+    public void testUpdateFuelLeftShouldSetFuelAmountForGievenFuel() {
+        long nextFuelLeft = 55;
+        FuelStorage fuelStorage = new FuelStorage(fuelLeft);
+        FuelTariff fuelTariff = new FuelTariff(3);
+        Fuel updatingFuel = new Fuel(fuelName, fuelStorage, fuelTariff);
+        given(fuelRepository.findById(fuelName)).willReturn(Optional.of(updatingFuel));
+        fuelService.updateFuelLeft(fuelName, nextFuelLeft);
+        assertEquals(nextFuelLeft, updatingFuel.getFuelStorage().getFuelAmount(), 0);
+    }
+
+    @Test
+    public void testUpdateFuelTariffShouldSetNextFuelTariffById() {
+        FuelTariff nextFuelTariff = new FuelTariff();
+        long nextFuelTariffId = 35;
+        FuelStorage fuelStorage = new FuelStorage(fuelLeft);
+        FuelTariff fuelTariff = new FuelTariff(3);
+        Fuel updatingFuel = new Fuel(fuelName, fuelStorage, fuelTariff);
+        given(fuelRepository.findById(fuelName)).willReturn(Optional.of(updatingFuel));
+        given(fuelTariffService.getFuelTariff(nextFuelTariffId)).willReturn(nextFuelTariff);
+        fuelService.updateFuelTariff(fuelName, nextFuelTariffId);
+        assertEquals(nextFuelTariff, updatingFuel.getFuelTariff());
+    }
+
+    @Test
+    public void testUpdateFuelNameShouldSetNextFuelName() {
+        String nextFuelName = "92";
+        FuelStorage fuelStorage = new FuelStorage(fuelLeft);
+        FuelTariff fuelTariff = new FuelTariff(3);
+        Fuel updatingFuel = new Fuel(fuelName, fuelStorage, fuelTariff);
+        given(fuelRepository.findById(fuelName)).willReturn(Optional.of(updatingFuel));
+        fuelService.updateFuelName(fuelName, nextFuelName);
+        assertEquals(nextFuelName, updatingFuel.getFuelName());
     }
 
 }

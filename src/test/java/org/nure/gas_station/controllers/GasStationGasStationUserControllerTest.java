@@ -6,10 +6,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nure.gas_station.model.enumerations.UserRoles;
-import org.nure.gas_station.exchange_models.GasStationUserController.AuthToken;
-import org.nure.gas_station.exchange_models.GasStationUserController.ChangePassword;
-import org.nure.gas_station.exchange_models.GasStationUserController.CreateUserCredentials;
-import org.nure.gas_station.exchange_models.GasStationUserController.UserCredentials;
+import org.nure.gas_station.exchange_models.gas_station_user_controller.AuthToken;
+import org.nure.gas_station.exchange_models.gas_station_user_controller.ChangePassword;
+import org.nure.gas_station.exchange_models.gas_station_user_controller.CreateUserCredentials;
+import org.nure.gas_station.exchange_models.gas_station_user_controller.UserCredentials;
 import org.nure.gas_station.services.interfaces.IUserService;
 import org.nure.gas_station.security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +46,7 @@ public class GasStationGasStationUserControllerTest {
     private final String password = "pass1234";
     private final String name = "Matthew";
     private final String surname = "Serbull";
-    private final UserRoles userRole = UserRoles.ROLE_BYER;
+    private final UserRoles userRole = UserRoles.ROLE_BUYER;
 
     @BeforeClass
     public static void setup() {
@@ -74,7 +74,7 @@ public class GasStationGasStationUserControllerTest {
         credentials.setSurname(surname);
         mvc.perform(post("/api/user/signin")
                 .contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(credentials)));
-        verify(userServiceMock).createUser(credentials.getUsername(), credentials.getPassword(), credentials.getName(), credentials.getSurname(), UserRoles.ROLE_BYER);
+        verify(userServiceMock).createUser(credentials.getUsername(), credentials.getPassword(), credentials.getName(), credentials.getSurname(), UserRoles.ROLE_BUYER);
     }
 
     @Test
