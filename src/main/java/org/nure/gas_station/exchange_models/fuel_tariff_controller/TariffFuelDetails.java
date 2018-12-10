@@ -10,7 +10,6 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class TariffFuelDetails extends TariffDetails {
 
     public TariffFuelDetails(FuelTariff fuelTariff) {
@@ -18,6 +17,11 @@ public class TariffFuelDetails extends TariffDetails {
         if (fuelTariff.getFuel() != null) {
             this.fuelName = fuelTariff.getFuel().getFuelName();
         }
+    }
+
+    public TariffFuelDetails(long id, float exchangeRate, String fuelName) {
+        super(id, exchangeRate);
+        this.fuelName = fuelName;
     }
 
     @JsonProperty("fuelName")

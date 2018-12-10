@@ -6,9 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nure.gas_station.exchange_models.ListDTO;
-import org.nure.gas_station.exchange_models.fuel_controller.CreateFuel;
-import org.nure.gas_station.exchange_models.fuel_controller.FuelDetails;
-import org.nure.gas_station.exchange_models.fuel_controller.RequestFuel;
+import org.nure.gas_station.exchange_models.fuel_controller.*;
 import org.nure.gas_station.model.Fuel;
 import org.nure.gas_station.model.FuelStorage;
 import org.nure.gas_station.model.FuelTariff;
@@ -55,7 +53,6 @@ public class FuelControllerTest {
     @WithMockUser(username = "matviei", authorities = { "ROLE_ADMIN" })
     public void testAddFuelShouldAddNewFuelAndReturnOkResponse() throws Exception {
         CreateFuel fuel = new CreateFuel(fuelName, fuelTariffId, fuelLeft);
-        System.out.println(map.writeValueAsString(fuel));
         mvc.perform(post("/api/fuel/add").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(fuel)))
                 .andExpect(status().isOk());
         verify(fuelService).addFuel(fuelName, fuelTariffId, fuelLeft);
@@ -122,5 +119,35 @@ public class FuelControllerTest {
                 .filter(f -> f.getFuelName().equals(fuelName2) && f.getStorage().getId() == fuelStorageId2 && f.getTariff().getId() == fuelTariffId2)
                 .findFirst();
         assertTrue(f1.isPresent() && f2.isPresent());
+    }
+
+    @Test
+    @WithMockUser(username = "matviei", authorities = { "ROLE_ADMIN" })
+    public void testUpdateFuelNameShouldTakeNewFuelNameAndCallUpdateFuelNameOnServiceWithIt() throws Exception {
+        String nextFuelName = "95+";
+        ChangeFuelName changeFuelName = new ChangeFuelName(fuelName, nextFuelName);
+        mvc.perform(put("/api/fuel/update-name").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(changeFuelName)))
+                .andExpect(status().is(204));
+        verify(fuelService).updateFuelName(eq(fuelName), eq(nextFuelName));
+    }
+
+    @Test
+    @WithMockUser(username = "matviei", authorities = { "ROLE_ADMIN" })
+    public void testUpdateFuelTariffShouldTakeFuelNameAndTariffIdAndSetNewTariffById() throws Exception {
+        long nextFuelTariffId = 25;
+        FuelTariffDTO fuelTariffDTO = new FuelTariffDTO(fuelName, nextFuelTariffId);
+        mvc.perform(put("/api/fuel/update-tariff").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(fuelTariffDTO)))
+                .andExpect(status().is(204));
+        verify(fuelService).updateFuelTariff(eq(fuelName), eq(nextFuelTariffId));
+    }
+
+    @Test
+    @WithMockUser(username = "matviei", authorities = { "ROLE_ADMIN" })
+    public void testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount() throws Exception {
+        float nextFuelAmountLeft = 3000;
+        FuelAmountDTO fuelAmountDTO = new FuelAmountDTO(fuelName, nextFuelAmountLeft);
+        mvc.perform(put("/api/fuel/update-left").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(fuelAmountDTO)))
+                .andExpect(status().is(204));
+        verify(fuelService).updateFuelLeft(eq(fuelName), eq(nextFuelAmountLeft));
     }
 }

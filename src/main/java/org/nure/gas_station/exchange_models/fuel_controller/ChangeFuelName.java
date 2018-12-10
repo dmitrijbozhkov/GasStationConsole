@@ -9,8 +9,12 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class ChangeFuelName extends RequestFuel {
+
+    public ChangeFuelName(String fuelName, String nextFuelName) {
+        super(fuelName);
+        this.nextFuelName = nextFuelName;
+    }
 
     @NotBlank(message = "Please provide next fuel name")
     @JsonProperty("nextFuelName")
