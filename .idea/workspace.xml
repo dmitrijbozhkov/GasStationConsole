@@ -5,34 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="625907db-92d0-42f8-a456-c6db3b681177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/CreateOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderValues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryDateOrders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryFuelDateOrders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryFuelOrders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryOrders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryUserOrders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSales.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSalesRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/VolumeOfSalesRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelOrderControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderIdValues.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSalesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSalesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/OperationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/ListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/ListDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/OperationController/OperationRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/OperationController/OperationResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/OperationController/QueryOperationsDate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/OperationController/QueryOperationsPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/OperationController/QueryOperationsUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/OperationController/QueryOperationsUserDate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/admin_controller/ChangeUserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/admin_controller/ChangeUserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/repositories/interfaces/IFuelOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/repositories/interfaces/IFuelOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelOrderControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelOrderControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/OperationControllerTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelOrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelOrderServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.controllers.AdminControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.controllers.AdminControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.controllers.FuelControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.controllers.FuelControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.controllers.GasStationGasStationUserControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.controllers.GasStationGasStationUserControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.controllers.MainControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.controllers.MainControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.security.JwtTokenProviderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.security.JwtTokenProviderTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.services.AdminServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.services.AdminServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.services.FuelOrderServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.services.FuelOrderServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.services.FuelServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.services.FuelServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.services.FuelTariffServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.services.FuelTariffServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.services.GasStationUserServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.nure.gas_station.services.GasStationUserServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.controllers.AdminControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.controllers.AdminControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.controllers.FuelControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.controllers.FuelControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.controllers.GasStationGasStationUserControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.controllers.GasStationGasStationUserControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.controllers.MainControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.controllers.MainControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.security.JwtTokenProviderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.security.JwtTokenProviderTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.services.AdminServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.services.AdminServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.services.FuelOrderServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.services.FuelOrderServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.services.FuelServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.services.FuelServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.services.FuelTariffServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.services.FuelTariffServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.services.GasStationUserServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/org.nure.gas_station.services.GasStationUserServiceTest.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,11 +50,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelOrderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1240">
-              <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
+            <state relative-caret-position="381">
+              <caret line="154" column="98" selection-start-line="154" selection-start-column="65" selection-end-line="154" selection-end-column="98" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelOrderControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-135">
+              <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,53 +77,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSalesTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSales.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSalesRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/VolumeOfSalesRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelOrderService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="21" column="77" lean-forward="true" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="161" column="46" lean-forward="true" selection-start-line="161" selection-start-column="46" selection-end-line="161" selection-end-column="46" />
+              <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -137,6 +146,7 @@
       <find>type</find>
       <find>Operation</find>
       <find>queryOperations</find>
+      <find>get</find>
     </findStrings>
     <replaceStrings>
       <replace>InputDataValidationException</replace>
@@ -159,10 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/gas_station_user_controller/ChangePassword.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/gas_station_user_controller/CreateUserCredentials.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/gas_station_user_controller/UserCredentials.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/admin_controller/UserDetails.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/FuelStorage.java" />
@@ -189,8 +195,6 @@
         <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_tariff_controller/TariffFuelDetails.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelTariffControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelOrderControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelOrderServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/admin_controller/ChangeUserRole.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/ListDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/OrderValues.java" />
@@ -206,10 +210,16 @@
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/FuelsVolumeOfSalesRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelOrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/repositories/interfaces/IFuelOrderRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSales.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelOrderServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelOrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderIdValues.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderDetails.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelOrderControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSalesTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSalesTest.java" />
       </list>
     </option>
   </component>
@@ -243,6 +253,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -322,7 +334,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="gas_station" type="462c0819:PsiDirectoryNode" />
               <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
-              <item name="fuel_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="fuel_order_controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
@@ -333,6 +345,18 @@
               <item name="gas_station" type="462c0819:PsiDirectoryNode" />
               <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
               <item name="fuel_order_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
+              <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
+              <item name="fuel_order_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="query" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
@@ -362,15 +386,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="gas_station" type="462c0819:PsiDirectoryNode" />
               <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
@@ -429,7 +444,7 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="gas_station" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="volume_of_sales" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
@@ -453,14 +468,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544450922045" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544537013847" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -482,8 +495,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FuelOrderServiceTest.testRemoveFuelOrderShouldDeleteFoundFuelOrderById">
-    <configuration name="FuelControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FuelsVolumeOfSalesTest.testSetOverallVolumeOfSalesShouldSetOverallVolumeOfSalesToSumOfAllVolumesOfSalesOfEachFuel">
+    <configuration name="FuelOrderControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GasStationConsole" />
       <extension name="coverage">
         <pattern>
@@ -492,12 +505,12 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.nure.gas_station.controllers" />
-      <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.controllers.FuelControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.controllers.FuelOrderControllerTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuelControllerTest.testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuelOrderControllerTest.testGetVolumeOfSalesForFuelsShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GasStationConsole" />
       <extension name="coverage">
         <pattern>
@@ -506,14 +519,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.nure.gas_station.controllers" />
-      <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.controllers.FuelControllerTest" />
-      <option name="METHOD_NAME" value="testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount" />
+      <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.controllers.FuelOrderControllerTest" />
+      <option name="METHOD_NAME" value="testGetVolumeOfSalesForFuelsShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuelControllerTest.testUpdateFuelTariffShouldTakeFuelNameAndTariffIdAndSetNewTariffById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuelOrderControllerTest.testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GasStationConsole" />
       <extension name="coverage">
         <pattern>
@@ -522,39 +535,39 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.nure.gas_station.controllers" />
-      <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.controllers.FuelControllerTest" />
-      <option name="METHOD_NAME" value="testUpdateFuelTariffShouldTakeFuelNameAndTariffIdAndSetNewTariffById" />
+      <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.controllers.FuelOrderControllerTest" />
+      <option name="METHOD_NAME" value="testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuelOrderServiceTest.testRemoveFuelOrderShouldDeleteFoundFuelOrderById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuelVolumeOfSalesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GasStationConsole" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nure.gas_station.services.*" />
+          <option name="PATTERN" value="org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.nure.gas_station.services" />
-      <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.services.FuelOrderServiceTest" />
-      <option name="METHOD_NAME" value="testRemoveFuelOrderShouldDeleteFoundFuelOrderById" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales" />
+      <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales.FuelVolumeOfSalesTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuelTariffControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuelsVolumeOfSalesTest.testSetOverallVolumeOfSalesShouldSetOverallVolumeOfSalesToSumOfAllVolumesOfSalesOfEachFuel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GasStationConsole" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.nure.gas_station.controllers.*" />
+          <option name="PATTERN" value="org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.nure.gas_station.controllers" />
-      <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.controllers.FuelTariffControllerTest" />
+      <option name="PACKAGE_NAME" value="org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales" />
+      <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales.FuelsVolumeOfSalesTest" />
+      <option name="METHOD_NAME" value="testSetOverallVolumeOfSalesShouldSetOverallVolumeOfSalesToSumOfAllVolumesOfSalesOfEachFuel" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -572,19 +585,19 @@
     </configuration>
     <list>
       <item itemvalue="JAR Application.Run console app" />
-      <item itemvalue="JUnit.FuelControllerTest.testUpdateFuelTariffShouldTakeFuelNameAndTariffIdAndSetNewTariffById" />
-      <item itemvalue="JUnit.FuelControllerTest.testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount" />
-      <item itemvalue="JUnit.FuelControllerTest" />
-      <item itemvalue="JUnit.FuelTariffControllerTest" />
-      <item itemvalue="JUnit.FuelOrderServiceTest.testRemoveFuelOrderShouldDeleteFoundFuelOrderById" />
+      <item itemvalue="JUnit.FuelOrderControllerTest.testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" />
+      <item itemvalue="JUnit.FuelOrderControllerTest.testGetVolumeOfSalesForFuelsShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" />
+      <item itemvalue="JUnit.FuelOrderControllerTest" />
+      <item itemvalue="JUnit.FuelVolumeOfSalesTest" />
+      <item itemvalue="JUnit.FuelsVolumeOfSalesTest.testSetOverallVolumeOfSalesShouldSetOverallVolumeOfSalesToSumOfAllVolumesOfSalesOfEachFuel" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FuelOrderServiceTest.testRemoveFuelOrderShouldDeleteFoundFuelOrderById" />
-        <item itemvalue="JUnit.FuelTariffControllerTest" />
-        <item itemvalue="JUnit.FuelControllerTest" />
-        <item itemvalue="JUnit.FuelControllerTest.testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount" />
-        <item itemvalue="JUnit.FuelControllerTest.testUpdateFuelTariffShouldTakeFuelNameAndTariffIdAndSetNewTariffById" />
+        <item itemvalue="JUnit.FuelsVolumeOfSalesTest.testSetOverallVolumeOfSalesShouldSetOverallVolumeOfSalesToSumOfAllVolumesOfSalesOfEachFuel" />
+        <item itemvalue="JUnit.FuelVolumeOfSalesTest" />
+        <item itemvalue="JUnit.FuelOrderControllerTest" />
+        <item itemvalue="JUnit.FuelOrderControllerTest.testGetVolumeOfSalesForFuelsShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" />
+        <item itemvalue="JUnit.FuelOrderControllerTest.testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" />
       </list>
     </recent_temporary>
   </component>
@@ -602,35 +615,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FuelControllerTest_testUpdateFuelNameShouldTakeNewFuelNameAndCallUpdateFuelNameOnServiceWithIt - 2018.12.10 at 11h 39m 32s.xml">
-      <configuration name="FuelControllerTest.testUpdateFuelNameShouldTakeNewFuelNameAndCallUpdateFuelNameOnServiceWithIt" configurationId="JUnit" />
+    <history-entry file="FuelOrderControllerTest_testQueryFuelDateOrdersShouldReturnNewestOrdersOfGivenFuelBetweenDatesWithPageAndAmount - 2018.12.11 at 14h 05m 38s.xml">
+      <configuration name="FuelOrderControllerTest.testQueryFuelDateOrdersShouldReturnNewestOrdersOfGivenFuelBetweenDatesWithPageAndAmount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuelControllerTest_testUpdateFuelNameShouldTakeNewFuelNameAndCallUpdateFuelNameOnServiceWithIt - 2018.12.10 at 11h 40m 02s.xml">
-      <configuration name="FuelControllerTest.testUpdateFuelNameShouldTakeNewFuelNameAndCallUpdateFuelNameOnServiceWithIt" configurationId="JUnit" />
+    <history-entry file="FuelOrderControllerTest_testQueryFuelDateOrdersShouldReturnNewestOrdersOfGivenFuelBetweenDatesWithPageAndAmount - 2018.12.11 at 14h 06m 52s.xml">
+      <configuration name="FuelOrderControllerTest.testQueryFuelDateOrdersShouldReturnNewestOrdersOfGivenFuelBetweenDatesWithPageAndAmount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuelControllerTest_testUpdateFuelTariffShouldTakeFuelNameAndTariffIdAndSetNewTariffById - 2018.12.10 at 11h 43m 01s.xml">
-      <configuration name="FuelControllerTest.testUpdateFuelTariffShouldTakeFuelNameAndTariffIdAndSetNewTariffById" configurationId="JUnit" />
+    <history-entry file="FuelOrderControllerTest_testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem - 2018.12.11 at 14h 29m 45s.xml">
+      <configuration name="FuelOrderControllerTest.testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuelControllerTest_testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount - 2018.12.10 at 11h 46m 10s.xml">
-      <configuration name="FuelControllerTest.testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount" configurationId="JUnit" />
+    <history-entry file="FuelOrderControllerTest_testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem - 2018.12.11 at 14h 31m 08s.xml">
+      <configuration name="FuelOrderControllerTest.testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuelControllerTest_testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount - 2018.12.10 at 11h 46m 35s.xml">
-      <configuration name="FuelControllerTest.testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount" configurationId="JUnit" />
+    <history-entry file="FuelOrderControllerTest_testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem - 2018.12.11 at 14h 33m 49s.xml">
+      <configuration name="FuelOrderControllerTest.testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuelControllerTest_testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount - 2018.12.10 at 11h 47m 33s.xml">
-      <configuration name="FuelControllerTest.testUpdateFuelLeftShouldTakeFuelNameAndAmountOfFuelLeftAndSetNewAmount" configurationId="JUnit" />
+    <history-entry file="FuelOrderControllerTest_testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem - 2018.12.11 at 14h 35m 32s.xml">
+      <configuration name="FuelOrderControllerTest.testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuelControllerTest - 2018.12.10 at 11h 47m 49s.xml">
-      <configuration name="FuelControllerTest" configurationId="JUnit" />
+    <history-entry file="FuelOrderControllerTest_testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem - 2018.12.11 at 14h 36m 12s.xml">
+      <configuration name="FuelOrderControllerTest.testGetVolumeOfSalesShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuelTariffControllerTest - 2018.12.10 at 12h 14m 19s.xml">
-      <configuration name="FuelTariffControllerTest" configurationId="JUnit" />
+    <history-entry file="FuelOrderControllerTest_testGetVolumeOfSalesForFuelsShouldReturnEachFuelsVolumeOfSalesAndSumOfThem - 2018.12.11 at 14h 39m 39s.xml">
+      <configuration name="FuelOrderControllerTest.testGetVolumeOfSalesForFuelsShouldReturnEachFuelsVolumeOfSalesAndSumOfThem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuelTariffControllerTest - 2018.12.10 at 12h 16m 19s.xml">
-      <configuration name="FuelTariffControllerTest" configurationId="JUnit" />
+    <history-entry file="FuelOrderControllerTest - 2018.12.11 at 14h 41m 22s.xml">
+      <configuration name="FuelOrderControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuelOrderServiceTest_testRemoveFuelOrderShouldDeleteFoundFuelOrderById - 2018.12.10 at 12h 29m 16s.xml">
-      <configuration name="FuelOrderServiceTest.testRemoveFuelOrderShouldDeleteFoundFuelOrderById" configurationId="JUnit" />
+    <history-entry file="FuelVolumeOfSalesTest - 2018.12.11 at 14h 54m 29s.xml">
+      <configuration name="FuelVolumeOfSalesTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -647,7 +660,7 @@
       <window_info id="Learn" order="7" weight="0.32982844" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32771337" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49973017" visible="true" weight="0.31506848" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49973017" visible="true" weight="0.33508956" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39936775" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -673,117 +686,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/ChangeFuelName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/commons/ExchangeValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/FuelTariffDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/FuelAmountDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_tariff_controller/CreateTariff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/FuelTariff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_tariff_controller/TariffFuelDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="76" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_tariff_controller/TariffDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelTariffControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1165">
-          <caret line="93" column="56" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/GasStationGasStationUserControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelOrderServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="257" column="4" lean-forward="true" selection-start-line="257" selection-start-column="4" selection-end-line="257" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -791,40 +693,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelOrderControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/OperationControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelTariffController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -917,13 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/PageDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/repositories/interfaces/IFuelRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -941,60 +806,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderValues.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/CreateOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryDateOrders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/RequestFuel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryOrders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1012,16 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryFuelDateOrders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1052,17 +857,176 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelOrderService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/OperationController.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/OperationControllerTest.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="21" column="77" lean-forward="true" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
+        <state relative-caret-position="-495" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mockito/mockito-core/2.15.0/mockito-core-2.15.0.jar!/org/mockito/ArgumentCaptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSales.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/CreateOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        <state relative-caret-position="315">
+          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderValues.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderIdValues.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.8.RELEASE/spring-data-commons-2.0.8.RELEASE.jar!/org/springframework/data/domain/Chunk.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+          <folding>
+            <element signature="e#3093#3094#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.8.RELEASE/spring-data-commons-2.0.8.RELEASE.jar!/org/springframework/data/domain/PageImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#1216#1217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.7.RELEASE/spring-core-5.0.7.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/PageDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="57" column="65" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="123" column="57" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="22" column="106" selection-start-line="22" selection-start-column="106" selection-end-line="22" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryDateOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryFuelDateOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="154" column="98" selection-start-line="154" selection-start-column="65" selection-end-line="154" selection-end-column="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/AdminServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelOrderServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-599">
+          <caret line="227" column="44" selection-start-line="227" selection-start-column="41" selection-end-line="227" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1072,7 +1036,24 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/VolumeOfSalesRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSalesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1081,8 +1062,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSalesRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="210">
+          <caret line="14" column="79" lean-forward="true" selection-start-line="14" selection-start-column="79" selection-end-line="14" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelOrderControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135">
+          <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1091,32 +1082,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        <state relative-caret-position="360">
+          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/OperationController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSales.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-500">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="346">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSalesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="161" column="46" lean-forward="true" selection-start-line="161" selection-start-column="46" selection-end-line="161" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelOrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1240">
-          <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
+        <state relative-caret-position="420">
+          <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

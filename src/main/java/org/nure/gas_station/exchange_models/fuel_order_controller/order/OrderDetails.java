@@ -13,17 +13,17 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor
-public class OrderDetails extends OrderValues {
+public class OrderDetails extends OrderIdValues {
 
-    public OrderDetails(float amount, OrderType orderType, Date orderDate, FuelDetails fuel, TariffDetails tariff, UserDetails user) {
-        super(amount, orderType, orderDate);
+    public OrderDetails(long id, float amount, OrderType orderType, Date orderDate, FuelDetails fuel, TariffDetails tariff, UserDetails user) {
+        super(amount, orderType, orderDate, id);
         this.fuel = fuel;
         this.tariff = tariff;
         this.user = user;
     }
 
     public OrderDetails(FuelOrder fuelOrder) {
-        super(fuelOrder.getAmount(), fuelOrder.getOrderType(), fuelOrder.getOrderDate());
+        super(fuelOrder.getAmount(), fuelOrder.getOrderType(), fuelOrder.getOrderDate(), fuelOrder.getId());
         this.fuel = new FuelDetails(fuelOrder.getFuel());
         this.tariff = new TariffDetails(fuelOrder.getFuelTariff());
         this.user = new UserDetails(fuelOrder.getGasStationUser());

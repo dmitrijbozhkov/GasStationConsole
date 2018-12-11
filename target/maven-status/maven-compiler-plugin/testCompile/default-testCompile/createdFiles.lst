@@ -3,9 +3,7 @@ org/nure/gas_station/controllers/MainControllerTest.class
 org/nure/gas_station/controllers/AdminControllerTest.class
 org/nure/gas_station/services/FuelServiceTest.class
 org/nure/gas_station/controllers/AdminControllerTest$1.class
-org/nure/gas_station/services/OperationServiceTest.class
 org/nure/gas_station/controllers/FuelControllerTest.class
-org/nure/gas_station/controllers/OperationControllerTest.class
 org/nure/gas_station/services/AdminServiceTest.class
 org/nure/gas_station/services/GasStationUserServiceTest.class
 org/nure/gas_station/security/JwtTokenProviderTest.class

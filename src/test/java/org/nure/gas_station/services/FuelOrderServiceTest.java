@@ -1,10 +1,15 @@
 package org.nure.gas_station.services;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.lang3.SerializationUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
 import org.nure.gas_station.exceptions.EntityNotFoundException;
 import org.nure.gas_station.exceptions.OperationException;
+import org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales.FuelVolumeOfSales;
+import org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales.FuelsVolumeOfSales;
 import org.nure.gas_station.model.*;
 import org.nure.gas_station.model.enumerations.OrderType;
 import org.nure.gas_station.model.enumerations.UserRoles;
@@ -19,8 +24,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.xml.crypto.Data;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Optional;
 
@@ -58,10 +65,12 @@ public class FuelOrderServiceTest {
     private GasStationUser gasStationUser;
     // Default order
     private final long fuelOrderId = 33;
-    private final float orderAmount = FuelOrder.getMaxOrderVolume() - 50;
+    private final float orderAmount = FuelOrder.getMaxOrderVolume() - 1;
     private final OrderType orderType = OrderType.CURRENCY_BY_FUEL;
     private final Date orderDate = Date.from(Instant.now().plus(3, ChronoUnit.DAYS));
     private FuelOrder fuelOrder;
+    // Deep copy
+    private ObjectMapper map = new ObjectMapper();
 
     @Before
     public void setUpOrderData() {
@@ -214,10 +223,11 @@ public class FuelOrderServiceTest {
         int page = 0;
         int amount = 5;
         fuelOrderService.getOrders(amount, page);
-        verify(fuelOrderRepository).findAll((PageRequest) argThat(req -> {
-            PageRequest rightRequest = (PageRequest) req;
-            return rightRequest.getPageNumber() == page && rightRequest.getPageSize() == amount && rightRequest.getSort().equals(new Sort(Sort.Direction.DESC, "date"));
-        }));
+        ArgumentCaptor<PageRequest> requestCaptor = ArgumentCaptor.forClass(PageRequest.class);
+        verify(fuelOrderRepository).findAll(requestCaptor.capture());
+        assertEquals(page, requestCaptor.getValue().getPageNumber());
+        assertEquals(amount, requestCaptor.getValue().getPageSize());
+        assertEquals(new Sort(Sort.Direction.DESC, "orderDate"), requestCaptor.getValue().getSort());
     }
 
     @Test
@@ -226,9 +236,13 @@ public class FuelOrderServiceTest {
         int amount = 5;
         given(adminService.getUser(username)).willReturn(gasStationUser);
         fuelOrderService.getUserOrders(username, amount, page);
-        verify(fuelOrderRepository).findAllByGasStationUser(eq(gasStationUser), argThat(req -> {
-            return req.getPageNumber() == page && req.getPageSize() == amount && req.getSort().equals(new Sort(Sort.Direction.DESC, "date"));
-        }));
+        ArgumentCaptor<GasStationUser> userCaptor = ArgumentCaptor.forClass(GasStationUser.class);
+        ArgumentCaptor<PageRequest> requestCaptor = ArgumentCaptor.forClass(PageRequest.class);
+        verify(fuelOrderRepository).findAllByGasStationUser(userCaptor.capture(), requestCaptor.capture());
+        assertEquals(gasStationUser, userCaptor.getValue());
+        assertEquals(page, requestCaptor.getValue().getPageNumber());
+        assertEquals(amount, requestCaptor.getValue().getPageSize());
+        assertEquals(new Sort(Sort.Direction.DESC, "orderDate"), requestCaptor.getValue().getSort());
     }
 
     @Test
@@ -238,9 +252,15 @@ public class FuelOrderServiceTest {
         Date before = new Date();
         Date after = new Date();
         fuelOrderService.getTimeOrders(before, after, amount, page);
-        verify(fuelOrderRepository).findAllByOrderDateBetween(eq(before), eq(after), argThat(req -> {
-            return req.getPageNumber() == page && req.getPageSize() == amount && req.getSort().equals(new Sort(Sort.Direction.DESC, "date"));
-        }));
+        ArgumentCaptor<Date> beforeCaptor = ArgumentCaptor.forClass(Date.class);
+        ArgumentCaptor<Date> afterCaptor = ArgumentCaptor.forClass(Date.class);
+        ArgumentCaptor<PageRequest> requestCaptor = ArgumentCaptor.forClass(PageRequest.class);
+        verify(fuelOrderRepository).findAllByOrderDateBetween(beforeCaptor.capture(), afterCaptor.capture(), requestCaptor.capture());
+        assertEquals(before, beforeCaptor.getValue());
+        assertEquals(after, afterCaptor.getValue());
+        assertEquals(page, requestCaptor.getValue().getPageNumber());
+        assertEquals(amount, requestCaptor.getValue().getPageSize());
+        assertEquals(new Sort(Sort.Direction.DESC, "orderDate"), requestCaptor.getValue().getSort());
     }
 
     @Test
@@ -251,9 +271,17 @@ public class FuelOrderServiceTest {
         Date after = new Date();
         given(fuelService.getFuel(fuelName)).willReturn(fuel);
         fuelOrderService.getFuelTimeOrders(fuelName, before, after, amount, page);
-        verify(fuelOrderRepository).findAllByFuelAndOrderDateBetween(eq(fuel), eq(before), eq(after), argThat(req -> {
-            return req.getPageNumber() == page && req.getPageSize() == amount && req.getSort().equals(new Sort(Sort.Direction.DESC, "date"));
-        }));
+        ArgumentCaptor<Date> beforeCaptor = ArgumentCaptor.forClass(Date.class);
+        ArgumentCaptor<Date> afterCaptor = ArgumentCaptor.forClass(Date.class);
+        ArgumentCaptor<Fuel> fuelCaptor = ArgumentCaptor.forClass(Fuel.class);
+        ArgumentCaptor<PageRequest> requestCaptor = ArgumentCaptor.forClass(PageRequest.class);
+        verify(fuelOrderRepository).findAllByFuelAndOrderDateBetween(fuelCaptor.capture(), beforeCaptor.capture(), afterCaptor.capture(), requestCaptor.capture());
+        assertEquals(fuel, fuelCaptor.getValue());
+        assertEquals(before, beforeCaptor.getValue());
+        assertEquals(after, afterCaptor.getValue());
+        assertEquals(page, requestCaptor.getValue().getPageNumber());
+        assertEquals(amount, requestCaptor.getValue().getPageSize());
+        assertEquals(new Sort(Sort.Direction.DESC, "orderDate"), requestCaptor.getValue().getSort());
     }
 
     @Test
@@ -261,5 +289,94 @@ public class FuelOrderServiceTest {
         given(fuelOrderRepository.findById(fuelOrderId)).willReturn(Optional.of(fuelOrder));
         fuelOrderService.removeFuelOrder(fuelOrderId);
         verify(fuelOrderRepository).delete(fuelOrder);
+    }
+
+    @Test
+    public void testGetVolumeOfSalesBetweenDatesShouldReturnFuelsVolumeOfSalesBetweenDatesForAllFuels() throws Exception {
+        Date before = Date.from(Instant.now());
+        Date after = Date.from(Instant.now());
+        long secondFuelTariffId = 99;
+        float secondExchangeRate = (float) 8.99;
+        FuelTariff secondFuelTariff = new FuelTariff(secondFuelTariffId, secondExchangeRate);
+        String secondFuelName = "98";
+        Fuel secondFuel = map.readValue(map.writeValueAsBytes(fuel), Fuel.class);
+        secondFuel.setFuelName(secondFuelName);
+        secondFuel.setFuelTariff(secondFuelTariff);
+        FuelOrder secondFuelOrder = map.readValue(map.writeValueAsBytes(fuelOrder), FuelOrder.class);
+        secondFuelOrder.setFuel(secondFuel);
+        secondFuelOrder.setFuelTariff(secondFuelTariff);
+        secondFuelOrder.setOrderType(OrderType.FUEL_BY_CURRENCY);
+        given(fuelService.getFuels()).willReturn(Arrays.asList(fuel, secondFuel));
+        given(fuelOrderRepository.findAllByFuelAndOrderDateBetween(fuel, before, after)).willReturn(Arrays.asList(fuelOrder));
+        given(fuelOrderRepository.findAllByFuelAndOrderDateBetween(secondFuel, before, after)).willReturn(Arrays.asList(secondFuelOrder));
+        float firstVolume = orderAmount * exchangeRate;
+        float secondVolume = orderAmount; // setup
+        FuelsVolumeOfSales fuelsVolumeOfSales = fuelOrderService.getVolumeOfSalesBetweenDates(before, after); // act
+        fuelsVolumeOfSales.getFuelVolumeOfSales()
+                .stream()
+                .filter(v -> {
+                    return v.getFuelName().equals(fuelName);
+                });
+        Optional<FuelVolumeOfSales> fuelVolumeOfSales1 = fuelsVolumeOfSales // assert
+                .getFuelVolumeOfSales()
+                .stream()
+                .filter((v) -> {
+                    return v.getFuelName().equals(fuelName) && v.getVolumeOfSales() == firstVolume;
+                })
+                .findFirst();
+        Optional<FuelVolumeOfSales> fuelVolumeOfSales2 = fuelsVolumeOfSales
+                .getFuelVolumeOfSales()
+                .stream()
+                .filter((v) -> {
+                    return v.getFuelName().equals(secondFuelName) && v.getVolumeOfSales() == secondVolume;
+                })
+                .findFirst();
+        assertTrue(fuelVolumeOfSales1.isPresent() && fuelVolumeOfSales2.isPresent());
+        assertEquals(firstVolume + secondVolume, fuelsVolumeOfSales.getOverallVolumeOfSales(), 0);
+    }
+
+    @Test
+    public void testGetFuelsVolumeOfSalesBetweenDatesShouldReturnFuelsVolumeOfSalesBetweenDatesForChosenFuels() throws Exception {
+        Date before = Date.from(Instant.now());
+        Date after = Date.from(Instant.now());
+        long secondFuelTariffId = 99;
+        float secondExchangeRate = (float) 8.99;
+        FuelTariff secondFuelTariff = new FuelTariff(secondFuelTariffId, secondExchangeRate);
+        String secondFuelName = "98";
+        Fuel secondFuel = map.readValue(map.writeValueAsBytes(fuel), Fuel.class);
+        secondFuel.setFuelName(secondFuelName);
+        secondFuel.setFuelTariff(secondFuelTariff);
+        FuelOrder secondFuelOrder = map.readValue(map.writeValueAsBytes(fuelOrder), FuelOrder.class);
+        secondFuelOrder.setFuel(secondFuel);
+        secondFuelOrder.setFuelTariff(secondFuelTariff);
+        secondFuelOrder.setOrderType(OrderType.FUEL_BY_CURRENCY);
+        given(fuelService.getFuel(fuelName)).willReturn(fuel);
+        given(fuelService.getFuel(secondFuelName)).willReturn(secondFuel);
+        given(fuelOrderRepository.findAllByFuelAndOrderDateBetween(fuel, before, after)).willReturn(Arrays.asList(fuelOrder));
+        given(fuelOrderRepository.findAllByFuelAndOrderDateBetween(secondFuel, before, after)).willReturn(Arrays.asList(secondFuelOrder));
+        float firstVolume = orderAmount * exchangeRate;
+        float secondVolume = orderAmount; // setup
+        FuelsVolumeOfSales fuelsVolumeOfSales = fuelOrderService.getFuelsVolumeOfSalesBetweenDates(Arrays.asList(fuelName, secondFuelName), before, after); // act
+        fuelsVolumeOfSales.getFuelVolumeOfSales()
+                .stream()
+                .filter(v -> {
+                    return v.getFuelName().equals(fuelName);
+                });
+        Optional<FuelVolumeOfSales> fuelVolumeOfSales1 = fuelsVolumeOfSales // assert
+                .getFuelVolumeOfSales()
+                .stream()
+                .filter((v) -> {
+                    return v.getFuelName().equals(fuelName) && v.getVolumeOfSales() == firstVolume;
+                })
+                .findFirst();
+        Optional<FuelVolumeOfSales> fuelVolumeOfSales2 = fuelsVolumeOfSales
+                .getFuelVolumeOfSales()
+                .stream()
+                .filter((v) -> {
+                    return v.getFuelName().equals(secondFuelName) && v.getVolumeOfSales() == secondVolume;
+                })
+                .findFirst();
+        assertTrue(fuelVolumeOfSales1.isPresent() && fuelVolumeOfSales2.isPresent());
+        assertEquals(firstVolume + secondVolume, fuelsVolumeOfSales.getOverallVolumeOfSales(), 0);
     }
 }

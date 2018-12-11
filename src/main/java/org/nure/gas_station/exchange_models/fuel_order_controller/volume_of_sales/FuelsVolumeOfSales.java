@@ -14,7 +14,7 @@ public class FuelsVolumeOfSales {
 
     public FuelsVolumeOfSales(List<FuelVolumeOfSales> fuelVolumeOfSales) {
         this.fuelVolumeOfSales = fuelVolumeOfSales;
-        this.overallVolumeOfSales = countOverallVolumeOfSales(fuelVolumeOfSales);
+        setOverallVolumeOfSales(fuelVolumeOfSales);
     }
 
     @JsonProperty("fuelVolumeOfSales")
@@ -22,8 +22,8 @@ public class FuelsVolumeOfSales {
     @JsonProperty("overallVolumeOfSales")
     private float overallVolumeOfSales;
 
-    private float countOverallVolumeOfSales(List<FuelVolumeOfSales> fuelVolumeOfSales) {
-        return fuelVolumeOfSales
+    public void setOverallVolumeOfSales(List<FuelVolumeOfSales> fuelVolumeOfSales) {
+        this.overallVolumeOfSales = fuelVolumeOfSales
                 .stream()
                 .map(FuelVolumeOfSales::getVolumeOfSales)
                 .reduce((float) 0, (current, next) -> current + next);

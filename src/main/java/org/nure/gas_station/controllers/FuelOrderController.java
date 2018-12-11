@@ -57,14 +57,14 @@ public class FuelOrderController {
 
     @Secured({"ROLE_ADMIN", "ROLE_BUYER"})
     @RequestMapping(value = "/get/{id}", method = { RequestMethod.GET })
-    public ResponseEntity<OrderDetails> getOperation(@PathVariable("id") long id) {
+    public ResponseEntity<OrderDetails> getOrder(@PathVariable("id") long id) {
         FuelOrder fuelOrder = fuelOrderService.getOrderById(id);
         return ResponseEntity.ok(new OrderDetails(fuelOrder));
     }
 
     @Secured("ROLE_ADMIN")
     @RequestMapping(value="/remove/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity removeTariff(@PathVariable("id") long id) {
+    public ResponseEntity removeOrder(@PathVariable("id") long id) {
         fuelOrderService.removeFuelOrder(id);
         return ResponseEntity.status(204).build();
     }
@@ -117,6 +117,7 @@ public class FuelOrderController {
     @Secured("ROLE_ADMIN")
     @RequestMapping(value = "/query-fuel", method = { RequestMethod.POST })
     public ResponseEntity<PageDTO<OrderDetails>> queryFuelOrders(@RequestBody QueryFuelOrders queryFuelOrders) {
+        exchangeValidator.validateConstrains(queryFuelOrders);
         Page<FuelOrder> operations = fuelOrderService.getFuelOrders(
                 queryFuelOrders.getFuelName(),
                 queryFuelOrders.getAmount(),
@@ -127,6 +128,7 @@ public class FuelOrderController {
     @Secured("ROLE_ADMIN")
     @RequestMapping(value = "/query-fuel-date", method = { RequestMethod.POST })
     public ResponseEntity<PageDTO<OrderDetails>> queryFuelDateOrders(@RequestBody QueryFuelDateOrders queryFuelDateOrders) {
+        exchangeValidator.validateConstrains(queryFuelDateOrders);
         Page<FuelOrder> operations = fuelOrderService.getFuelTimeOrders(
                 queryFuelDateOrders.getFuelName(),
                 queryFuelDateOrders.getBefore(),
@@ -139,6 +141,7 @@ public class FuelOrderController {
     @Secured("ROLE_ADMIN")
     @RequestMapping(value = "/volume-of-sales", method = { RequestMethod.POST })
     public ResponseEntity<FuelsVolumeOfSales> getVolumeOfSales(@RequestBody VolumeOfSalesRequest volumeOfSalesRequest) {
+        exchangeValidator.validateConstrains(volumeOfSalesRequest);
          FuelsVolumeOfSales fuelsVolumeOfSales = fuelOrderService.getVolumeOfSalesBetweenDates(
                 volumeOfSalesRequest.getBefore(),
                 volumeOfSalesRequest.getAfter());
@@ -148,6 +151,7 @@ public class FuelOrderController {
     @Secured("ROLE_ADMIN")
     @RequestMapping(value = "/volume-of-sales-fuel", method = { RequestMethod.POST })
     public ResponseEntity<FuelsVolumeOfSales> getVolumeOfSalesForFuels(@RequestBody FuelsVolumeOfSalesRequest fuelsVolumeOfSalesRequest) {
+        exchangeValidator.validateConstrains(fuelsVolumeOfSalesRequest);
         FuelsVolumeOfSales fuelsVolumeOfSales = fuelOrderService.getFuelsVolumeOfSalesBetweenDates(
                 fuelsVolumeOfSalesRequest.getFuelNames(),
                 fuelsVolumeOfSalesRequest.getBefore(),

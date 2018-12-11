@@ -23,14 +23,14 @@ public class FuelVolumeOfSales extends RequestFuel {
 
     public FuelVolumeOfSales(Fuel fuel, List<FuelOrder> fuelOrders) {
         super(fuel.getFuelName());
-        this.volumeOfSales = countVolumeOfSales(fuelOrders, fuel.getFuelTariff().getExchangeRate());
+        setVolumeOfSales(fuelOrders, fuel.getFuelTariff().getExchangeRate());
     }
 
     @JsonProperty("volumeOfSales")
     private float volumeOfSales;
 
-    private float countVolumeOfSales(List<FuelOrder> fuelOrders, float exchangeRate) {
-        return fuelOrders
+    public void setVolumeOfSales(List<FuelOrder> fuelOrders, float exchangeRate) {
+        this.volumeOfSales = fuelOrders
                 .stream()
                 .map((o) -> {
                     switch (o.getOrderType()) {
