@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.nure.gas_station.controllers.OperationControllerTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in org.nure.gas_station.controllers.OperationControllerTest
-initializationError(org.nure.gas_station.controllers.OperationControllerTest)  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.Exception: No runnable methods
-
