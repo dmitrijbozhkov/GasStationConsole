@@ -24,7 +24,7 @@ public class FuelOrder {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     private Long id;
     @Getter
@@ -43,12 +43,12 @@ public class FuelOrder {
 
     @Getter
     @Setter
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fuel_id", nullable = false)
     private Fuel fuel;
     @Getter
     @Setter
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fuel_tariff_id", nullable = false)
     private FuelTariff fuelTariff;
     @Getter

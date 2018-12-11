@@ -92,6 +92,5 @@ public class GasStationUserServiceTest {
         given(userRepository.findById(correctUsername)).willReturn(Optional.of(user));
         userService.changePassword(correctUsername, changingPassword, correctPassword);
         verify(user).setPassword(argThat(settingPassword -> encoder.matches(changingPassword, settingPassword)));
-        verify(userRepository).flush();
     }
 }

@@ -17,6 +17,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
@@ -32,6 +33,7 @@ public class UserService implements IUserService {
     private BCryptPasswordEncoder encoder;
 
     @Override
+    @Transactional
     public void createUser(String username, String password, String name, String surname, UserRoles role) throws EntityAlreadyExistsException, InputDataValidationException {
         Optional<GasStationUser> search = userRepository.findById(username);
         if (search.isPresent()) {
@@ -48,6 +50,7 @@ public class UserService implements IUserService {
     }
 
     @Override
+    @Transactional
     public void changePassword(String username, String password, String oldPassword) throws EntityNotFoundException, InputDataValidationException {
         Optional<GasStationUser> search = userRepository.findById(username);
         if (!search.isPresent()) {
@@ -58,6 +61,5 @@ public class UserService implements IUserService {
             throw new InputDataValidationException("Old password isn't correct");
         }
         user.setPassword(encoder.encode(password));
-        userRepository.flush();
     }
 }

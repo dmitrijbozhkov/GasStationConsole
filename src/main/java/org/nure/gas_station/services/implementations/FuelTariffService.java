@@ -26,7 +26,7 @@ public class FuelTariffService implements IFuelTariffService {
     public FuelTariff getFuelTariff(long id) throws EntityNotFoundException {
         Optional<FuelTariff> search = fuelTariffRepository.findById(id);
         if (!search.isPresent()) {
-            throw new EntityNotFoundException(String.format("Fuel %s doesn't exist", id));
+            throw new EntityNotFoundException(String.format("Fuel tariff %s doesn't exist", id));
         }
         return search.get();
     }

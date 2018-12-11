@@ -18,7 +18,7 @@ public class FuelStorage {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     private Long id;
     @Column(nullable = false)

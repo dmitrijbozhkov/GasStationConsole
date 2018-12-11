@@ -158,7 +158,7 @@ public class FuelOrderService implements IFuelOrderService {
     public FuelsVolumeOfSales getFuelsVolumeOfSalesBetweenDates(List<String> fuelNames, Date before, Date after) {
         List<Fuel> fuels = fuelNames
                 .stream()
-                .map(n -> fuelService.getFuel(n))
+                .map(fuelService::getFuel)
                 .collect(Collectors.toList());
         return countFuelsVolumeOfSales(fuels, before, after);
     }

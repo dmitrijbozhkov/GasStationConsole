@@ -15,6 +15,13 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Fuel {
+
+    public Fuel(String fuelName, FuelStorage fuelStorage, FuelTariff fuelTariff) {
+        this.fuelName = fuelName;
+        this.fuelStorage = fuelStorage;
+        this.fuelTariff = fuelTariff;
+    }
+
     @Id
     private String fuelName;
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
@@ -23,4 +30,6 @@ public class Fuel {
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "fuel_tariff_id", nullable = false)
     private FuelTariff fuelTariff;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "fuel", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<FuelOrder> fuelOrders = new HashSet<>();
 }

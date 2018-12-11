@@ -36,7 +36,7 @@ public class FuelOrderController {
         List<OrderDetails> orderDetails = operations
                 .getContent()
                 .stream()
-                .map(o -> new OrderDetails(o))
+                .map(OrderDetails::new)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(new PageDTO<OrderDetails>(orderDetails, operations.getPageable(), operations.getTotalElements()));
     }

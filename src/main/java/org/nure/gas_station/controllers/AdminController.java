@@ -45,7 +45,7 @@ public class AdminController {
         List<UserDetails> userDetails = users
                 .getContent()
                 .stream()
-                .map(u -> new UserDetails(u))
+                .map(UserDetails::new)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(new PageDTO<UserDetails>(userDetails, users.getPageable(), users.getTotalElements()));
     }

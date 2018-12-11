@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
@@ -29,13 +30,13 @@ public class AdminService implements IAdminService {
 
     @Override
     public Page<GasStationUser> searchForUser(String query, int amount, int page) {
-        return userRepository.findByUsernameContainingIgnoreCase(query, new PageRequest(page, amount));
+        return userRepository.findByUsernameContainingIgnoreCase(query, PageRequest.of(page, amount));
     }
 
     @Override
+    @Transactional
     public void setRole(String username, UserRoles role) throws EntityNotFoundException {
         GasStationUser user = getUser(username);
         user.setRoles(role);
-        userRepository.flush();
     }
 }

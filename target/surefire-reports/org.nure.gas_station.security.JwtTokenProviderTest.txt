@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.nure.gas_station.security.JwtTokenProviderTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.352 s - in org.nure.gas_station.security.JwtTokenProviderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.017 s - in org.nure.gas_station.security.JwtTokenProviderTest

@@ -48,7 +48,7 @@ public class AdminControllerTest {
     private static ObjectMapper map;
 
     // Default user
-    private final String username = "matviei";
+    private final String username = "pepe";
     private final String password = "pass1234";
     private final String name = "Matthew";
     private final String surname = "Serbull";

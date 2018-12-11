@@ -57,7 +57,7 @@ public class FuelController {
         List<FuelDetails> foundFuels = fuelService
                 .getFuels()
                 .stream()
-                .map(f -> new FuelDetails(f))
+                .map(FuelDetails::new)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(new ListDTO<FuelDetails>(foundFuels));
     }
