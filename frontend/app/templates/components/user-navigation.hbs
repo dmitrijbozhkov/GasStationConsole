@@ -1,0 +1,55 @@
+<p class="menu-label">
+  My account
+</p>
+<ul class="menu-list">
+  <li>
+    <a 
+      href="#" 
+      class={{if isMyOperationsActive "is-active"}}
+      {{action "transitionToMenu" "user.my-operations"}}
+    >
+      My operations
+    </a>
+  </li>
+  <li>
+    <a 
+      href="#"
+      class={{if isChangePasswordActive "is-active"}} 
+      {{action "transitionToMenu" "user.change-password"}}
+    >
+      Change password
+    </a>
+  </li>
+</ul>
+<p class="menu-label">
+  Administration
+</p>
+<ul class="menu-list">
+  <li>
+    <a 
+      href="#"
+      class={{if isManageUserAuthoritiesActive "is-active"}}  
+      {{action "transitionToMenu" "user.manage-authorities"}}
+    >
+      Manage user authorities
+    </a>
+  </li>
+  <li>
+    <a 
+      href="#" 
+      class={{if isSearchUserOperationsActive "is-active"}} 
+      {{action "transitionToMenu" "user.search-user-operations"}}
+    >
+      Search user operations
+    </a>
+  </li>
+  <li>
+    <a 
+      href="#" 
+      class={{if isManageFuelTanksActive "is-active"}}
+      {{action "transitionToMenu" "user.manage-fuel"}}
+    >
+      Manage fuel tanks
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,81 @@
+<form>
+  <div class="field">
+    <div class="control">
+      {{input 
+        class=(if showNameValidationError "input is-large is-danger" "input is-large")
+        type="text"
+        placeholder="Your name"
+        autofocus=""
+        value=name
+        focus-out=(action "nameInputTouched")
+      }}
+    </div>
+    {{#if showNameValidationError}}
+      <p class="help is-danger" >Name should be 4 - 25 letters long</p>
+    {{/if}}
+  </div>
+  <div class="field">
+    <div class="control">
+      {{input 
+        class=(if showSurnameValidationError "input is-large is-danger" "input is-large")
+        type="text"
+        placeholder="Your surname"
+        autofocus=""
+        value=surname
+        focus-out=(action "surnameInputTouched")
+      }}
+    </div>
+    {{#if showSurnameValidationError}}
+      <p class="help is-danger" >Surname should be 4 - 25 letters long</p>
+    {{/if}}
+  </div>
+  <div class="field">
+    <div class="control">
+      {{input 
+        class=(if showUsernameValidationError "input is-large is-danger" "input is-large")
+        type="text"
+        placeholder="Your username"
+        autofocus=""
+        value=username
+        focus-out=(action "usernameInputTouched")
+      }}
+    </div>
+    {{#if showUsernameValidationError}}
+      <p class="help is-danger" >Username should be 4 - 25 characters long and contain lovercase and uppercase latin letters and numbers</p>
+    {{/if}}
+  </div>
+  <div class="field">
+    <div class="control">
+      {{input 
+        class=(if showPasswordValidationError "input is-large is-danger" "input is-large")
+        type="password"
+        placeholder="Your Password"
+        value=password
+        focus-out=(action "passwordInputTouched")
+      }}
+    </div>
+    {{#if showPasswordValidationError}}
+      <p class="help is-danger" >Surname should be 6 - 24 characters long and contain lovercase and uppercase latin letters and numbers</p>
+    {{/if}}
+  </div>
+  <div class="field">
+    <div class="control">
+      {{input 
+        class=(if showPasswordRepeatValidationError "input is-large is-danger" "input is-large")
+        type="password"
+        placeholder="Repeat your Password"
+        value=passwordRepeat
+        focus-out=(action "repeatPasswordInputTouched")
+      }}
+    </div>
+    {{#if showPasswordRepeatValidationError}}
+      <p class="help is-danger" >Password repeat doesn't match</p>
+    {{/if}}
+  </div>
+  <button
+    class="button is-block is-info is-large is-fullwidth"
+    {{action "registerUser"}}
+  >
+    Register
+  </button>
+</form>
