@@ -9,6 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
@@ -41,15 +42,17 @@ public class JwtTokenProvider {
     private JwtParser getParser() {
         return Jwts
                 .parser()
-                .setSigningKey(signingKey);
+                .setSigningKey(signingKey.getBytes());
     }
 
     public UsernamePasswordAuthenticationToken validateToken(String token) {
-        Claims claims = getParser()
-                .parseClaimsJws(token)
-                .getBody();
-        String tokenUsername = getClaimFromClaims(claims, Claims::getSubject);
-        UserDetails details = userDetailsService.loadUserByUsername(tokenUsername);
+        Jws<Claims> jws = getParser()
+                .parseClaimsJws(token);
+        Claims claims = jws.getBody();
+        if (claims.getExpiration().before(Date.from(Instant.now()))) {
+            throw new ExpiredJwtException(jws.getHeader(), claims, "Please log in one more time, authorization token is expired");
+        }
+        UserDetails details = userDetailsService.loadUserByUsername(claims.getSubject());
         Collection<? extends GrantedAuthority> authorities =
                 Arrays.stream(claims.get(authoritiesKey).toString().split(authoritiesSeparator))
                 .map(SimpleGrantedAuthority::new)
@@ -67,7 +70,7 @@ public class JwtTokenProvider {
                 .builder()
                 .setSubject(auth.getName())
                 .claim(authoritiesKey, authorities)
-                .signWith(SignatureAlgorithm.HS256, signingKey)
+                .signWith(SignatureAlgorithm.HS256, signingKey.getBytes())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + tokenValid * 1000))
                 .compact();

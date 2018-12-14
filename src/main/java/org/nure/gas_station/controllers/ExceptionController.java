@@ -1,9 +1,7 @@
 package org.nure.gas_station.controllers;
 
-import org.nure.gas_station.exceptions.EntityAlreadyExistsException;
-import org.nure.gas_station.exceptions.EntityNotFoundException;
-import org.nure.gas_station.exceptions.InputDataValidationException;
-import org.nure.gas_station.exceptions.OperationException;
+import io.jsonwebtoken.ExpiredJwtException;
+import org.nure.gas_station.exceptions.*;
 import org.nure.gas_station.exchange_models.exception_controller.ExceptionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -46,6 +44,13 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
     @ExceptionHandler(InputDataValidationException.class)
     @ResponseBody
     public ExceptionResponse handleInputDataValidationException(InputDataValidationException ex, WebRequest request) {
+        return new ExceptionResponse(ex.getClass().getCanonicalName(), ex.getMessage());
+    }
+
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(ExpiredJwtException.class)
+    @ResponseBody
+    public ExceptionResponse handleTokenExpiredException(ExpiredJwtException ex, WebRequest request) {
         return new ExceptionResponse(ex.getClass().getCanonicalName(), ex.getMessage());
     }
 }

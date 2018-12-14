@@ -98,12 +98,12 @@ public class GasStationApp {
             }
             Fuel fuel1 = fuelService.getFuel(fuelName1);
             Fuel fuel2 = fuelService.getFuel(fuelName2);
-            fuelOrderService.orderFuel(username1, fuelName1, 2, OrderType.CURRENCY_BY_FUEL, Date.from(Instant.now().plus(3, ChronoUnit.DAYS)));
-            fuelOrderService.orderFuel(username1, fuelName2, 1, OrderType.CURRENCY_BY_FUEL, Date.from(Instant.now().plus(19, ChronoUnit.DAYS)));
-            fuelOrderService.orderFuel(username1, fuelName1, 5, OrderType.FUEL_BY_CURRENCY, Date.from(Instant.now().plus(40, ChronoUnit.DAYS)));
-            fuelOrderService.orderFuel(username2, fuelName2, 2, OrderType.CURRENCY_BY_FUEL, Date.from(Instant.now().plus(3, ChronoUnit.DAYS)));
-            fuelOrderService.orderFuel(username2, fuelName2, 1, OrderType.FUEL_BY_CURRENCY, Date.from(Instant.now().plus(22, ChronoUnit.DAYS)));
-            fuelOrderService.orderFuel(username2, fuelName1, 5, OrderType.FUEL_BY_CURRENCY, Date.from(Instant.now().plus(45, ChronoUnit.DAYS)));
+            fuelOrderService.orderFuel(username1, fuelName1, 20, OrderType.CURRENCY_BY_FUEL, Date.from(Instant.now().plus(3, ChronoUnit.DAYS)));
+            fuelOrderService.orderFuel(username1, fuelName2, 15, OrderType.CURRENCY_BY_FUEL, Date.from(Instant.now().plus(19, ChronoUnit.DAYS)));
+            fuelOrderService.orderFuel(username1, fuelName1, 30, OrderType.FUEL_BY_CURRENCY, Date.from(Instant.now().plus(40, ChronoUnit.DAYS)));
+            fuelOrderService.orderFuel(username2, fuelName2, 16, OrderType.CURRENCY_BY_FUEL, Date.from(Instant.now().plus(5, ChronoUnit.DAYS)));
+            fuelOrderService.orderFuel(username2, fuelName2, 80, OrderType.FUEL_BY_CURRENCY, Date.from(Instant.now().plus(22, ChronoUnit.DAYS)));
+            fuelOrderService.orderFuel(username2, fuelName1, 40, OrderType.FUEL_BY_CURRENCY, Date.from(Instant.now().plus(45, ChronoUnit.DAYS)));
             System.out.println("Default data generation completed");
         }
     }

@@ -44,16 +44,16 @@ public class JwtTokenProviderTest {
     private final String authoritiesSeparator = ",";
     // User properties
     private final String username = "matviei";
-    private final String userAthority = UserRoles.ROLE_ADMIN.getAuthority();
+    private final String userAuthority = UserRoles.ROLE_ADMIN.getAuthority();
 
     @Test
     public void testValidateTokenSouldReturnUsernamePasswordAuthenticationTokenWithUserDetailsAndUthorities() {
-        String authorities = StringUtils.join(Arrays.asList(userAthority), authoritiesSeparator.charAt(0));
+        String authorities = StringUtils.join(Arrays.asList(userAuthority), authoritiesSeparator.charAt(0));
         String token = Jwts
                 .builder()
                 .setSubject(username)
                 .claim(authoritiesKey, authorities)
-                .signWith(SignatureAlgorithm.HS256, signingKey)
+                .signWith(SignatureAlgorithm.HS256, signingKey.getBytes())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + tokenValid * 1000))
                 .compact();
@@ -64,11 +64,7 @@ public class JwtTokenProviderTest {
         assertTrue(auth
                 .getAuthorities()
                 .stream()
-                .filter(a -> {
-                    return a.getAuthority().equals(userAthority);
-                })
-                .findFirst()
-                .isPresent());
+                .anyMatch(a -> a.getAuthority().equals(userAuthority)));
     }
 
 }
