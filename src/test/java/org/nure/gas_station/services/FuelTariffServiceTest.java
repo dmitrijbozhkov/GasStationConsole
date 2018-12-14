@@ -3,6 +3,7 @@ package org.nure.gas_station.services;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nure.gas_station.exceptions.EntityNotFoundException;
+import org.nure.gas_station.exceptions.OperationException;
 import org.nure.gas_station.model.Fuel;
 import org.nure.gas_station.model.FuelTariff;
 import org.nure.gas_station.repositories.interfaces.IFuelTariffRepository;
@@ -47,10 +48,18 @@ public class FuelTariffServiceTest {
         fuelTariffService.getFuelTariff(tariffId);
     }
 
-
     @Test
-    public void testRemoveFuelTariffShouldCallDeleteOnFoundFuelTariff() {
+    public void testRemoveFuelTariffShouldCallDeleteOnFoundFuelTariffIfFuelIsNull() throws OperationException {
         FuelTariff fuelTariff = new FuelTariff();
+        given(fuelTariffRepository.findById(tariffId)).willReturn(Optional.of(fuelTariff));
+        fuelTariffService.removeFuelTariff(tariffId);
+        verify(fuelTariffRepository).delete(eq(fuelTariff));
+    }
+
+    @Test(expected = OperationException.class)
+    public void testRemoveFuelTariffShouldThrowOperationExceptionIfFuelIsNotNull() throws OperationException {
+        FuelTariff fuelTariff = new FuelTariff();
+        fuelTariff.setFuel(new Fuel());
         given(fuelTariffRepository.findById(tariffId)).willReturn(Optional.of(fuelTariff));
         fuelTariffService.removeFuelTariff(tariffId);
         verify(fuelTariffRepository).delete(eq(fuelTariff));
@@ -64,29 +73,8 @@ public class FuelTariffServiceTest {
         FuelTariff fuelTariff = new FuelTariff(tariffId, tariff);
         given(fuelService.getFuel(fuelName)).willReturn(fuel);
         given(fuelTariffRepository.findById(tariffId)).willReturn(Optional.of(fuelTariff));
-        fuelTariffService.updateFuelTariff(tariffId, nextRate, fuelName);
+        fuelTariffService.updateFuelTariff(tariffId, nextRate);
         assertEquals(nextRate, fuelTariff.getExchangeRate(),0);
-    }
-
-    @Test
-    public void testUpdateFuelTariffShouldSetFuelTariffFuel() {
-        String fuelName = "98";
-        float nextRate = (float) 9.98;
-        Fuel fuel = new Fuel();
-        FuelTariff fuelTariff = new FuelTariff(tariffId, tariff);
-        given(fuelService.getFuel(fuelName)).willReturn(fuel);
-        given(fuelTariffRepository.findById(tariffId)).willReturn(Optional.of(fuelTariff));
-        fuelTariffService.updateFuelTariff(tariffId, nextRate, fuelName);
-        assertEquals(fuel, fuelTariff.getFuel());
-    }
-
-    @Test
-    public void testUpdateFuelTariffShouldSetFuelToNullIfNOGuelNameGiven() {
-        float nextRate = (float) 9.98;
-        FuelTariff fuelTariff = new FuelTariff(tariffId, tariff);
-        given(fuelTariffRepository.findById(tariffId)).willReturn(Optional.of(fuelTariff));
-        fuelTariffService.updateFuelTariff(tariffId, nextRate, null);
-        assertNull(fuelTariff.getFuel());
     }
 
     @Test

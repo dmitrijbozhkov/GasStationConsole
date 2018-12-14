@@ -1,6 +1,7 @@
 package org.nure.gas_station.controllers;
 
 import org.nure.gas_station.controllers.commons.ExchangeValidator;
+import org.nure.gas_station.exceptions.OperationException;
 import org.nure.gas_station.exchange_models.fuel_controller.CreateFuel;
 import org.nure.gas_station.exchange_models.fuel_controller.FuelDetails;
 import org.nure.gas_station.exchange_models.fuel_controller.RequestFuel;
@@ -35,7 +36,7 @@ public class FuelTariffController {
 
     @Secured("ROLE_ADMIN")
     @RequestMapping(value="/remove/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity removeTariff(@PathVariable("id") long id) {
+    public ResponseEntity removeTariff(@PathVariable("id") long id) throws OperationException {
         fuelTariffService.removeFuelTariff(id);
         return ResponseEntity.status(204).build();
     }
@@ -48,12 +49,11 @@ public class FuelTariffController {
 
     @Secured("ROLE_ADMIN")
     @RequestMapping(value="/update", method = RequestMethod.PUT)
-    public ResponseEntity updateTariff(@RequestBody TariffFuelDetails tariffFuelDetails) {
-        exchangeValidator.validateConstrains(tariffFuelDetails);
+    public ResponseEntity updateTariff(@RequestBody TariffDetails tariffDetails) {
+        exchangeValidator.validateConstrains(tariffDetails);
         fuelTariffService.updateFuelTariff(
-                tariffFuelDetails.getId(),
-                tariffFuelDetails.getExchangeRate(),
-                tariffFuelDetails.getFuelName());
+                tariffDetails.getId(),
+                tariffDetails.getExchangeRate());
         return ResponseEntity.status(204).build();
     }
 

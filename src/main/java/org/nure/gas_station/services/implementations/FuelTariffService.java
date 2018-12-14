@@ -1,6 +1,7 @@
 package org.nure.gas_station.services.implementations;
 
 import org.nure.gas_station.exceptions.EntityNotFoundException;
+import org.nure.gas_station.exceptions.OperationException;
 import org.nure.gas_station.model.Fuel;
 import org.nure.gas_station.model.FuelTariff;
 import org.nure.gas_station.repositories.interfaces.IFuelTariffRepository;
@@ -33,21 +34,20 @@ public class FuelTariffService implements IFuelTariffService {
 
     @Override
     @Transactional
-    public void removeFuelTariff(long id) {
-        fuelTariffRepository.delete(getFuelTariff(id));
+    public void removeFuelTariff(long id) throws OperationException {
+        FuelTariff fuelTariff = getFuelTariff(id);
+        if (fuelTariff.getFuel() == null) {
+            fuelTariffRepository.delete(fuelTariff);
+        } else {
+            throw new OperationException(String.format("Can't delete fuel tariff with id %d, it's used in fuel %s", fuelTariff.getId(), fuelTariff.getFuel().getFuelName()));
+        }
     }
 
     @Override
     @Transactional
-    public void updateFuelTariff(long id, float exchangeRate, String fuelName) {
+    public void updateFuelTariff(long id, float exchangeRate) {
         FuelTariff fuelTariff = getFuelTariff(id);
         fuelTariff.setExchangeRate(exchangeRate);
-        if (fuelName != null && !fuelName.isEmpty()) {
-            Fuel fuel = fuelService.getFuel(fuelName);
-            fuelTariff.setFuel(fuel);
-        } else {
-            fuelTariff.setFuel(null);
-        }
         fuelTariffRepository.save(fuelTariff);
     }
 

@@ -1,11 +1,12 @@
 package org.nure.gas_station.services.interfaces;
 
+import org.nure.gas_station.exceptions.OperationException;
 import org.nure.gas_station.model.FuelTariff;
 
 
 public interface IFuelTariffService {
     FuelTariff getFuelTariff(long id);
-    void removeFuelTariff(long id);
-    void updateFuelTariff(long id, float exchangeRate, String fuelName);
+    void removeFuelTariff(long id) throws OperationException;
+    void updateFuelTariff(long id, float exchangeRate);
     FuelTariff createFuelTariff(float exchangeRate);
 }

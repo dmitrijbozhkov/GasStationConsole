@@ -97,10 +97,10 @@ public class FuelTariffControllerTest {
 
     @Test
     @WithMockUser(username = "matviei", authorities = { "ROLE_ADMIN" })
-    public void testUpdateTariffShouldTakeTariffFuelDetailsAndCallUpdateFuelTariffWithIdExchangeRateAndFuelName() throws Exception {
-        TariffFuelDetails tariffFuelDetails = new TariffFuelDetails(fuelTariffId, exchangeRate, null);
+    public void testUpdateTariffShouldTakeTariffFuelDetailsAndCallUpdateFuelTariffWithIdExchangeRate() throws Exception {
+        TariffDetails tariffFuelDetails = new TariffDetails(fuelTariffId, exchangeRate);
         mvc.perform(put("/api/tariff/update").contentType(MediaType.APPLICATION_JSON).content(map.writeValueAsString(tariffFuelDetails)))
                 .andExpect(status().is(204));
-        verify(fuelTariffService).updateFuelTariff(eq(fuelTariffId), eq(exchangeRate), isNull());
+        verify(fuelTariffService).updateFuelTariff(eq(fuelTariffId), eq(exchangeRate));
     }
 }

@@ -1,5 +1,6 @@
 package org.nure.gas_station;
 import lombok.AllArgsConstructor;
+import lombok.extern.java.Log;
 import org.nure.gas_station.exceptions.EntityAlreadyExistsException;
 import org.nure.gas_station.model.Fuel;
 import org.nure.gas_station.model.FuelTariff;
@@ -29,6 +30,7 @@ import java.time.temporal.TemporalUnit;
 @SpringBootApplication
 @ComponentScan("org.nure")
 @EnableJpaRepositories(basePackages = "org.nure.gas_station.repositories")
+@Log
 public class GasStationApp {
 
     @Value("${admin.settings.username}")
@@ -59,26 +61,26 @@ public class GasStationApp {
 
     @PostConstruct
     public void startup() throws Exception {
-        System.out.println(String.format("Generating admin with username=%s, password=%s, name=%s, surname=%s", adminUsername, adminPassword, adminName, adminSurname));
+        log.info(String.format("Generating admin with username=%s, password=%s, name=%s, surname=%s", adminUsername, adminPassword, adminName, adminSurname));
         try {
             userService.createUser(adminUsername, adminPassword, adminName, adminSurname, UserRoles.ROLE_ADMIN);
         } catch (EntityAlreadyExistsException ex) {
-            System.out.println("User with this name already exists in the database, changing his authority to admin");
+            log.info("User with this name already exists in the database, changing his authority to admin");
             adminService.setRole(adminUsername, UserRoles.ROLE_ADMIN);
         }
         if (isGenerateDefaultData) {
-            System.out.println("Generating default data");
+            log.info("Generating default data");
             String username1 = "batsinpants";
             String username2 = "randomuser";
             try {
                 userService.createUser(username1, "pass1234", "Alex", "Svir", UserRoles.ROLE_BUYER);
             } catch (EntityAlreadyExistsException ex) {
-                System.out.println(String.format("User by username %s already exists", username1));
+                log.info(String.format("User by username %s already exists", username1));
             }
             try {
                 userService.createUser(username2, "pass1234", "Pepega", "Forsaan", UserRoles.ROLE_BUYER);
             } catch (EntityAlreadyExistsException ex) {
-                System.out.println(String.format("User by username %s already exists", username2));
+                log.info(String.format("User by username %s already exists", username2));
             }
             float exchangeRate1 = 18;
             float exchangeRate2 = 15;
@@ -89,12 +91,12 @@ public class GasStationApp {
             try {
                 fuelService.addFuel(fuelName1, fuelTariff1.getId(), 5000);
             } catch (EntityAlreadyExistsException ex) {
-                System.out.println(String.format("Fuel by name %s already exists", fuelName1));
+                log.info(String.format("Fuel by name %s already exists", fuelName1));
             }
             try {
                 fuelService.addFuel(fuelName2, fuelTariff2.getId(), 8000);
             } catch (EntityAlreadyExistsException ex) {
-                System.out.println(String.format("Fuel by name %s already exists", fuelName2));
+                log.info(String.format("Fuel by name %s already exists", fuelName2));
             }
             Fuel fuel1 = fuelService.getFuel(fuelName1);
             Fuel fuel2 = fuelService.getFuel(fuelName2);
@@ -104,7 +106,7 @@ public class GasStationApp {
             fuelOrderService.orderFuel(username2, fuelName2, 16, OrderType.CURRENCY_BY_FUEL, Date.from(Instant.now().plus(5, ChronoUnit.DAYS)));
             fuelOrderService.orderFuel(username2, fuelName2, 80, OrderType.FUEL_BY_CURRENCY, Date.from(Instant.now().plus(22, ChronoUnit.DAYS)));
             fuelOrderService.orderFuel(username2, fuelName1, 40, OrderType.FUEL_BY_CURRENCY, Date.from(Instant.now().plus(45, ChronoUnit.DAYS)));
-            System.out.println("Default data generation completed");
+            log.info("Default data generation completed");
         }
     }
 }
