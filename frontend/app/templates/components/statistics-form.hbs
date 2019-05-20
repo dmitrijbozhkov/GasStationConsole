@@ -1,0 +1,81 @@
+<section class="container is-fluid">
+  <form>
+    <h2 class="title">Explore sales volume:</h2>
+    <div class="level">
+      <div class="level-left">
+        <div class="field">
+          <label class="label">Before</label>
+          <div class="control">
+            {{input
+              class="input is-large"
+              type="date"
+              change=(action (mut dateBefore) value="target.value")
+            }}
+          </div>
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="field">
+          <label class="label">After</label>
+          <div class="control">
+            {{input
+              class="input is-large"
+              type="date"
+              change=(action (mut dateAfter) value="target.value")
+            }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="checkbox">
+        {{input type="checkbox" name="searchFuel" placeholder="Search by fuel" checked=searchFuel}}
+        Search by fuel:
+        <span>
+          {{#each chosenFuels as |cf|}}
+            <span class="tag is-info">
+              {{cf.fuelName}}
+              <button class="delete is-small" {{action "removeChosenFuel" cf.fuelName}}></button>
+            </span>
+          {{/each}}
+        </span>
+      </label>
+      <div class="control is-expanded">
+        <div class="select is-medium">
+          <select onchange={{action "fuelChange"}} disabled={{unless searchFuel true false}}>
+            <option value={{chosenFuel}}>Choose fuel</option>
+            {{#each fuels as |f|}}
+              <option value={{f.fuelName}}>{{f.fuelName}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field is-grouped is-grouped-centered">
+      <div class="control">
+        <button class="button is-info" {{action "submitSearch"}}>
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
+<section class="container is-fluid columns is-multiline is-clearfix">
+  {{#if overallVolumeOfSales}}
+    <div class="column is-full has-text-centered">
+      <h2 class="subtitle">Overall volume of sales: ${{overallVolumeOfSales}}</h2>
+    </div>
+    <div class="column is-full">
+      <h2 class="subtitle">Sales by fuel:</h2>
+    </div>
+    {{#each fuelsVolumeOfSales as |fv|}}
+      <div class="box column is-full">
+        <div class="level">
+          <div class="level-left">{{fv.fuelName}}</div>
+          <div class="level-right">${{fv.volumeOfSales}}</div>
+        </div>
+      </div>
+    {{/each}}
+  {{/if}} 
+</section>
+{{block-loader isLoading=isLoading}}

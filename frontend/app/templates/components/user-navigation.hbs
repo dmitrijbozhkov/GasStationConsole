@@ -21,6 +21,7 @@
     </a>
   </li>
 </ul>
+{{#if isAdmin}}
 <p class="menu-label">
   Administration
 </p>
@@ -46,10 +47,38 @@
   <li>
     <a 
       href="#" 
+      class={{if isSearchOperationsActive "is-active"}} 
+      {{action "transitionToMenu" "user.search-operations"}}
+    >
+      Search operations
+    </a>
+  </li>
+  <li>
+    <a 
+      href="#" 
       class={{if isManageFuelTanksActive "is-active"}}
       {{action "transitionToMenu" "user.manage-fuel"}}
     >
-      Manage fuel tanks
+      Manage fuel
+    </a>
+  </li>
+  <li>
+    <a 
+      href="#"
+      class={{if isManageFuelTariffsActive "is-active"}}  
+      {{action "transitionToMenu" "user.manage-tariff"}}
+    >
+      Manage fuel tariffs
+    </a>
+  </li>
+  <li>
+    <a 
+      href="#"
+      class={{if isStatisticsActive "is-active"}}  
+      {{action "transitionToMenu" "user.statistics"}}
+    >
+      Explore statistics
     </a>
   </li>
 </ul>
+{{/if}}

@@ -30,13 +30,6 @@ public class AdminController {
     @Autowired
     private ExchangeValidator exchangeValidator;
 
-//    @Secured("ROLE_ADMIN")
-//    @RequestMapping(value = "/get-user", method = { RequestMethod.POST })
-//    public ResponseEntity<GasStationUser> getUser(@RequestBody GetUser user) {
-//        validateUser(user);
-//        return ResponseEntity.ok(adminService.getUser(user.getUsername()));
-//    }
-
     @Secured("ROLE_ADMIN")
     @RequestMapping(value = "/search-user", method = { RequestMethod.POST })
     public ResponseEntity<PageDTO<UserDetails>> searchUser(@RequestBody SearchUser user) {

@@ -1,0 +1,6 @@
+{{choose-user isLoading=isLoading chosenUser=chosenUser}}
+{{#if chosenUser}}
+  {{operation-list model=operations isAdmin=true delete=(action "delete")}}
+  {{items-paginator currentPage=currentPage amountPages=amountPages}}
+{{/if}}
+{{block-loader isLoading=isLoading}}

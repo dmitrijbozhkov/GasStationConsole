@@ -34,3 +34,26 @@
 .buy-content > figure {
     margin: auto;
 }
+
+.about-hero {
+    background-image: url("http://wallpapers.ae/wp-content/uploads/2015/10/Lake-Bunyonyi-Uganda-Wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.description-section {
+    margin-top: 20px;
+}
+
+.pageloader {
+    opacity: 0.6;
+    background-color: black;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.choose-user-form {
+    margin-bottom: 20px;
+}

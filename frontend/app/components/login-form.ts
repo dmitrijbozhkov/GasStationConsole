@@ -1,29 +1,32 @@
 import Component from '@ember/component';
-import { inject as service } from '@ember/service';
+import { inject } from '@ember/service';
 
 export default class LoginForm extends Component.extend({
+  userService: inject("user-service"),
+  router: inject("router"),
+  notify: inject("toast" as any) as any,
+  isLoading: false,
   username: "",
   password: ""
 }) {
-  session = (service("session" as any) as any)
-  router = service("router")
   actions = {
     loginUser(this: LoginForm) {
-      let credentials = { username: this.get("username"), password: this.get("password") };
-      this
-        .get("session")
-        .authenticate('authenticator:token', credentials)
-        .then((success: any) => {
-          let transition = this.get("session.attemptedTransition" as any);
-          if (transition) {
-            transition.retry();
-          } else {
-            this.get("router").transitionTo("index");
-          }
-        })
-        .catch((err: any) => {
-          console.log(err);
-        });
+      this.set("isLoading", true);
+      this.get("userService")
+      .login(this.get("username"), this.get("password"))
+      .then((data: any) => {
+        this.set("isLoading", false);
+        let transition = this.get("session.attemptedTransition" as any);
+        if (transition) {
+          transition.retry();
+        } else {
+          this.get("router").transitionTo("index");
+        }
+      })
+      .catch((error: any) => {
+        this.set("isLoading", false);
+        this.notify.error(error.responseJSON.exceptionMessage, "Login error");
+      });
     }
   }
 };

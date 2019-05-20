@@ -1,0 +1,29 @@
+{{choose-user isLoading=isLoading chosenUser=chosenUser}}
+{{#if chosenUser}}
+  <section class="container is-fluid">
+    <form>
+      <div class="level">
+        <div class="level-left">
+          <div class="field">
+            <label class="label">Choose a role:</label>
+            <div class="control">
+              <div class="select">
+                <select onchange={{action "roleSelected"}}>
+                  {{#each roleRepr as |r|}}
+                    <option selected={{r.isCurrent}} value={{r.role}}>{{r.repr}}</option>
+                  {{/each}}
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="level-right">
+          <div class="field">
+            <button class="button is-info" {{action "changeRole"}} disabled={{unless selectedRole true false}}>Change Role</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+{{/if}}
+{{block-loader isLoading=isLoading}}

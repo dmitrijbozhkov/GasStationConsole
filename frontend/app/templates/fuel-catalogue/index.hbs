@@ -3,7 +3,7 @@
     <div class="column is-full">
       <h1 class="title">Buy fuel</h1>
     </div>
-    {{#each model as |fuel|}}
+    {{#each model.content as |fuel|}}
       <div class="box column is-full has-background-white-ter">
         <div class="tile is-ancestor">
           <div class="tile">
@@ -14,20 +14,19 @@
                     <h1 class="title">{{fuel.fuelName}}</h1>
                   </div>
                   <div class="level-right">
-                    <h2 class="subtitle">{{fuel.fuelLeft}}/{{fuel.maxFuel}} Liters</h2>
+                    <h2 class="subtitle">{{fuel.storage.fuelAmount}}/10000 Liters</h2>
                   </div>
                 </div>
               </div>
               <div class="tile is-child">
                 <progress
                   class="progress is-info"
-                  value={{fuel.fuelLeft}}
+                  value={{fuel.storage.fuelAmount}}
                   max="10000"
                 >
                 </progress>
               </div>
               <div class="tile is-child is-size-4">
-                <p>{{fuel.description}}</p>
               </div>
             </div>
             <div 
@@ -37,13 +36,13 @@
                 {{#link-to
                   "fuel-catalogue.buy"
                   fuel.fuelName
-                  class=(if fuel.fuelLeft "button is-success is-fullwidth is-large" "button is-success is-static is-fullwidth is-large")  
+                  class=(if fuel.storage.fuelAmount "button is-success is-fullwidth is-large" "button is-success is-static is-fullwidth is-large")  
                 }}
                   Buy
                 {{/link-to}}
               </div>
               <div class="tile is-child has-text-centered is-size-3">
-                ${{fuel.price}}
+                ${{fuel.tariff.exchangeRate}}
               </div>
             </div>
           </div>
@@ -51,5 +50,4 @@
       </div>
     {{/each}}
   </div>
-  
 </section>

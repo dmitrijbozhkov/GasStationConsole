@@ -1,0 +1,26 @@
+<section class="container is-fluid">
+  <div class="columns is-multiline">
+    <div class="column is-full">
+      <label class="label">Operations: </label>
+    </div>
+    {{#each model as |o|}}
+      <div class="box column is-full has-background-white-ter">
+        <div class="level">
+          <div class="level-right"><p>Fuel bought: {{o.fuel.fuelName}}</p></div>
+          {{#if isFuelByCurrency}}
+            <div class="level-left">{{o.amount}} Liters</div>
+          {{else}}
+            <div class="level-left">${{o.amount}}</div>
+          {{/if}}
+        </div>
+        <div class="level">
+          <div class="level-left">By tariff: ${{o.tariff.exchangeRate}} / Liter</div>
+          <div class="level-left">{{pretty-date o.orderDate}}</div>
+        </div>
+        {{#if isAdmin}}
+          <button class="button is-fullwidth is-danger" {{action "deleteOperation" o.id}} >Delete</button>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+</section>

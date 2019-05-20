@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -56,5 +57,10 @@ public class FuelTariffService implements IFuelTariffService {
     public FuelTariff createFuelTariff(float exchangeRate) {
         FuelTariff fuelTariff = new FuelTariff(exchangeRate);
         return fuelTariffRepository.save(fuelTariff);
+    }
+
+    @Override
+    public List<FuelTariff> getTariffs() {
+        return fuelTariffRepository.findAll();
     }
 }

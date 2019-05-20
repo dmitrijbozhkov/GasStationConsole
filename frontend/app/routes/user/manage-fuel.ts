@@ -1,7 +1,11 @@
 import Route from '@ember/routing/route';
+import { inject } from '@ember/service';
 
 export default class UserManageFuel extends Route.extend({
+  fuelService: inject("fuel-service"),
   // anything which *must* be merged to prototype here
 }) {
-  // normal class body definition here
+  model() {
+    return this.get("fuelService").getAllFuels();
+  }
 }

@@ -1,86 +1,90 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
-import Ember from 'ember';
 import { inject } from '@ember/service';
 
-const USD_TO_BITCOIN_LINK = "https://blockchain.info/tobtc?currency=USD&value=1";
-const ROUND_ZEROES = 5;
-const BUY_FUEL_URL = "/api/operation/buy-fuel";
-
+const ROUND_ZEROES = 100;
+const MAX_ORDER_VOLUME = 100;
 export default class BuyFuelForm extends Component.extend({
   notify: inject("toast" as any) as any,
   router: inject("router"),
+  fuelOrderService: inject("fuel-order-service"),
   positionalParams: ["model"],
-  selectedFuelAmount: 0,
-  exchangeRate: 0,
-  isBitcoinModalOpen: false,
-  representSelectedFuelAmount: computed("selectedFuelAmount", function() {
-    return this.get("selectedFuelAmount") ? this.get("selectedFuelAmount") : 0;
+  selectedOrderType: "FUEL_BY_CURRENCY",
+  maxFuelOrder: 0,
+  selectedValueAmount: 0,
+  isLoading: false,
+  isFuelByCurrency: computed("selectedOrderType", function() {
+    return this.get("selectedOrderType") === "FUEL_BY_CURRENCY";
   }),
-  selctedFuelPrice: computed("representSelectedFuelAmount", function() {
-    return Number((this.get("representSelectedFuelAmount") * this.get("model.price")).toPrecision(ROUND_ZEROES));
+  fuelByCurrencyMoney: computed("selectedValueAmount", function() {
+    return Math.round(this.get("selectedValueAmount") * this.get("model.tariff.exchangeRate") * ROUND_ZEROES) / ROUND_ZEROES;
   }),
-  bitcoinPrice: computed("exchangeRate", "selctedFuelPrice", function() {
-    return  Number((this.get("representSelectedFuelAmount") * this.get("model.price") * this.get("exchangeRate")).toPrecision(ROUND_ZEROES));
-  })
+  currencyByFuelAmount: computed("selectedValueAmount", function() {
+    return Math.round(this.get("selectedValueAmount") / this.get("model.tariff.exchangeRate") * ROUND_ZEROES) / ROUND_ZEROES;
+  }),
+  currencyByFuelMaxAmount: 0
 }) {
+  constructor() {
+    super(...arguments);
+    let maxFuel = this.get("fuel.storage.fuelAmount" as any) < MAX_ORDER_VOLUME ? this.get("fuel.storage.fuelAmount" as any) : MAX_ORDER_VOLUME;
+    this.set("maxFuelOrder", maxFuel);
+    this.set("currencyByFuelMaxAmount", maxFuel);
+  }
   actions = {
+    orderTypeSelected(this: BuyFuelForm, event: any) {
+      this.set("selectedOrderType", event.target.value);
+      this.set("selectedValueAmount", 0);
+      if (this.get("selectedOrderType") === "FUEL_BY_CURRENCY") {
+        if (this.get("fuel.storage.fuelAmount" as any) < MAX_ORDER_VOLUME) {
+          this.set("maxFuelOrder", 10000);
+        } else {
+          this.set("maxFuelOrder", MAX_ORDER_VOLUME);
+        }
+      }
+      if (this.get("selectedOrderType") === "CURRENCY_BY_FUEL") {
+        if (this.get("fuel.storage.fuelAmount" as any) < MAX_ORDER_VOLUME) {
+          this.set("maxFuelOrder", 10000 * this.get("model.tariff.exchangeRate" as any));
+        } else {
+          this.set("maxFuelOrder", MAX_ORDER_VOLUME * this.get("model.tariff.exchangeRate" as any));
+        }
+      }
+    },
     fuelMoved(this: BuyFuelForm, event: any) {
       let selectedFuel = Number(event.target.value);
-      let maxFuel = this.get("model.fuelLeft" as any);
-      if (selectedFuel > maxFuel) {
-        this.set("selectedFuelAmount", maxFuel);
-        event.target.value = maxFuel;
-      } else {
-        this.set("selectedFuelAmount", selectedFuel);
+      if (this.get("selectedOrderType") === "FUEL_BY_CURRENCY") {
+        if (selectedFuel > this.get("maxFuelOrder")) {
+          this.set("selectedValueAmount", this.get("maxFuelOrder"));
+          event.target.value = this.get("maxFuelOrder");
+        } else {
+          this.set("selectedValueAmount", selectedFuel);
+        }
       }
-    },
-    fuelUpdate(this: BuyFuelForm) {
-      this.updateExchangeRate();
-    },
-    oneMoreLiter(this: BuyFuelForm) {
-      let selectedFuel = this.get("selectedFuelAmount");
-      let maxFuel = this.get("model.fuelLeft" as any);
-      if (selectedFuel < maxFuel) {
-        this.set("selectedFuelAmount", selectedFuel + 1);
-      }
-      this.updateExchangeRate();
-    },
-    oneLessLiter(this: BuyFuelForm) {
-      let selectedFuel = this.get("selectedFuelAmount");
-      if (selectedFuel) {
-        this.set("selectedFuelAmount", selectedFuel - 1);
-      }
-      this.updateExchangeRate();
-    },
-    toggleBuyFuelModal(this: BuyFuelForm) {
-      if (this.get("representSelectedFuelAmount")) {
-        this.set("isBitcoinModalOpen", !this.get("isBitcoinModalOpen"));
+      if (this.get("selectedOrderType") === "CURRENCY_BY_FUEL") {
+        if (selectedFuel > this.get("maxFuelOrder")) {
+          this.set("selectedValueAmount", this.get("maxFuelOrder"));
+          event.target.value = this.get("maxFuelOrder");
+        } else {
+          this.set("selectedValueAmount", selectedFuel);
+        }
       }
     },
     buyFuel(this: BuyFuelForm) {
-      Ember.$.ajax({
-        type: "POST",
-        url: BUY_FUEL_URL,
-        contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify({
-          fuelName: this.get("model.fuelName" as any),
-          amount: this.get("representSelectedFuelAmount")
-        })
-      }).then((data) => {
+      if (this.get("selectedValueAmount") === 0) {
+        this.get("notify").error("Please choose some amount of fuel to order", "Validation error");
+        return;
+      }
+      this.set("isLoading", true);
+      this.get("fuelOrderService")
+      .createOrder(this.get("model.fuelName" as any), this.get("selectedValueAmount"), this.get("selectedOrderType"))
+      .then((data) => {
+        this.set("isLoading", false);
         this.get("notify").success("Thank you for the purchase", "Transaction successful");
         this.get("router").transitionTo("fuel-catalogue");
-      }, (error) => {
+      })
+      .catch((error) => {
+        this.set("isLoading", false);
         this.get("notify").error(error.responseJSON.exceptionMessage, "An error occured");
       });
     }
-  }
-  updateExchangeRate(this: BuyFuelForm) {
-    $.ajax({
-      type: "GET",
-      url: USD_TO_BITCOIN_LINK,
-    }).then((rate: number) => {
-      this.set("exchangeRate", rate);
-    });
   }
 };

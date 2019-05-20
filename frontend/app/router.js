@@ -16,10 +16,16 @@ Router.map(function() {
   this.route('about');
   this.route('user', function() {
     this.route('manage-fuel');
-    this.route('my-operations');
     this.route('change-password');
-    this.route('manage-authorities');
     this.route('search-user-operations');
+    this.route('manage-tariff');
+    this.route('statistics');
+    this.route('my-operations', function() {
+      this.route('index');
+      this.route('page', { path: "/page/:page_number" });
+    });
+    this.route('manage-authorities', function() {});
+    this.route('search-operations');
   });
 });
 

@@ -2,8 +2,10 @@ package org.nure.gas_station.controllers;
 
 import org.nure.gas_station.controllers.commons.ExchangeValidator;
 import org.nure.gas_station.exceptions.OperationException;
+import org.nure.gas_station.exchange_models.ListDTO;
 import org.nure.gas_station.exchange_models.fuel_controller.CreateFuel;
 import org.nure.gas_station.exchange_models.fuel_controller.FuelDetails;
+import org.nure.gas_station.exchange_models.fuel_controller.FuelTariffDTO;
 import org.nure.gas_station.exchange_models.fuel_controller.RequestFuel;
 import org.nure.gas_station.exchange_models.fuel_tariff_controller.CreateTariff;
 import org.nure.gas_station.exchange_models.fuel_tariff_controller.TariffDetails;
@@ -15,6 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/tariff")
@@ -55,6 +60,16 @@ public class FuelTariffController {
                 tariffDetails.getId(),
                 tariffDetails.getExchangeRate());
         return ResponseEntity.status(204).build();
+    }
+
+    @RequestMapping(value="/get-all", method = RequestMethod.GET)
+    public ResponseEntity<ListDTO<TariffDetails>> getFuels() {
+        List<TariffDetails> foundFuels = fuelTariffService
+                .getTariffs()
+                .stream()
+                .map(TariffDetails::new)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(new ListDTO<TariffDetails>(foundFuels));
     }
 
 }

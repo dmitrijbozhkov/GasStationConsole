@@ -1,0 +1,78 @@
+<section class="container is-fluid">
+  <div class="columns is-multiline">
+    <div class="column is-full">
+      <h1 class="title">Manage tariffs</h1>
+    </div>
+    <div class="column is-full">
+      <button class="button is-success is-fullwidth is-medium" {{action "addTariff"}}>
+        <i class="fa fa-plus"></i>
+        Add new tariff
+      </button>
+    </div>
+    {{#each model.content as |t|}}
+      <div class="box column is-full has-background-white-ter is-multiline">
+        <div class="column is-full has-text-centered">
+          <h1 class="title">${{t.exchangeRate}} per Liter</h1>
+        </div>
+        <div class="column is-full">
+          <div class="level">
+            <div class="level-left">
+              <button class="button is-warning is-fullwidth" {{action "editTariff" t}}>
+                Edit
+              </button>
+            </div>
+            <div class="level-right">
+              <button class="button is-danger is-fullwidth" {{action "removeTariff" t}}>
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>
+<div class="modal {{if modalOperation "is-active"}}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">{{modalOperation}}</p>
+      <button class="delete" aria-label="close" {{action "closeModal"}}></button>
+    </header>
+    <section class="modal-card-body">
+      <form>
+        <div class="field">
+          <label class="label">Exchange rate</label>
+          <div class="control has-icons-left">
+            {{input
+              type="number"
+              class="input"
+              value=operationExchangeRate
+            }}
+            <span class="icon is-left">
+              $
+            </span>
+          </div>
+        </div>
+      </form>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success" {{action "save"}}>Save</button>
+      <button class="button" {{action "closeModal"}}>Cancel</button>
+    </footer>
+  </div>
+</div>
+<div class="modal {{if isDeleteOpen "is-active"}}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Are you sure you want to remove fuel?</p>
+      <button class="delete" aria-label="close" {{action "closeDeleteModal"}}></button>
+    </header>
+    <footer class="modal-card-foot">
+      <button class="button is-danger" {{action "confirmDelete"}}>Delete</button>
+      <button class="button" {{action "closeDeleteModal"}}>Cancel</button>
+    </footer>
+  </div>
+</div>
+{{block-loader isLoading=isLoading}}

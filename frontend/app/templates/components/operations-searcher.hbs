@@ -1,0 +1,67 @@
+<section class="container is-fluid">
+  <form>
+    <h2 class="title">Search operations:</h2>
+    <div class="field">
+      <label class="checkbox">
+        {{input type="checkbox" name="searchFuel" placeholder="Search by fuel" checked=searchFuel}}
+        Search by fuel
+      </label>
+      <div class="control is-expanded">
+        <div class="select is-medium">
+          <select onchange={{action "fuelChange"}} disabled={{if searchFuel false true}}>
+            {{#if isFuelChooserNotTouched}}
+              <option value={{chosenFuel}}>Choose fuel</option>
+            {{/if}}
+            {{#each fuels as |f|}}
+              <option value={{f.fuelName}}>{{f.fuelName}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="checkbox">
+        {{input type="checkbox" name="searchFuel" placeholder="Search by date" checked=searchDates}}
+        Search by date
+      </label>
+    </div>
+    <div class="level">
+      <div class="level-left">
+        <div class="field">
+          <label class="label">Before</label>
+          <div class="control">
+            {{input
+              class="input is-large"
+              type="date"
+              change=(action (mut dateBefore) value="target.value")
+              disabled=(unless searchDates true false)
+            }}
+          </div>
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="field">
+          <label class="label">After</label>
+          <div class="control">
+            {{input
+              class="input is-large"
+              type="date"
+              change=(action (mut dateAfter) value="target.value")
+              disabled=(unless searchDates true false)
+            }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field is-grouped is-grouped-centered">
+      <div class="control">
+        <button class="button is-info" {{action "submitSearch"}}>
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
+{{operation-list model=operations isAdmin=true delete=(action "delete")}}
+{{items-paginator currentPage=currentPage amountPages=amountPages}}
+{{block-loader isLoading=isLoading}}

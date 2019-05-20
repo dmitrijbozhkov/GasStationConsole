@@ -1,0 +1,21 @@
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+  <a class="pagination-previous" {{action "previousPage"}} disabled={{isPreviousPageNotExists}}>Previous page</a>
+  <a class="pagination-next" {{action "nextPage"}} disabled={{isNextPageNotExists}}>Next page</a>
+  <ul class="pagination-list">
+    {{#if isMorePagesBack}}
+      <li><a class="pagination-link" {{action "movePage" 1}} aria-label="Go to page 1">1</a></li>
+      <li><span class="pagination-ellipsis">&hellip;</span></li>
+    {{/if}}
+    {{#each pageView as |p|}}
+      <li>
+        <a class="pagination-link {{if p.isCurrent "is-current"}}" {{action "movePage" p.pageNumber}} aria-label="Go to page {{p.pageNumber}}" aria-current="page">
+          {{p.pageNumber}}
+        </a>
+      </li>
+    {{/each}}
+    {{#if isMorePagesForward}}
+      <li><span class="pagination-ellipsis">&hellip;</span></li>
+      <li><a class="pagination-link" {{action "movePage" amountPages}} aria-label="Go to page {{amountPages}}">{{amountPages}}</a></li>
+    {{/if}}
+  </ul>
+</nav>

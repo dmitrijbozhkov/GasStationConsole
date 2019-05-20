@@ -6,12 +6,44 @@
   <component name="ChangeListManager">
     <list default="true" id="625907db-92d0-42f8-a456-c6db3b681177" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/GasStationApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/GasStationApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/adapters/fuel/fuel-details.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/components/buy-fuel-form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/buy-fuel-form.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/components/login-form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/login-form.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/components/register-form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/register-form.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/components/user-navigation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/user-navigation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/models/fuel/fuel-details.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes/fuel-catalogue/buy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/fuel-catalogue/buy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes/fuel-catalogue/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/fuel-catalogue/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes/user/change-password.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/user/change-password.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes/user/manage-fuel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/user/manage-fuel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes/user/my-operations.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/about.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/about.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/components/buy-fuel-form.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/components/buy-fuel-form.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/components/login-form.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/components/login-form.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/components/register-form.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/components/register-form.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/components/user-navigation.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/components/user-navigation.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/fuel-catalogue/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/fuel-catalogue/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/user.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/user.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/user/change-password.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/user/change-password.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/user/manage-authorities.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/user/manage-authorities.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/user/manage-fuel.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/user/manage-fuel.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/user/my-operations.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/templates/user/search-user-operations.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/templates/user/search-user-operations.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/mirage/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/mirage/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tests/unit/adapters/fuel/fuel-details-test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tests/unit/models/fuel/fuel-details-test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tests/unit/routes/user/my-operations-test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelTariffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelTariffController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelTariffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelTariffService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelTariffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelTariffService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelTariffControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelTariffControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelTariffServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelTariffServiceTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,22 +53,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/GasStationApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1011">
-              <caret line="99" column="13" lean-forward="true" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelOrderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="699">
-              <caret line="142" column="84" selection-start-line="142" selection-start-column="84" selection-end-line="142" selection-end-column="84" />
+            <state relative-caret-position="519">
+              <caret line="142" column="35" lean-forward="true" selection-start-line="142" selection-start-column="35" selection-end-line="142" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,46 +71,89 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelTariffService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelTariffController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="49" column="49" lean-forward="true" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+            <state relative-caret-position="495">
+              <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="143" selection-start-line="143" selection-end-line="143" />
+              <folding>
+                <element signature="e#2732#2733#0" expanded="true" />
+                <element signature="e#2790#2791#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-30">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="84">
+              <caret line="40" column="66" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="66" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/FuelTariff.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryDateOrders.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryFuelOrders.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/admin_controller/UserDetails.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/ListDTO.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_tariff_controller/TariffDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="14" selection-start-line="14" selection-end-line="24" selection-end-column="1" />
+            <state relative-caret-position="300">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/FuelDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="330">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/FuelStorageDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -142,9 +211,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/ChangeFuelName.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_tariff_controller/TariffFuelDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/admin_controller/ChangeUserRole.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/ListDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/OrderValues.java" />
@@ -166,12 +232,9 @@
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderDetails.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelOrderControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSalesTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSalesTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelOrderController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/AdminService.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/GasStationUserServiceTest.java" />
@@ -188,11 +251,17 @@
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/security/JwtTokenProvider.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/security/JwtTokenProviderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/GasStationApp.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelTariffServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelTariffControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/AdminServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelTariffService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelTariffService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelTariffController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelTariffServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelTariffControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/admin_controller/UserDetails.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/AdminController.java" />
       </list>
     </option>
   </component>
@@ -226,6 +295,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -276,7 +346,100 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="gas_station" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
               <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
+              <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
+              <item name="admin_controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
+              <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
+              <item name="fuel_controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
+              <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
+              <item name="fuel_order_controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
+              <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
+              <item name="fuel_order_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
+              <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
+              <item name="fuel_order_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="query" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
+              <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
+              <item name="fuel_order_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="volume_of_sales" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
+              <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
+              <item name="fuel_tariff_controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
+              <item name="exchange_models" type="462c0819:PsiDirectoryNode" />
+              <item name="gas_station_user_controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
@@ -296,24 +459,6 @@
               <item name="gas_station" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="enumerations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
@@ -359,21 +504,6 @@
             </path>
             <path>
               <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GasStationConsole" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gas_station" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GasStationConsole" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
             <path>
@@ -385,13 +515,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544798185436" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545798168853" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -413,7 +543,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FuelTariffServiceTest.testRemoveFuelTariffShouldCallDeleteOnFoundFuelTariffIfFuelIsNull">
+  <component name="RunManager" selected="JAR Application.Run console app with default data">
     <configuration name="FuelOrderControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GasStationConsole" />
       <extension name="coverage">
@@ -424,6 +554,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.nure.gas_station.controllers" />
       <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.controllers.FuelOrderControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -454,6 +585,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales" />
       <option name="MAIN_CLASS_NAME" value="org.nure.gas_station.exchange_models.fuel_order_controller.volume_of_sales.FuelVolumeOfSalesTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -490,32 +622,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Run console app with default data" type="JarApplication" factoryName="JAR Application">
+    <configuration name="Run console app with default data" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/GasStationConsole-1.0-SNAPSHOT.jar" />
       <option name="PROGRAM_PARAMETERS" value="--default.data.generate=true" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
     </configuration>
-    <configuration name="Run console app" type="JarApplication" factoryName="JAR Application">
+    <configuration name="Run console app" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/GasStationConsole-1.0-SNAPSHOT.jar" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+    <configuration default="true" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/GasStationConsole-1.0-SNAPSHOT.jar" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JAR Application.Run console app with default data" />
-      <item itemvalue="JAR Application.Run console app" />
       <item itemvalue="JUnit.FuelOrderControllerTest" />
+      <item itemvalue="JUnit.FuelTariffServiceTest.testRemoveFuelTariffShouldCallDeleteOnFoundFuelTariffIfFuelIsNull" />
       <item itemvalue="JUnit.FuelVolumeOfSalesTest" />
       <item itemvalue="JUnit.FuelsVolumeOfSalesTest.testSetOverallVolumeOfSalesShouldSetOverallVolumeOfSalesToSumOfAllVolumesOfSalesOfEachFuel" />
       <item itemvalue="JUnit.JwtTokenProviderTest.testValidateTokenSouldReturnUsernamePasswordAuthenticationTokenWithUserDetailsAndUthorities" />
-      <item itemvalue="JUnit.FuelTariffServiceTest.testRemoveFuelTariffShouldCallDeleteOnFoundFuelTariffIfFuelIsNull" />
+      <item itemvalue="JAR Application.Run console app with default data" />
+      <item itemvalue="JAR Application.Run console app" />
     </list>
     <recent_temporary>
       <list>
@@ -586,7 +718,7 @@
       <window_info id="Learn" order="7" weight="0.32982844" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32771337" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49973017" visible="true" weight="0.33508956" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49973017" weight="0.33508956" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39936775" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -603,7 +735,7 @@
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.2450081" />
-      <window_info anchor="right" id="Maven" order="8" visible="true" weight="0.09012412" />
+      <window_info anchor="right" id="Maven" order="8" visible="true" weight="0.16783594" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -612,234 +744,30 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.7.RELEASE/spring-aop-5.0.7.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.0.7.RELEASE/spring-tx-5.0.7.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="184" selection-start-line="184" selection-end-line="184" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.7.RELEASE/spring-core-5.0.7.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE.jar!/org/springframework/security/access/intercept/aopalliance/MethodSecurityInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.7.RELEASE/spring-webmvc-5.0.7.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="491" selection-start-line="491" selection-end-line="491" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.7.RELEASE/spring-webmvc-5.0.7.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="570" selection-start-line="570" selection-end-line="570" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/FuelOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/Fuel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exceptions/TokenExpiredException.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt/0.9.0/jjwt-0.9.0.jar!/io/jsonwebtoken/ExpiredJwtException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exceptions/NotEnoughPrivilegesException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/security/GasStationUserDetailsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt/0.9.0/jjwt-0.9.0.jar!/io/jsonwebtoken/JwtParser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="55" column="15" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exceptions/OperationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/GasStationUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/gas_station_user_controller/UserCredentials.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/gas_station_user_controller/AuthToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/enumerations/UserRoles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/exception_controller/ExceptionResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSales.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="1185">
+          <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/RequestFuel.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelTariffControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="19" selection-end-column="28" />
+        <state relative-caret-position="120">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/commons/ExchangeValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" selection-start-line="9" selection-end-line="30" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/FuelDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="27" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_tariff_controller/CreateTariff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/FuelStorageDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/VolumeOfSalesRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/security/JwtTokenProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="61" column="41" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/ListDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="14" selection-start-line="14" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="120">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -850,121 +778,357 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/ExceptionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelOrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="699">
-          <caret line="142" column="84" selection-start-line="142" selection-start-column="84" selection-end-line="142" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.7.RELEASE/spring-aop-5.0.7.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="511" selection-start-line="511" selection-end-line="511" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelTariffService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelTariffService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="49" column="49" lean-forward="true" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_tariff_controller/TariffDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelTariffController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="55" column="49" lean-forward="true" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/controllers/FuelTariffControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="981">
-          <caret line="97" column="9" lean-forward="true" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/services/FuelTariffServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/security/JwtAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/nure/gas_station/security/JwtTokenProviderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+        <state relative-caret-position="210">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/CreateOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/enumerations/OrderType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/gas_station_user_controller/ChangePassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderValues.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/EtityCreatedResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/Fuel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/GasStationApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1011">
-          <caret line="99" column="13" lean-forward="true" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
+        <state relative-caret-position="336">
+          <caret line="102" column="32" lean-forward="true" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/CreateFuel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/FuelAmountDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelTariffService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="62" column="40" lean-forward="true" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/interfaces/IFuelTariffService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="77" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/ChangeFuelName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_tariff_controller/CreateTariff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/FuelTariffDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/enumerations/UserRoles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/VolumeOfSalesRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryUserOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelVolumeOfSales.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/RequestFuel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="61" selection-start-column="61" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/admin_controller/ChangeUserRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/FuelStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/ListDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/PageDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSales.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/GasStationUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/admin_controller/SearchUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/model/FuelOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/order/OrderIdValues.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryFuelDateOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryDateOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/query/QueryFuelOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/admin_controller/UserDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_tariff_controller/TariffDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/FuelDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_controller/FuelStorageDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/exchange_models/fuel_order_controller/volume_of_sales/FuelsVolumeOfSalesRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelTariffController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="40" column="66" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/controllers/FuelOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="142" column="35" lean-forward="true" selection-start-line="142" selection-start-column="35" selection-end-line="142" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nure/gas_station/services/implementations/FuelOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+          <folding>
+            <element signature="e#2732#2733#0" expanded="true" />
+            <element signature="e#2790#2791#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

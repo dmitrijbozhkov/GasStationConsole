@@ -1,15 +1,15 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
-import Ember from 'ember';
 import { inject } from '@ember/service';
 
 const USERNAME_PATTERN = new RegExp("[^A-Za-z0-9]+");
 const PASSWORD_PATTERN = new RegExp("[^A-Za-z0-9]+");
-const REGISTER_LINK = "/api/user/signin/"
 
 export default class RegisterForm extends Component.extend({
   notify: inject("toast" as any) as any,
   router: inject("router"),
+  userService: inject("user-service"),
+  isLoading: false,
   // Form values
   name: "",
   surname: "",
@@ -66,21 +66,18 @@ export default class RegisterForm extends Component.extend({
         this.get("isSurnameValid") && 
         this.get("isUsernameValid") && 
         this.get("isPasswordValid") && 
-        this.get("isRepeatValid")) {
-        Ember.$.ajax({
-          type: "POST",
-          url: REGISTER_LINK,
-          contentType: 'application/json; charset=utf-8',
-          data: JSON.stringify({
-            "name": this.get("name"),
-            "surname": this.get("surname"),
-            "username": this.get("username"),
-            "password": this.get("password")
-          })
-        }).then((data) => {
+        this.get("isRepeatValid"))
+      {
+        this.set("isLoading", true);
+        this.get("userService")
+        .signin(this.get("name"), this.get("surname"), this.get("username"), this.get("password"))
+        .then((data) => {
+          this.set("isLoading", false);
           this.get("notify").success("You can now login into your account", "Registration successfull");
           this.get("router").transitionTo("login");
-        }, (error) => {
+        })
+        .catch((error) => {
+          this.set("isLoading", false);
           this.notify.error(error.responseJSON.exceptionMessage, "Registration error");
         });
       }

@@ -1,0 +1,44 @@
+<section class="container is-fluid">
+  {{#unless chosenUser}}
+    <form class="choose-user-form">
+      <label class="label">Search user by email</label>
+      <div class="field has-addons">
+        <div class="control is-expanded">
+          {{input
+            class="input"
+            type="text"
+            value=searchEmail
+          }}
+        </div>
+        <div class="control">
+          <button class="button is-info" {{action "searchUser"}}>
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  {{/unless}}
+  {{#if foundUsers}}
+    {{#each foundUsers as |u|}}
+      <a href="#" class="box column is-full has-background-white-ter" {{action "chooseUser" u}}>
+        <h2>{{u.username}}</h2>
+        <p>{{u.name}} {{u.surname}}</p>
+      </a>
+    {{/each}}
+    {{items-paginator currentPage=currentPage amountPages=amountPages}}
+  {{/if}}
+  {{#if chosenUser}}
+    <label class="label">Chosen user:</label>
+    <div class="box column is-full has-background-white-ter">
+      <div class="level">
+        <div class="level-left">
+          <h2>{{chosenUser.username}}</h2>
+        </div>
+        <div class="level-right">
+          <a href="#" {{action "dismissUser"}}><i class="fa fa-times has-text-danger"></i></a>
+        </div>
+      </div>
+      <p>{{chosenUser.name}} {{chosenUser.surname}}</p>
+    </div>
+  {{/if}}
+</section>

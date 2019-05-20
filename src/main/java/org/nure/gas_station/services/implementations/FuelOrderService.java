@@ -59,14 +59,20 @@ public class FuelOrderService implements IFuelOrderService {
         storage.setFuelAmount(currentFuelAmount - fuelAmount);
     }
 
+    private float roundFuelAmount(float fuelAmount) {
+        return Math.round(fuelAmount * 100) / 100f;
+    }
+
     private FuelOrder orderFuelByCurrency(Fuel fuel, GasStationUser user, float moneyAmount, Date orderDate) throws OperationException {
         float fuelAmount =  moneyAmount / fuel.getFuelTariff().getExchangeRate();
+        fuelAmount = roundFuelAmount(fuelAmount);
         checkOrderValid(fuel, orderDate, fuelAmount);
         removeFuelFromStorage(fuel.getFuelStorage(), fuelAmount);
         return new FuelOrder(moneyAmount, OrderType.FUEL_BY_CURRENCY, orderDate, fuel, fuel.getFuelTariff(), user);
     }
 
     private FuelOrder orderCurrencyByFuel(Fuel fuel, GasStationUser user, float fuelAmount, Date orderDate) throws OperationException {
+        fuelAmount = roundFuelAmount(fuelAmount);
         checkOrderValid(fuel, orderDate, fuelAmount);
         removeFuelFromStorage(fuel.getFuelStorage(), fuelAmount);
         return new FuelOrder(fuelAmount, OrderType.CURRENCY_BY_FUEL, orderDate, fuel, fuel.getFuelTariff(), user);
