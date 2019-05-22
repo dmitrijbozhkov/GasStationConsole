@@ -34,6 +34,7 @@ export default class FuelService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/get",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName
       })
@@ -44,6 +45,7 @@ export default class FuelService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/add",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName,
         tariffId: tariffId,
@@ -56,6 +58,7 @@ export default class FuelService extends Service.extend({
       type: "DELETE",
       url: this.get("namespace") + "/remove",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName
       })
@@ -66,6 +69,7 @@ export default class FuelService extends Service.extend({
       type: "PUT",
       url: this.get("namespace") + "/update-name",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: oldFuelName,
         nextFuelName: nextFuelName
@@ -77,6 +81,7 @@ export default class FuelService extends Service.extend({
       type: "PUT",
       url: this.get("namespace") + "/update-tariff",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName,
         tariffId: tariffId
@@ -88,6 +93,7 @@ export default class FuelService extends Service.extend({
       type: "PUT",
       url: this.get("namespace") + "/update-left",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName,
         fuelLeft: fuelLeft

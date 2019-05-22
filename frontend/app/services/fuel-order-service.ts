@@ -34,16 +34,16 @@ export default class FuelOrderService extends Service.extend({
   makeAuthRequest: inject("make-auth-request"),
   namespace: "/api/order"
 }) {
-  createOrder(fuelName: string, amount: number, orderType: string) {
+  createOrder(fuelName: string, amount: number, orderType: string, operationDate: Date) {
     return this.get("makeAuthRequest").ajaxRequest({
       type: "POST",
       url: this.get("namespace") + "/create",
-      dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName,
         amount: amount,
         orderType: orderType,
-        orderDate: new Date()
+        orderDate: operationDate
       })
     });
   }
@@ -59,10 +59,14 @@ export default class FuelOrderService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/query-user-current",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
-        page: page,
+        page: page - 1,
         amount: AMOUNT_PAGE
       })
+    }).then(page => {
+      page.page += 1;
+      return page;
     });
   }
   query(page: number): Promise<IPageDTO<Order>> {
@@ -70,10 +74,14 @@ export default class FuelOrderService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/query",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
-        page: page,
+        page: page - 1,
         amount: AMOUNT_PAGE
       })
+    }).then(page => {
+      page.page += 1;
+      return page;
     });
   }
   queryFuel(fuelName: string, page: number): Promise<IPageDTO<Order>> {
@@ -81,11 +89,15 @@ export default class FuelOrderService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/query-fuel",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName,
-        page: page,
+        page: page - 1,
         amount: AMOUNT_PAGE
       })
+    }).then(page => {
+      page.page += 1;
+      return page;
     });
   }
   queryUser(username: string, page: number): Promise<IPageDTO<Order>> {
@@ -93,11 +105,15 @@ export default class FuelOrderService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/query-user",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         username: username,
-        page: page,
+        page: page - 1,
         amount: AMOUNT_PAGE
       })
+    }).then(page => {
+      page.page += 1;
+      return page;
     });
   }
   queryDate(before: Date, after: Date, page: number): Promise<IPageDTO<Order>> {
@@ -105,12 +121,16 @@ export default class FuelOrderService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/query-date",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         before: before,
         after: after,
-        page: page,
+        page: page - 1,
         amount: AMOUNT_PAGE
       })
+    }).then(page => {
+      page.page += 1;
+      return page;
     });
   }
   queryDateFuel(before: Date, after: Date, fuelName: string, page: number): Promise<IPageDTO<Order>> {
@@ -118,13 +138,17 @@ export default class FuelOrderService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/query-fuel-date",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName,
         before: before,
         after: after,
-        page: page,
+        page: page - 1,
         amount: AMOUNT_PAGE
       })
+    }).then(page => {
+      page.page += 1;
+      return page;
     });
   }
   getVolumeOfSales(before: Date, after: Date): Promise<FuelsVolumeOfSales> {
@@ -132,6 +156,7 @@ export default class FuelOrderService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/volume-of-sales",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         before: before,
         after: after
@@ -143,11 +168,15 @@ export default class FuelOrderService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/volume-of-sales-fuel",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelNames: fuelNames,
         before: before,
         after: after
       })
+    }).then(page => {
+      page.page += 1;
+      return page;
     });
   }
 }

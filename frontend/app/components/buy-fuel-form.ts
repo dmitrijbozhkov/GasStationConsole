@@ -22,7 +22,11 @@ export default class BuyFuelForm extends Component.extend({
   currencyByFuelAmount: computed("selectedValueAmount", function() {
     return Math.round(this.get("selectedValueAmount") / this.get("model.tariff.exchangeRate") * ROUND_ZEROES) / ROUND_ZEROES;
   }),
-  currencyByFuelMaxAmount: 0
+  currencyByFuelMaxAmount: 0,
+  operationDate: null as unknown as Date,
+  operationDateObj: computed("operationDate", function() {
+    return new Date(this.get("operationDate"));
+  }),
 }) {
   constructor() {
     super(...arguments);
@@ -75,13 +79,14 @@ export default class BuyFuelForm extends Component.extend({
       }
       this.set("isLoading", true);
       this.get("fuelOrderService")
-      .createOrder(this.get("model.fuelName" as any), this.get("selectedValueAmount"), this.get("selectedOrderType"))
-      .then((data) => {
+      .createOrder(this.get("model.fuelName" as any), this.get("selectedValueAmount"), this.get("selectedOrderType"), this.get("operationDateObj"))
+      .then(() => {
         this.set("isLoading", false);
         this.get("notify").success("Thank you for the purchase", "Transaction successful");
         this.get("router").transitionTo("fuel-catalogue");
       })
       .catch((error) => {
+        console.log(error);
         this.set("isLoading", false);
         this.get("notify").error(error.responseJSON.exceptionMessage, "An error occured");
       });

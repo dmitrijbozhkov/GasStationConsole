@@ -30,6 +30,7 @@ export default class UserService extends Service.extend({
       type: "POST",
       url: this.get("userNamespace") + "/signin",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         name: name,
         surname: surname,
@@ -43,9 +44,10 @@ export default class UserService extends Service.extend({
       type: "POST",
       url: this.get("userNamespace") + "/change-password",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
-        oldPassword: oldPassword,
-        password: nextPassword
+        password: nextPassword,
+        oldPassword: oldPassword
       })
     })
     .then((data) => {
@@ -57,11 +59,15 @@ export default class UserService extends Service.extend({
       type: "POST",
       url: this.get("adminNamespace") + "/search-user",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         username: username,
-        page: page,
+        page: page - 1,
         amount: AMOUNT_PAGE
       })
+    }).then(page => {
+      page.page += 1;
+      return page;
     });
   }
   setRole(username: string, role: string) {
@@ -70,6 +76,7 @@ export default class UserService extends Service.extend({
       type: "POST",
       url: this.get("adminNamespace") + "/set-role",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         username: username,
         userRole: role

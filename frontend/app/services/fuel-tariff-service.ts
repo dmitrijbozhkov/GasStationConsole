@@ -30,6 +30,7 @@ export default class FuelTariffService extends Service.extend({
       type: "POST",
       url: this.get("namespace") + "/add",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         exchangeRate: exchangeRate
       })
@@ -47,6 +48,7 @@ export default class FuelTariffService extends Service.extend({
       type: "PUT",
       url: this.get("namespace") + "/update",
       dataType: "json",
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         tariffId: tariffId,
         exchangeRate: exchangeRate

@@ -17,6 +17,16 @@
     </div>
   </div>
   <div class="field">
+    <label class="label">Before</label>
+    <div class="control">
+      {{input
+        class="input is-large"
+        type="date"
+        change=(action (mut operationDate) value="target.value")
+      }}
+    </div>
+  </div>
+  <div class="field">
     <div class="control">
       <input type="range" class="slider is-fullwidth" max={{maxFuelOrder}} value={{selectedValueAmount}}
         oninput={{action "fuelMoved"}}>
@@ -30,23 +40,25 @@
   <div class="field">
     <label class="label">
       {{#if isFuelByCurrency}}
-        <div class="level">
-          <div class="level-left"><span class="is-size-5">Fuel to buy:</span></div>
-          <div class="level-right"><span class="tag is-size-5">{{selectedValueAmount}}/{{currencyByFuelMaxAmount}} Liters</span></div>
-        </div>
-        <div class="level">
-          <div class="level-left"><span class="is-size-5">Money for order:</span></div>
-          <div class="level-right"><span class="tag is-size-5">${{fuelByCurrencyMoney}}</span></div>
-        </div>
+      <div class="level">
+        <div class="level-left"><span class="is-size-5">Fuel to buy:</span></div>
+        <div class="level-right"><span class="tag is-size-5">{{selectedValueAmount}}/{{currencyByFuelMaxAmount}}
+            Liters</span></div>
+      </div>
+      <div class="level">
+        <div class="level-left"><span class="is-size-5">Money for order:</span></div>
+        <div class="level-right"><span class="tag is-size-5">${{fuelByCurrencyMoney}}</span></div>
+      </div>
       {{else}}
-        <div class="level">
-          <div class="level-left"><span class="is-size-5">Fuel to buy:</span></div>
-          <div class="level-right"><span class="tag is-size-5">{{currencyByFuelAmount}}/{{currencyByFuelMaxAmount}} Liters</span></div>
-        </div>
-        <div class="level">
-          <div class="level-left"><span class="is-size-5">Money for order:</span></div>
-          <div class="level-right"><span class="tag is-size-5">${{selectedValueAmount}}</span></div>
-        </div>
+      <div class="level">
+        <div class="level-left"><span class="is-size-5">Fuel to buy:</span></div>
+        <div class="level-right"><span class="tag is-size-5">{{currencyByFuelAmount}}/{{currencyByFuelMaxAmount}}
+            Liters</span></div>
+      </div>
+      <div class="level">
+        <div class="level-left"><span class="is-size-5">Money for order:</span></div>
+        <div class="level-right"><span class="tag is-size-5">${{selectedValueAmount}}</span></div>
+      </div>
       {{/if}}
     </label>
     <a href="#" class="button is-fullwidth is-success is-large" {{action "buyFuel"}}>

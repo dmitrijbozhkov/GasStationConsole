@@ -9,7 +9,7 @@ export default class MakeAuthRequest extends Service.extend({
     if (!params.headers) {
       params.headers = {};
     }
-    params.headers["Authorization"] = this.get("session.data.authenticated.token" as any);
+    params.headers["Authorization"] = "Bearer " + this.get("session.data.authenticated.token" as any);
     return fetchAjax(params);
   }
 }
