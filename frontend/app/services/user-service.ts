@@ -29,7 +29,6 @@ export default class UserService extends Service.extend({
     return fetchAjax({
       type: "POST",
       url: this.get("userNamespace") + "/signin",
-      dataType: "json",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         name: name,
@@ -43,7 +42,6 @@ export default class UserService extends Service.extend({
     return this.get("makeAuthRequest").ajaxRequest({
       type: "POST",
       url: this.get("userNamespace") + "/change-password",
-      dataType: "json",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         password: nextPassword,
@@ -75,7 +73,6 @@ export default class UserService extends Service.extend({
     return this.get("makeAuthRequest").ajaxRequest({
       type: "POST",
       url: this.get("adminNamespace") + "/set-role",
-      dataType: "json",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         username: username,

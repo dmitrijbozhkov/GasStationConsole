@@ -27,7 +27,7 @@ export default class FuelService extends Service.extend({
       type: "GET",
       url: this.get("namespace") + "/get-all",
       dataType: "json"
-    });
+    })
   }
   getFuel(fuelName: string): Promise<Fuel> {
     return fetchAjax({
@@ -44,7 +44,6 @@ export default class FuelService extends Service.extend({
     return this.get("makeAuthRequest").ajaxRequest({
       type: "POST",
       url: this.get("namespace") + "/add",
-      dataType: "json",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName,
@@ -57,7 +56,6 @@ export default class FuelService extends Service.extend({
     return this.get("makeAuthRequest").ajaxRequest({
       type: "DELETE",
       url: this.get("namespace") + "/remove",
-      dataType: "json",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName
@@ -68,7 +66,6 @@ export default class FuelService extends Service.extend({
     return this.get("makeAuthRequest").ajaxRequest({
       type: "PUT",
       url: this.get("namespace") + "/update-name",
-      dataType: "json",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: oldFuelName,
@@ -80,7 +77,6 @@ export default class FuelService extends Service.extend({
     return this.get("makeAuthRequest").ajaxRequest({
       type: "PUT",
       url: this.get("namespace") + "/update-tariff",
-      dataType: "json",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName,
@@ -92,7 +88,6 @@ export default class FuelService extends Service.extend({
     return this.get("makeAuthRequest").ajaxRequest({
       type: "PUT",
       url: this.get("namespace") + "/update-left",
-      dataType: "json",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         fuelName: fuelName,

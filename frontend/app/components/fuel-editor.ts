@@ -72,7 +72,13 @@ export default class FuelEditor extends Component.extend({
     })
     .catch((error) => {
       this.set("isLoading", false);
-      this.notify.error(error.responseJSON.exceptionMessage, "Error getting user operations");
+      console.log(error);
+      if (error.responseJSON) {
+        this.notify.error(error.responseJSON.exceptionMessage, "Error getting user operations");
+      } else {
+        this.notify.error(error.message, "Error getting user operations");
+      }
+      
     });
   }
   editFuel() {
@@ -97,7 +103,11 @@ export default class FuelEditor extends Component.extend({
     })
     .catch((error) => {
       this.set("isLoading", false);
-      this.notify.error(error.responseJSON.exceptionMessage, "Error getting user operations");
+      if (error.responseJSON) {
+        this.notify.error(error.responseJSON.exceptionMessage, "Error getting user operations");
+      } else {
+        this.notify.error(error, "Error getting user operations");
+      }
     });
   }
   updateModel() {
@@ -105,11 +115,17 @@ export default class FuelEditor extends Component.extend({
     .getAllFuels()
     .then((result) => {
       this.set("isLoading", false);
+      console.log(result);
       this.set("model" as any, result)
     })
     .catch((error) => {
       this.set("isLoading", false);
-      this.notify.error(error.responseJSON.exceptionMessage, "Error getting user operations");
+      console.log(error);
+      if (error.responseJSON) {
+        this.notify.error(error.responseJSON.exceptionMessage, "Error getting user operations");
+      } else {
+        this.notify.error(error, "Error getting user operations");
+      }
     });
   }
   actions = {
@@ -165,7 +181,11 @@ export default class FuelEditor extends Component.extend({
       })
       .catch((error) => {
         this.set("isLoading", false);
-        this.notify.error(error.responseJSON.exceptionMessage, "Error getting user operations");
+        if (error.responseJSON) {
+          this.notify.error(error.responseJSON.exceptionMessage, "Error getting user operations");
+        } else {
+          this.notify.error(error, "Error getting user operations");
+        }
       });
     }
   }

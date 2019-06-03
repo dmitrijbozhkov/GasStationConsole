@@ -44,6 +44,7 @@ export default class TariffEditor extends Component.extend({
       this.notify.success("Fuel tariff successfuly added", "Operation successful");
     })
     .catch((error) => {
+      console.log(error);
       this.set("isLoading", false);
       this.notify.error(error.responseJSON.exceptionMessage, "Error getting user operations");
     });
@@ -73,6 +74,7 @@ export default class TariffEditor extends Component.extend({
     editTariff(this: TariffEditor, tariff: FuelTariff) {
       this.set("modalOperation", ModalOperation.EditOperation);
       this.set("operationExchangeRate", tariff.exchangeRate);
+      console.log(tariff);
       this.set("oldTariffSnapshot", {id: tariff.id, exchangeRate: tariff.exchangeRate});
     },
     removeTariff(this: TariffEditor, tariff: FuelTariff) {

@@ -29,7 +29,6 @@ export default class FuelTariffService extends Service.extend({
     return this.get("makeAuthRequest").ajaxRequest({
       type: "POST",
       url: this.get("namespace") + "/add",
-      dataType: "json",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         exchangeRate: exchangeRate
@@ -39,15 +38,13 @@ export default class FuelTariffService extends Service.extend({
   removeFuelTariff(tariffId: number) {
     return this.get("makeAuthRequest").ajaxRequest({
       type: "DELETE",
-      url: this.get("namespace") + "/remove/" + tariffId,
-      dataType: "json"
+      url: this.get("namespace") + "/remove/" + tariffId
     });
   }
   updateFuelTariff(tariffId: number, exchangeRate: number) {
     return this.get("makeAuthRequest").ajaxRequest({
       type: "PUT",
       url: this.get("namespace") + "/update",
-      dataType: "json",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         tariffId: tariffId,

@@ -73,12 +73,12 @@ public class GasStationApp {
             String username1 = "batsinpants";
             String username2 = "randomuser";
             try {
-                userService.createUser(username1, "pass1234", "Alex", "Svir", UserRoles.ROLE_BUYER);
+                userService.createUser(username1, "Pass1234", "Alex", "Svir", UserRoles.ROLE_BUYER);
             } catch (EntityAlreadyExistsException ex) {
                 log.info(String.format("User by username %s already exists", username1));
             }
             try {
-                userService.createUser(username2, "pass1234", "Pepega", "Forsaan", UserRoles.ROLE_BUYER);
+                userService.createUser(username2, "Pass1234", "Pepega", "Forsaan", UserRoles.ROLE_BUYER);
             } catch (EntityAlreadyExistsException ex) {
                 log.info(String.format("User by username %s already exists", username2));
             }

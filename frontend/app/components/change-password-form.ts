@@ -58,7 +58,7 @@ export default class ChangePasswordForm extends Component.extend({
       if (!isDisabled) {
         this.set("isLoading", true);
         this.get("userService")
-        .changePassword(this.get("newPassword"), this.get("oldPassword"))
+        .changePassword(this.get("oldPassword"), this.get("newPassword"))
         .then((data) => {
           this.set("isLoading", false);
           this.get("notify").success("Password successfully changed", "You may login with your new password now");
